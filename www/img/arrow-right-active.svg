@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="4.219px" height="8px" viewBox="0 0 4.219 8" enable-background="new 0 0 4.219 8" xml:space="preserve">
+<g>
+	<rect x="-51.168" y="29.41" fill="#FFFFFF" width="18.002" height="2.55"/>
+	<rect x="-51.168" y="35.785" fill="#FFFFFF" width="18.002" height="2.55"/>
+	<rect x="-51.168" y="22.396" fill="#FFFFFF" width="18.002" height="2.551"/>
+</g>
+<g>
+	<rect x="-26.168" y="29.409" fill="#333333" width="18.002" height="2.551"/>
+	<rect x="-26.168" y="35.784" fill="#333333" width="18.002" height="2.551"/>
+	<rect x="-26.168" y="22.396" fill="#333333" width="18.002" height="2.551"/>
+</g>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="8.906" y="19.671" width="4.219" height="8"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_2_)" fill="#666666" d="M13.057,23.503L9.293,19.74c-0.089-0.089-0.231-0.089-0.32,0
+			c-0.088,0.089-0.088,0.23,0,0.319l3.604,3.603l-3.604,3.603c-0.088,0.089-0.088,0.23,0,0.319c0.044,0.043,0.103,0.067,0.159,0.067
+			c0.058,0,0.116-0.022,0.159-0.067l3.764-3.764C13.143,23.734,13.143,23.589,13.057,23.503L13.057,23.503z M13.057,23.503"/>
+	</g>
+</g>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" width="4.219" height="8"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<path clip-path="url(#SVGID_4_)" fill="#81AADA" d="M4.15,3.832L0.387,0.069c-0.089-0.089-0.231-0.089-0.32,0
+			c-0.088,0.089-0.088,0.23,0,0.319L3.67,3.991L0.066,7.594c-0.088,0.089-0.088,0.23,0,0.319C0.11,7.957,0.169,7.98,0.226,7.98
+			c0.058,0,0.116-0.022,0.159-0.067L4.148,4.15C4.236,4.063,4.236,3.918,4.15,3.832L4.15,3.832z M4.15,3.832"/>
+	</g>
+</g>
+</svg>
