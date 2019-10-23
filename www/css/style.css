@@ -3661,6 +3661,26 @@ li.footer_midle_right_item a {
 	#footer-links-info{
 		display:none!important;}
 }
+
+/*ERROR 404*/
+div.error404 {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.5;
+	font-family: 'Roboto',sans-serif;
+	padding: 1em 3em;
+}
+span.error404 {
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #02643D;
+}
+strong.error404 {
+	font-size: 2em;
+	color: #F73D34;
+}
+
+
 #counters1{
 	display:none;}
 
