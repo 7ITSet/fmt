@@ -3679,6 +3679,9 @@ strong.error404 {
 	font-size: 2em;
 	color: #F73D34;
 }
+a.error404 {
+	margin-top: 1.5em;
+}
 
 
 #counters1{
