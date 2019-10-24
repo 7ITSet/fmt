@@ -120,10 +120,7 @@ input[type=text],textarea,select {
 	margin:0;
 	border:1px solid #ddd;
 	font:.875em 'Roboto',sans-serif;}
-/* input[type=text]:focus, textarea:focus {
-	box-shadow:0 0 5px #4496E7;
-	margin:0;
-	border:1px solid #4496E7;} */
+
 input:read-only,textarea:read-only,input:read-only:focus,textarea:read-only:focus{
 	border:none;
 	background:transparent;
@@ -165,7 +162,6 @@ p.disc{
 	margin:0 auto;}
 .hidden{
 	display:none;}
-
 
 .minipopup{
 	background:#fff;
@@ -1905,6 +1901,12 @@ p.select_default_option_selected{
 .good_info .main_products_list_items,
 .main_products_list_items.no-background{
 	background:#fff;}
+.good_info {
+	overflow: hidden;
+	min-height: 31em;
+	position: relative;
+	box-sizing: border-box;
+}
 .about_good h1 {
   font-size: 1.5em;
 	margin-bottom: .5em;
@@ -2009,7 +2011,7 @@ span.exist_span {
 	object-position: center;
 	margin:0 auto;}
 .main_products_list_items_info_foto_preview{
-	height:25em;
+	height:auto;
 	width:25em;
 	overflow:hidden;
 	text-align:center;
