@@ -520,7 +520,7 @@ $(document).ready(function(){
         slides[currentSlide].className = 'slide showing';
     }
 </script>
-<script>
+<script type="text/javascript">
 
     let i = 1;
     for(let li of carousel.querySelectorAll('li')) {
@@ -553,4 +553,4 @@ $(document).ready(function(){
       position = Math.max(position, -width * (listElems.length - count));
       list.style.marginLeft = position + 'px';
     };
-  </script>
+</script>

@@ -271,8 +271,9 @@ else $captcha_reg=false;
 		<div class="main_products_list_items">
             <div class="good_info">
                 <div class="main_products_list_items_info_foto">
-                    <div class="main_products_list_items_info_foto_gallery">
+                    <div class="main_products_list_items_info_foto_gallery carousel">
                         <div class="main_products_list_items_info_foto_gallery_container">
+                            <button class="arrow prev"></button>
                             <div class="main_products_list_items_info_foto_gallery_container_slider">
                             <?
                                 //сортируем массив с фото, делаем главную фотку первой
@@ -297,6 +298,7 @@ else $captcha_reg=false;
 //                     <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_min.jpg" data-med="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-max="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg"'.($_foto['main']?' itemprop="image"':'').' >
                             ?>
                             </div>
+                            <button class="arrow next"></button>
                         </div>
                     </div>
                     <div class="main_products_list_items_info_foto_preview">
@@ -1515,4 +1517,37 @@ if($captcha_reg){
 		});
 
 	});
+</script>
+<script type="text/javascript">
+
+    let i = 1;
+    for(let li of document.getElementsByClassName('main_products_list_items_info_foto_gallery_item')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+        i++;
+    }
+
+    let width = 20; // ширина картинки
+    let count = 5; // видимое количество изображений
+
+    let list = document.getElementsByClassName('main_products_list_items_info_foto_gallery_container_slider');
+    let listElems = document.getElementsByClassName('main_products_list_items_info_foto_gallery_item');
+
+    let position = 0; // положение ленты прокрутки
+
+    carousel.querySelector('.prev').onclick = function() {
+        // сдвиг влево
+        position += width * count;
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position, 0);
+        list.style.marginLeft = position + 'px';
+    };
+
+    carousel.querySelector('.next').onclick = function() {
+        // сдвиг вправо
+        position -= width * count;
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position, -width * (listElems.length - count));
+        list.style.marginLeft = position + 'px';
+    };
 </script>
