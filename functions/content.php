@@ -1159,6 +1159,17 @@ Product.`m_products_show_site`=1
 		
 		if(!$e){
 			$data['m_products_main_product']=$data['m_products_main_product']?$data['m_products_main_product']:0;
+
+			$q='SELECT m_products_attributes_groups_list_id FROM `formetoo_main`.`m_products_attributes_groups` 
+			LEFT JOIN `formetoo_main`.`m_products`
+				ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`m_products_attributes_groups_id`
+			WHERE 
+			(`m_products`.`m_products_id`='.$data['m_products_id'].');';
+
+			if($res=$sql->query($q)) {
+				$attrsGroup = explode('|', $res[0]['m_products_attributes_groups_list_id']);
+			}
+
 			$q='SELECT * FROM `formetoo_main`.`m_products_attributes_list` 
 				RIGHT JOIN `formetoo_main`.`m_products_attributes`
 					ON `m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`
@@ -1166,10 +1177,21 @@ Product.`m_products_show_site`=1
 					(
 						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_id'].' OR 
 						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_main_product'].') AND 
-					`m_products_attributes_list_active`=1 
-				ORDER BY `m_products_attributes_list_name`;';
-			if($res=$sql->query($q))
+					`m_products_attributes_list_active`=1;';
+
+			if($res=$sql->query($q)) {
+				if(!empty($attrsGroup)) {
+					$tempResult = array();
+					foreach($res as $attrId) {
+						$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroup);
+						if ($index) $tempResult[$index] = $attrId;
+					}
+					ksort($tempResult);
+					return $tempResult;
+				}
+				
 				return $res;
+			}
 			return false;
 		}
 		return false;
