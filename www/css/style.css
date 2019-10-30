@@ -3677,13 +3677,34 @@ a.error404 {
 	color:#fff;
 	z-index:101;
 	cursor:pointer;
-	top:40%;}
+	top:40%;
+}
 .slide_arrow_prev{
 	background:rgba(0,0,0,.5) url(/img/all.svg) -6.725em -54.7em no-repeat;
-	left:1em;}
+	left:1em;
+}
 .slide_arrow_next{
 	background:rgba(0,0,0,.5) url(/img/all.svg) -11.025em -54.7em no-repeat;
 	right:1em;}
+.good_slide_arrow{
+	border-radius: .2em;
+	position: absolute;
+	width: 2.5em;
+	height: 2.5em;
+	padding: 0.3em;
+	color: #fff;
+	z-index: 101;
+	cursor: pointer;
+	top: 21%;
+}
+.good_slide_arrow_prev{
+	background:rgba(0,0,0,.5) url(/img/all.svg) -6.9em -54.8em no-repeat;
+	left: 0em;
+}
+.good_slide_arrow_next{
+	background: rgba(0,0,0,.5) url(/img/all.svg) -11.4em -54.838em no-repeat;
+	right: 0em;
+}
 
 #feedback{
 	background:url('/img/all.png') -244px -654px no-repeat;
