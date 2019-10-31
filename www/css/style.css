@@ -2788,21 +2788,25 @@ span.free_calc_delivery_title {
 .main_products_list_items_miniinfo p.exist-1{
 	color:#18ad4d;
 	font-size:.875em;
-	font-weight:300;}
+	font-weight:300;
+}
 .main_products_list_items_item_info p.exist-1,
 .main_products_list_items_item_info p.exist-0{
-	font-weight:300;}
+	font-weight:300;
+}
 .main_products_list_items_miniinfo p.exist-1 a,
 .main_products_list_items_item_info p.exist-1 a,
 .main_products_list_items_miniinfo p.exist-1 a:hover,
 .main_products_list_items_item_info p.exist-1 a:hover{
-	color:#18ad4d!important;}
+	color:#18ad4d!important;
+}
 .main_products_list_items_item_info p.exist-1:before,
 .main_products_list_items_miniinfo p.exist-1:before{
-	content:"●";
+	content:none;
 	margin-right:.3em;
 	font-size:.875em;
-	color:#18ad4d;}
+	color:#18ad4d;
+}
 .main_products_list_items_info_pay .main_products_list_items_miniinfo p.exist-1:before{
 	display:none;}
 .main_products_list_items_info_pay .main_products_list_items_miniinfo{

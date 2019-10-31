@@ -336,7 +336,7 @@ else $captcha_reg=false;
 												<span class="gif-mini-preloader-container">
 													<img src="/img/loader-firstyle-4.svg" class="gif-mini-preloader" title="Уточняем наличие…"/>
 												</span>
-												<?=($current_product['m_products_exist']==1?'<p class="exist-1">Наличие на складе: <a href="#" rel="nofollow" title="Нажмите, чтобы уточнить наличие" class="dotted" id="get_exist">Уточнить наличие</a></p>':'<p class="exist-0">Нет в наличии, заказ от 30000 р.</p>');?>
+												<?=($current_product['m_products_exist']==1?'<p class="exist-1"> <a href="#" rel="nofollow" title="Нажмите, чтобы уточнить наличие" class="dotted" id="get_exist">Уточнить наличие</a></p>':'<p class="exist-0">Нет в наличии, заказ от 30000 р.</p>');?>
 											</noindex>
 										</div>
 									</div>
@@ -358,16 +358,6 @@ else $captcha_reg=false;
 												</div>
 											</div>
 										</div>
-										<!--<div class="main_products_list_items_miniinfo_exist">
-											<div class="exist">
-												<noindex>
-													<span class="gif-mini-preloader-container">
-														<img src="/img/loader-firstyle-4.svg" class="gif-mini-preloader"/>
-													</span>
-													'/* .($current_product['m_products_exist']==1?'<p class="exist-1"><a href="#" rel="nofollow" title="Нажмите, чтобы уточнить наличие" class="dotted" id="get_exist">Уточнить наличие</a></p>':'<p class="exist-0">Нет в наличии, заказ от 30 000<span class="rouble">&nbsp;₽</span></p>') */.'
-												</noindex>
-											</div>
-										</div>-->
 										';
 											?>
 									</div>
