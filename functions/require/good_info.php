@@ -264,7 +264,6 @@ else $captcha_reg=false;
 		<?$menu->breadcrumbs(true)?>
 	</div>
 	<div class="clr"></div>
-	<h1 itemprop="name"><?=$current['h1']?></h1>
 </div>
 <div class="main_container_body good_info">
 	<div class="main_content good_info_content">

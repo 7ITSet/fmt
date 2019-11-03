@@ -1447,9 +1447,6 @@ img.timer_product_img_big {
   position: absolute;
   top: 35px;
   padding: 0;
-  /* background: #ddd; */
-  /* border-radius: 15px;
-  border: 1px solid gray; */
   font-size: 24px;
   line-height: 24px;
   color: #ddd;
@@ -1666,18 +1663,7 @@ input.main_products_filters_checkbox[type="radio"]:checked:disabled + label::bef
 	width:7.0em;
 	box-sizing:border-box;
 	padding-left:.5em;
-	/* padding-left:2em; */}
-/* .rangeinput label{
-	position:absolute;
-	font-size:.875em;
-	left:.5em;
-	top:.2em;
-	color:#999;}
-.rangeinput .icon-close{
-	background-position:-.4em -27.2em;
-	position:absolute;
-	right: 0;
-	top: -.2em;} */
+}
 .rangeinput_slider{
 	margin:1em 0 .5em;}
 .rangeinput_slider.ui-corner-all,
@@ -1890,8 +1876,8 @@ p.select_default_option_selected{
 	box-sizing: border-box;
 }
 .about_good h1 {
-  font-size: 1.5em;
-	margin-bottom: .5em;
+	font-size: 1.5em;
+	margin-bottom: .2em;
 	width: 80%;
 }
 .good_title_share {
