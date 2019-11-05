@@ -1486,7 +1486,7 @@ class user{
 			$data_prod=array();
 			foreach($data_cart->items as $_item)
 				$data_prod[]=$_item->product_id;
-			$q='SELECT `m_products_id`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';
+			$q='SELECT `m_products_id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';
 			$data_prod=$sql->query($q,'m_products_id');
 			//ед. измерения
 			$data_units=array();
@@ -1595,7 +1595,7 @@ class user{
 			$data_prod=array();
 			foreach($data_cart->items as $_item)
 				$data_prod[]=$_item->product_id;
-			$q='SELECT `m_products_id`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';
+			$q='SELECT `m_products_id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';
 			$data_prod=$sql->query($q,'m_products_id');
 			//ед. измерения
 			$data_units=array();

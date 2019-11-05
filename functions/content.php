@@ -272,7 +272,7 @@ Product.`m_products_show_site`=1
 		$q_wo_l='SELECT 
 				SQL_CALC_FOUND_ROWS
 				/* Product.`m_products_id`,Product.`m_products_show_site`,Product.`m_products_categories_id`[SELECT] */
-				Product.`m_products_id`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
+				Product.`m_products_id`, `slug`, `m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
 			FROM `formetoo_main`.`m_products` Product
 [JOIN]
 			WHERE
@@ -384,7 +384,7 @@ Product.`m_products_show_site`=1
 //						ORDER BY '.$order.',`m_products_order` DESC
 //						LIMIT '.$start.','.$limit.';';
 
-                $q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`
+                $q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`slug`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`
 					FROM `formetoo_main`.`m_products` WHERE
 						`m_products_categories_id` IN('.implode(',',($ch?$ch:array($menu->nodes_id[$current['id']]['category']))).') AND
 						`m_products_show_site`=1
@@ -399,7 +399,7 @@ Product.`m_products_show_site`=1
 
 			//похожие товары
 			elseif(is_numeric($result)){
-				$q='SELECT `m_products_links` FROM `formetoo_main`.`m_products` WHERE `m_products_id`='.$result.' LIMIT 1;';
+				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `m_products_id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
 					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
@@ -425,7 +425,7 @@ Product.`m_products_show_site`=1
 						$viewed[]=$_result;
 				}
 				if($viewed){
-					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`slug`,`m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`m_products_id` IN('.implode(',',$viewed).') AND
 						`m_products_show_site`=1 
@@ -522,14 +522,14 @@ Product.`m_products_show_site`=1
 							<div class="main_products_list_items_item_info">
 								<div class="foto">',
 									($_good['m_products_id_isolux']
-//										? '<a href="/product/'.$_good['m_products_id'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_good['m_products_id_isolux'],0,2).'/SN'.$_good['m_products_id_isolux'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//										: '<a href="/product/'.$_good['m_products_id'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//										? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_good['m_products_id_isolux'],0,2).'/SN'.$_good['m_products_id_isolux'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//										: '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
 
-//                                        ? '<a href="/product/'.$_good['m_products_id'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//                                        : '<a href="/product/'.$_good['m_products_id'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//                                        ? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//                                        : '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
 
-                                        ? '<a href="/product/'.$_good['m_products_id'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
-                                        : '<a href="/product/'.$_good['m_products_id'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
+                                        ? '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
+                                        : '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
 
 
 
@@ -537,7 +537,7 @@ Product.`m_products_show_site`=1
 								'</div>
 								<div class="title">
 									<p>
-										<a href="/product/'.$_good['m_products_id'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
+										<a href="/product/'.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
 									</p>
 								</div>
 							</div>
@@ -719,7 +719,7 @@ Product.`m_products_show_site`=1
 				`m_products_show_site`=1;';
 			if($this->goods=$sql->query($q,'m_products_id')){	 */		
 				 $q=' CREATE TEMPORARY TABLE IF NOT EXISTS `formetoo_main`.`temp__filters`
-						SELECT `m_products_id` FROM `formetoo_main`.`m_products` WHERE 
+						SELECT `m_products_id`,`slug` FROM `formetoo_main`.`m_products` WHERE 
 						`m_products_categories_id` IN('.implode(',',$chCat).') 
 						AND `m_products_show_site`=1;'; 
 				$sql->query($q);
@@ -1028,7 +1028,7 @@ Product.`m_products_show_site`=1
 			
 			
 			
-			$q='SELECT `m_products_id`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_foto`,`m_products_foto_category` FROM `formetoo_main`.`m_products` WHERE `m_products_categories_id` IN('.implode(',',$cat_ids).') AND `m_products_show_site`=1 ORDER BY `m_products_foto_category` DESC;';
+			$q='SELECT `m_products_id`,`m_products_id_isolux`,`slug`,`m_products_categories_id`,`m_products_foto`,`m_products_foto_category` FROM `formetoo_main`.`m_products` WHERE `m_products_categories_id` IN('.implode(',',$cat_ids).') AND `m_products_show_site`=1 ORDER BY `m_products_foto_category` DESC;';
 			if($res=$sql->query($q,'m_products_categories_id')){
 				function _rec_count_cats(&$cats,$res){
 					global $current,$menu;
@@ -1207,7 +1207,7 @@ Product.`m_products_show_site`=1
 		array_walk($data,'check',true);
 
 		if(!$e){
-			$q='SELECT `m_products_id`,`m_products_name`,`m_products_name_full` FROM `formetoo_main`.`m_products` WHERE
+			$q='SELECT `m_products_id`,`slug`,`m_products_name`,`m_products_name_full` FROM `formetoo_main`.`m_products` WHERE
 					`m_products_id`='.$data['m_products_id'].' OR 
 					`m_products_main_product`='.$data['m_products_id'].' 
 					'.($data['m_products_main_product']

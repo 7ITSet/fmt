@@ -343,7 +343,7 @@ class order{
 		$ec[3]=$ec_res[0]['m_info_settings_exchange_eur'];
 		
 		//находим цену и параметры товара
-		$q='SELECT `m_products_id`,`m_products_price_general`,`m_products_price_bonus`,`m_products_price_currency`,`m_products_multiplicity` FROM `formetoo_main`.`m_products` WHERE 
+		$q='SELECT `m_products_id`,`slug`,`m_products_price_general`,`m_products_price_bonus`,`m_products_price_currency`,`m_products_multiplicity` FROM `formetoo_main`.`m_products` WHERE 
 			`m_products_id`='.$data['product_id'].' LIMIT 1;';
 		if($prod=$sql->query($q)){
 			$prod=$prod[0];

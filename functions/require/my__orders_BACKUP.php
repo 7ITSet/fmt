@@ -53,7 +53,7 @@ if(get('new')=='success'){
 			foreach($params->items as $_item)
 				foreach($_item->services as $__item)
 					$data_prod[]=$__item->id;
-			$q='SELECT `m_products_id`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';	
+			$q='SELECT `m_products_id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';	
 			$data_prod=$sql->query($q,'m_products_id');
 			//ед. измерения
 			$data_units=array();
@@ -146,7 +146,7 @@ if(get('action')=='detail'){
 					if($__item->table=='products')
 						$data_prod[]=$__item->id;
 					else $data_serv[]=$__item->id;
-			$q='SELECT `m_products_id`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';	
+			$q='SELECT `m_products_id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN('.implode(',',$data_prod).');';	
 			$data_prod=$sql->query($q,'m_products_id');
 			$q='SELECT `m_services_id`,`m_services_name`,`m_services_unit` FROM `formetoo_main`.`m_services` WHERE `m_services_id` IN(0,'.implode(',',$data_serv).');';	
 			$data_serv=$sql->query($q,'m_services_id');
