@@ -5,6 +5,10 @@ defined ('_DSITE') or die ('Access denied');
 $sql=new sql; */
 global $order,$sql,$user;
 
+$q='SELECT `value` FROM `formetoo_main`.`m_settings_cart` WHERE `key`="min_total_sum" LIMIT 1;';
+$res=$sql->query($q);
+$min_total_sum = (isset($res) && is_numeric($res[0]['value']) && $res[0]['value'] > 0) ? $res[0]['value'] : 0;
+
 $uact=$user->getUserActions();
 if(isset($uact[13])&&sizeof($uact[13])>50){
 	$captcha_reg=true;
@@ -576,7 +580,7 @@ $(document).ready(function(){
 				}
 			);
 		}
-		if(total_sum>5000){
+		if(total_sum > <?=$min_total_sum;?> || <?=$min_total_sum;?> == 0){
 			$('.new_order_submit .button,.new_order_quicksubmit .button').removeClass('disabled');
 			$('.new_order_submit p').css('visibility','hidden');
 		}
