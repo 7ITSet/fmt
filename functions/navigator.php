@@ -54,10 +54,16 @@ if ($path!=''){
 	//если открыта карточка товара
 	if(is_numeric($path[0])&&strlen($path[0])==10&&$path[1]=='product'&&sizeof($path)==2){
 		//выбираем товар
-		$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `m_products_id`=\''.$path[0].'\' LIMIT 1;';
+		//$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `m_products_id`=\''.$path[0].'\' LIMIT 1;';
+		$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
+			LEFT JOIN `formetoo_main`.`m_products_category` 
+				ON `m_products_category`.`product_id`=`m_products`.`m_products_id` 
+			WHERE `m_products_id`=' . $id . '  
+			GROUP BY `m_products_category`.`product_id` 
+			LIMIT 1;';
 		if($current_product=$sql->query($q)){
 			$current_product=$current_product[0];
-			$product_categories=explode('|',$current_product['m_products_categories_id']);
+			$product_categories=explode('|',$current_product['categories_id']);
 			$q='SELECT `id` FROM `formetoo_main`.`menu` WHERE `category`=\''.$product_categories[0].'\' LIMIT 1;';
 			if($current=$sql->query($q))
 				$current=$current[0];
@@ -70,13 +76,20 @@ if ($path!=''){
 	}
 	else if (!is_numeric($path[0]) && $path[1]=='product' && sizeof($path)==2) {
 		//выбираем товар ЧПУ
-		$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `slug`=\''.$path[0].'\' LIMIT 1;';
+		//$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `slug`=\''.$path[0].'\' LIMIT 1;';
+		$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
+			LEFT JOIN `formetoo_main`.`m_products_category` 
+				ON `m_products_category`.`product_id`=`m_products`.`m_products_id` 
+			WHERE `slug`=\''.$path[0].'\' 
+			GROUP BY `m_products_category`.`product_id` 
+			LIMIT 1;';
 		if($current_product=$sql->query($q)){
 			$current_product=$current_product[0];
-			$product_categories=explode('|',$current_product['m_products_categories_id']);
+			$product_categories=explode('|',$current_product['categories_id']);
 			$q='SELECT `id` FROM `formetoo_main`.`menu` WHERE `category`=\''.$product_categories[0].'\' LIMIT 1;';
-			if($current=$sql->query($q))
+			if($current=$sql->query($q)){
 				$current=$current[0];
+			}
 		}
 		//если такого товара нет
 		else{
