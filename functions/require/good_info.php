@@ -286,8 +286,8 @@ else $captcha_reg=false;
                                     foreach($current_product['m_products_foto'] as $_foto)
                                         echo '
                                             <div class="main_products_list_items_info_foto_gallery_item'.($_foto['main']?' selected':'').'">
-                                                <a data-fancybox="gallery" href=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.jpg" onclick="return false;">
-                                                    <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_min.jpg  " data-med=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.jpg" data-max=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.jpg"'.($_foto['main']?' itemprop="image"':'').' >
+                                                <a data-fancybox="gallery" href=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'" onclick="return false;">
+                                                    <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_min.'.$_foto['ext'].'  " data-med=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-max=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'"'.($_foto['main']?' itemprop="image"':'').' >
                                                 </a>
                                             </div>';
 
@@ -306,13 +306,13 @@ else $captcha_reg=false;
                                 foreach($current_product['m_products_foto'] as $_foto)
                                     if($_foto['main']){
 //                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg">';
-                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.jpg" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.jpg">';
+                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
                                         $mainfoto=1;
                                     }
                                 if(!$mainfoto)
                                     foreach($current_product['m_products_foto'] as $_foto){
 //                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg">';
-                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.jpg" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.jpg">';
+                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
                                         break;
                                     }
                         ?>
@@ -1073,7 +1073,7 @@ if($captcha_reg){
 						foreach($current_product['m_products_foto'] as $_foto)
 							echo '
 								{
-								src : "https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.jpg",
+								src : "https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'",
 
 									opts:{
 										caption : "'.$current_product['m_products_name_full'].'"

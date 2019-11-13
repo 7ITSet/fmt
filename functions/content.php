@@ -508,11 +508,12 @@ Product.`m_products_show_site`=1
 //                    echo "</pre>";
 
 //						if($_foto->main)
-							$foto=$_foto->file;
+							$foto = $_foto->file;
+							$ext = $_foto->ext ? $_foto->ext : 'jpg';
 
-//                    echo "<pre>";
-//                    var_dump($foto);
-//                    echo "</pre>";
+                  //  echo "<pre>";
+                    var_dump($foto);
+                  //  echo "</pre>";
 
 					echo '
 						<div class="main_products_list_items_item">
@@ -529,14 +530,14 @@ Product.`m_products_show_site`=1
 							<div class="main_products_list_items_item_info">
 								<div class="foto">',
 									($_good['m_products_id_isolux']
-//										? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_good['m_products_id_isolux'],0,2).'/SN'.$_good['m_products_id_isolux'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//										: '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//										? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_good['m_products_id_isolux'],0,2).'/SN'.$_good['m_products_id_isolux'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//										: '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
 
-//                                        ? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//                                        : '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//                                        ? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
+//                                        : '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
 
-                                        ? '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
-                                        : '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.jpg" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
+                                        ? '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
+                                        : '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
 
 
 
