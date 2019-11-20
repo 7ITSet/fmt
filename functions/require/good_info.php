@@ -321,220 +321,178 @@ else $captcha_reg=false;
                     </div>
                 </div>
                 <div class="about_good">
-                                    <div class="good_title_share">
-                                        <h1 itemprop="name"><?=$current['h1']?></h1>
-                                        <a href="#" class="share">
-                                            <img src="/img/share.svg" alt="поделиться" class="share_img">
-                                            <span class="share_text">Поделиться</span>
-                                        </a>
+                    <div class="good_title_share">
+                        <h1 itemprop="name"><?=$current['h1']?></h1>
+                        <a href="#" class="share">
+                            <img src="/img/share.svg" alt="поделиться" class="share_img">
+                            <span class="share_text">Поделиться</span>
+                        </a>
+                    </div>
+                    <div class="main_products_list_items_miniinfo">
+                        <span class="exist_span">Наличие на складе: </span>
+                        <div class="exist">
+                            <noindex>
+                                <span class="gif-mini-preloader-container">
+                                    <img src="/img/loader-firstyle-4.svg" class="gif-mini-preloader" title="Уточняем наличие…"/>
+                                </span>
+                                <?=($current_product['m_products_exist']==1?'<p class="exist-1"> <a href="#" rel="nofollow" title="Нажмите, чтобы уточнить наличие" class="dotted" id="get_exist">Уточнить наличие</a></p>':'<p class="exist-0">Нет в наличии, заказ от 30000 р.</p>');?>
+                            </noindex>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_miniinfo">
+                            <?
+                            echo '
+                        <div class="main_products_list_items_miniinfo_art">Код товара: <span class="grey">'.substr($current_product['m_products_id'],0,3).''.substr($current_product['m_products_id'],3,3).''.substr($current_product['m_products_id'],6).'</span></div>
+                        <div class="main_products_list_items_miniinfo_rating">
+                            <div class="rating" title="'.($current_product['m_products_rate']?'Средняя оценка: '.$current_product['m_products_rate'].' на основании '.$current_product['m_products_feedbacks'].' '.transform::numberof(($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0),'оцен',array('ки','ок','ок')):'У товара пока нет оценок и отзывов').'">
+                                <div class="stars">';
+                                for($i=1;$i<=5;$i++)
+                                    echo '<div class="star'.($current_product['m_products_rate']>=$i?' full-fill':(abs($current_product['m_products_rate']-$i)<=.5?' half-fill':'')).'"></div>';
+                                echo '
+                                </div>
+                                <div class="feedbacks-count">
+                                    <a href="#products_reviews" class="dotted" id="downto_products_reviews">
+                                        '.($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0).' '.transform::numberof(($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0),'оцен',array('ка','ки','ок')).'
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                            ?>
+                    </div>
+                    <div class="good_info_form">
+                        <form class="main_products_list_items_info_pay" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        <div class="main_products_list_items_info_pay_price" itemprop="price" content="<?=$price['price'];?>">
+                            <?=transform::price_o($price['price']);?><span class="rouble"> руб.</span>
+                        </div>
+                         <meta itemprop="priceCurrency" content="RUB">
+                        <?
+                        if($price['bonus']){
+                        ?>
+                            <div class="main_products_list_items_info_pay_bonus">
+                                +&nbsp;<?=transform::price_o($price['bonus']);?><span class="rouble">&nbsp;&#8381;</span>
+                                <p class="desc">на бонусную карту</p>
+                            </div>
+                        <?}?>
+
+                        <div class="main_products_list_items_info_pay_count">
+                            <div class="info_pay_count_inputs_parent">
+                                <div class="main_products_list_items_info_pay_count_inputs">
+                                    <div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
+                                        <span id="pay_count_minus" onselectstart="return false">–</span>
                                     </div>
-									<div class="main_products_list_items_miniinfo">
-										<span class="exist_span">Наличие на складе: </span>
-										<div class="exist">
-											<noindex>
-												<span class="gif-mini-preloader-container">
-													<img src="/img/loader-firstyle-4.svg" class="gif-mini-preloader" title="Уточняем наличие…"/>
-												</span>
-												<?=($current_product['m_products_exist']==1?'<p class="exist-1"> <a href="#" rel="nofollow" title="Нажмите, чтобы уточнить наличие" class="dotted" id="get_exist">Уточнить наличие</a></p>':'<p class="exist-0">Нет в наличии, заказ от 30000 р.</p>');?>
-											</noindex>
-										</div>
-									</div>
-									<div class="main_products_list_items_miniinfo">
-											<?
-											echo '
-										<div class="main_products_list_items_miniinfo_art">Код товара: <span class="grey">'.substr($current_product['m_products_id'],0,3).''.substr($current_product['m_products_id'],3,3).''.substr($current_product['m_products_id'],6).'</span></div>
-										<div class="main_products_list_items_miniinfo_rating">
-											<div class="rating" title="'.($current_product['m_products_rate']?'Средняя оценка: '.$current_product['m_products_rate'].' на основании '.$current_product['m_products_feedbacks'].' '.transform::numberof(($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0),'оцен',array('ки','ок','ок')):'У товара пока нет оценок и отзывов').'">
-												<div class="stars">';
-												for($i=1;$i<=5;$i++)
-													echo '<div class="star'.($current_product['m_products_rate']>=$i?' full-fill':(abs($current_product['m_products_rate']-$i)<=.5?' half-fill':'')).'"></div>';
-												echo '
-												</div>
-												<div class="feedbacks-count">
-													<a href="#products_reviews" class="dotted" id="downto_products_reviews">
-														'.($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0).' '.transform::numberof(($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0),'оцен',array('ка','ки','ок')).'
-													</a>
-												</div>
-											</div>
-										</div>
-										';
-											?>
-									</div>
-                                    <div class="good_info_form">
-									    <form class="main_products_list_items_info_pay" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-										<div class="main_products_list_items_info_pay_price" itemprop="price" content="<?=$price['price'];?>">
-											<?=transform::price_o($price['price']);?><span class="rouble"> руб.</span>
-										</div>
-										 <meta itemprop="priceCurrency" content="RUB">
-										<?
-										if($price['bonus']){
-										?>
-											<div class="main_products_list_items_info_pay_bonus">
-												+&nbsp;<?=transform::price_o($price['bonus']);?><span class="rouble">&nbsp;&#8381;</span>
-												<p class="desc">на бонусную карту</p>
-											</div>
-										<?}?>
-
-										<div class="main_products_list_items_info_pay_count">
-											<div class="info_pay_count_inputs_parent">
-												<div class="main_products_list_items_info_pay_count_inputs">
-                                                    <div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
-                                                        <span id="pay_count_minus" onselectstart="return false">–</span>
-                                                    </div>
-													<input type="text" name="pay_count" id="pay_count" data-unitvolume="<?=round($current_product['m_products_multiplicity'],4);?>" value="<?=round($current_product['m_products_multiplicity'],4);?>"/>
-													<div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
-														<span id="pay_count_plus" onselectstart="return false">+</span>
-													</div>
-												</div>
-												<div class="main_products_list_items_info_pay_count_units">
-													<?=$unit['m_info_units_name'];?>
-												</div>
-											</div>
-											<div class="clr"></div>
-											<div class="main_products_list_items_info_pay_count_units_add">
-												<ul class="list_dotts">
-													<?
-														if($attr)
-															switch($unit['m_info_units_name']){
-																case 'упак':
-																	foreach($attr as $_attr){
-																		//кол-во в упаковке (шт)
-																		if($_attr['m_products_attributes_list_id']==3784943609)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Количество</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;шт</div>
-														</li>';
-																		//кол-во в упаковке (м2)
-																		if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
-														</li>';
-																		//кол-во в упаковке (м3)
-																		if($_attr['m_products_attributes_list_id']==3493624856)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
-														</li>';
-																	}
-																	break;
-																case 'м2':
-																	foreach($attr as $_attr){
-																		//кол-во в упаковке (шт)
-																		if($_attr['m_products_attributes_list_id']==3784943609)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Количество</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;шт</div>
-														</li>';
-																		//кол-во в упаковке (м2)
-																		if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
-														</li>';
-																		//кол-во в упаковке (м3)
-																		if($_attr['m_products_attributes_list_id']==3493624856)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
-														</li>';
-																	}
-																	break;
-																case 'шт':
-																	foreach($attr as $_attr){
-																		//кол-во в упаковке (м2)
-																		if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
-														</li>';
-																		//кол-во в упаковке (м3)
-																		if($_attr['m_products_attributes_list_id']==3493624856)
-																			echo '
-														<li>
-															<div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
-															<div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
-														</li>';
-																	}
-																	break;
-																default:
-																	break;
-															}
-													?>
-												</ul>
-											</div>
-										</div>
-										<div class="main_products_list_items_info_pay_buy">
-											<span id="pay_add_cart" onselectstart="return false">Купить</span>
-                                            <a href="https://wa.me/79105199977" class="child good_info_whatsapp_href" target="_blank">
-                                                <div class="good_info_whatsapp_icon">
-                                                    <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
-                                                </div>
-                                            </a>
-											<span id="pay_oneclick" onselectstart="return false">Быстрый заказ</span>
-											<input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['m_products_id'];?>" value="<?=$current_product['m_products_id'];?>"/>
-										</div>
-									</form>
-                                        <div class="goods_comparison">
-                                            <a href="#" class="good_info_comparison_a comparison_a">
-                                                <span class="good_info_comparison_icon comparison_icon"></span>
-                                                <span class="good_info_comparison_title comparison_title">Сравнить</span>
-                                            </a>
-                                            <a href="#" class="good_info_goods_a goods_a">
-                                                <span class="good_info_goods_icon goods_icon"></span>
-                                                <span class="good_info_goods_title goods_title">Отложить</span>
-                                            </a>
-                                        </div>
+                                    <input type="text" name="pay_count" id="pay_count" data-unitvolume="<?=round($current_product['m_products_multiplicity'],4);?>" value="<?=round($current_product['m_products_multiplicity'],4);?>"/>
+                                    <div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
+                                        <span id="pay_count_plus" onselectstart="return false">+</span>
                                     </div>
-                  <div class="main_products_list_items_info_characteristics">
-                      <?=!empty($print_variants)?'
-			<div class="m_products_good_variants">
-				<p class="m_products_good_variants_header">Доступные варианты</p>
-				'.$print_variants.'
-			</div>':'';?>
-                      <?=$attr_main?'<p class="m_products_good_params_header"></p>':'';?>
-                      <ul class="list_dotts">
-                          <?
-
-
-
-                          //было
-//                          '.($_attr_main['m_products_attributes_list_type']==2?$_attr_main['m_products_attributes_value'].'&nbsp;'.$_attr_main['m_products_attributes_list_unit']:$attr_values_all[$_attr_main['m_products_attributes_value']][0]['m_products_attributes_values_value']).'
-
-
-
-                          if($attr_main)
-                              foreach($attr_main as $_attr_main)
-                                  echo '
-							<li>
-								<div class="list_dotts_name">
-									<span class="list_dotts_name_text">'.$_attr_main['m_products_attributes_list_name'].'</span>
-								</div>
-								<div class="list_dotts_value">
-
-
-
-
-
-									'.($_attr_main['m_products_attributes_list_type']==2?$_attr_main['m_products_attributes_value'].'&nbsp;'.$_attr_main['m_products_attributes_list_unit']:$_attr_main['m_products_attributes_value']).'
-
-
-
-
-								</div>
-							</li>
-							';
-                          ?>
-                      </ul>
-                      <?=$attr_main?'<a href="#products_tech" class="dotted" id="downto_products_tech">Все характеристики</a>':'';?>
-                  </div>
+                                </div>
+                                <div class="main_products_list_items_info_pay_count_units">
+                                    <?=$unit['m_info_units_name'];?>
+                                </div>
+                            </div>
+                            <div class="clr"></div>
+                            <div class="main_products_list_items_info_pay_count_units_add">
+                                <ul class="list_dotts">
+                                    <?
+                                        if($attr)
+                                            switch($unit['m_info_units_name']){
+                                                case 'упак':
+                                                    foreach($attr as $_attr){
+                                                        //кол-во в упаковке (шт)
+                                                        if($_attr['m_products_attributes_list_id']==3784943609)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Количество</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;шт</div>
+                                        </li>';
+                                                        //кол-во в упаковке (м2)
+                                                        if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
+                                        </li>';
+                                                        //кол-во в упаковке (м3)
+                                                        if($_attr['m_products_attributes_list_id']==3493624856)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
+                                        </li>';
+                                                    }
+                                                    break;
+                                                case 'м2':
+                                                    foreach($attr as $_attr){
+                                                        //кол-во в упаковке (шт)
+                                                        if($_attr['m_products_attributes_list_id']==3784943609)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Количество</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;шт</div>
+                                        </li>';
+                                                        //кол-во в упаковке (м2)
+                                                        if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
+                                        </li>';
+                                                        //кол-во в упаковке (м3)
+                                                        if($_attr['m_products_attributes_list_id']==3493624856)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
+                                        </li>';
+                                                    }
+                                                    break;
+                                                case 'шт':
+                                                    foreach($attr as $_attr){
+                                                        //кол-во в упаковке (м2)
+                                                        if($_attr['m_products_attributes_list_id']==6447361156||$_attr['m_products_attributes_list_id']==2233750374)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Площадь</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>2</sup></div>
+                                        </li>';
+                                                        //кол-во в упаковке (м3)
+                                                        if($_attr['m_products_attributes_list_id']==3493624856)
+                                                            echo '
+                                        <li>
+                                            <div class="list_dotts_name"><span class="list_dotts_name_text">Объём</span></div>
+                                            <div class="list_dotts_value" data-value="'.$_attr['m_products_attributes_value'].'"><span>'.$_attr['m_products_attributes_value'].'</span>&nbsp;м<sup>3</sup></div>
+                                        </li>';
+                                                    }
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main_products_list_items_info_pay_buy">
+                            <span id="pay_add_cart" onselectstart="return false">Купить</span>
+                            <a href="https://wa.me/79105199977" class="child good_info_whatsapp_href" target="_blank">
+                                <div class="good_info_whatsapp_icon">
+                                    <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
+                                </div>
+                            </a>
+                            <span id="pay_oneclick" onselectstart="return false">Быстрый заказ</span>
+                            <input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['m_products_id'];?>" value="<?=$current_product['m_products_id'];?>"/>
+                        </div>
+                        </form>
+                        <div class="goods_comparison">
+                            <a href="#" class="good_info_comparison_a comparison_a">
+                                <span class="good_info_comparison_icon comparison_icon"></span>
+                                <span class="good_info_comparison_title comparison_title">Сравнить</span>
+                            </a>
+                            <a href="#" class="good_info_goods_a goods_a">
+                                <span class="good_info_goods_icon goods_icon"></span>
+                                <span class="good_info_goods_title goods_title">Отложить</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 			<div class="clr"></div>

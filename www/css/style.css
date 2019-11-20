@@ -1999,21 +1999,6 @@ span.exist_span {
 	object-fit: cover;
 }
 
-/* БЛОК ХАРАКТЕРИСТИК */
-.main_products_list_items_info_characteristics{
-	margin-top: 1.5em;
-	font-size: .875em;
-	font-weight: 300;
-	max-width: 100%;
-}
-@media (max-width:1120px){
-	.main_products_list_items_info_characteristics{
-		display:none;}
-}
-.main_products_list_items_info_characteristics ul{
-	margin-bottom:.5em;
-	max-width:30em;
-	min-width:20em;}
 /* ВАРИАНТЫ ТОВАРА */
 .main_products_list_items_pagination_container.good_variants{
 	text-align:left;
