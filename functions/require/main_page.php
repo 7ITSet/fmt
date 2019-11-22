@@ -1,32 +1,14 @@
 <div class="main_container_body">
-	<div class="left_sidebar">
-		<div class="nav">
-			<div class="nav_container">
-				<div class="nav_container_inner">
-					<div class="nav_wrapper">
-						<ul>
-							<li id="menu_id_2000000000" class="has_sublevel">
-								<a href="/catalog/" title="Каталог"><span class="menu-item-parent" style="font-size: 1em;">Каталог товаров</span></a>
-							</li>
-							<li id="menu_id_1000000000" class=""><a href="/" title="Главная"><span class="menu-item-parent" style="font-size: 1em;">Главная</span></a></li>
-							<li id="nav_more" class="has_sublevel" style="display: none;"><a href="#"><span style="font-size: 1em;">Ещё</span></a><ul class="nav_sublevel" style="display: none;">&nbsp;</ul></li>
-						</ul>
-						<?
-							//$menu->display('top-catalog',0,false);
-						?>
-					</div>
-				</div>
-			</div>
-		</div>
-		<form method="post" class="left_sidebar_discount">
-			<h1>Скидка 10%</h1>
-			<strong>При подписке на рассылку Вы получите купон<br></strong>
-			<span>Подбираем лучшие предложеняия и<br>отправляем не чаще 1 раза в неделю</span>
-			<p><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="option1" placeholder="E-mail (не работает)"></p>
-			<p><button id="button1" name="подписаться">Подписаться</button></p>
-			<p class="discount_last_p"><input type="checkbox" name="option3" value="" checked><span>Я даю согласие на обработку своих персональных данных</span></p>
-		</form>
-	</div>
+    <div class="left_advert">
+        <form method="post" class="left_advert_discount">
+            <h1>Скидка 10%</h1>
+            <strong>При подписке на рассылку Вы получите купон<br></strong>
+            <span>Подбираем лучшие предложеняия и<br>отправляем не чаще 1 раза в неделю</span>
+            <p><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="option1" placeholder="E-mail (не работает)"></p>
+            <p><button id="button1" name="подписаться">Подписаться</button></p>
+            <p class="discount_last_p"><input type="checkbox" name="option3" value="" checked><span>Я даю согласие на обработку своих персональных данных</span></p>
+        </form>
+    </div>
 	<div class="main_content">
 		<div class="main_slider">
             <ul id="slides">
@@ -37,13 +19,6 @@
                 <li class="slide"><img class="baner_img" src="/img/baner.jpg"></li>
             </ul>
 		</div>
-
-		<!-- <div class="main-slider">
-			<div><img class="baner_img" src="/img/baner.jpg"></div>
-			<div><img class="baner_img" src="/img/baner.jpg"></div>
-			<div><img class="baner_img" src="/img/baner.jpg"></div>
-			<div><img class="baner_img" src="/img/baner.jpg"></div>
-		</div> -->
 		<div class="main_services">
 			<div class="main_service">
 				<a href="#" class="main_service_a">

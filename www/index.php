@@ -103,134 +103,144 @@ if($merge_carts){
 	</div>
 	<div class="page-wrapper">
 
-	<div id="slide" class="mini">
-		<div id="slide-bg"></div>
-	</div>
+        <div id="slide" class="mini">
+            <div id="slide-bg"></div>
+        </div>
 
+        <div class="header">
+            <div class="header_top_left">
+                <div class="header_logo" id="logo">
+                    <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
+                </div>
+            </div>
+            <div class="header_top_right">
+                <div class="contact_parent">
+                    <div class="parent header_phone" id="contacts">
+                        <div class="child child_contacts">
+                            <p class="phone"><a href="tel:{tel_office_nobr}">{tel_office}</a></p>
+                            <p class="schedule"><span class="schedule_content">пн-пт: 09:00 - 18:00</span></p>
+                        </div>
+                    </div>
+                    <div class="parent social_icons">
+                        <a href="https://wa.me/79105199977" class="child whatsapp_href" target="_blank">
+                            <div class="whatsapp_icon">
+                                <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
+                            </div>
+                        </a>
+                        <a href="viber://chat?number={tel_office}" class="child viber_href" target="_blank">
+                             <div class="viber_icon">
+                                 <img src="/img/viber.png" alt="viber_icon" id="viber">
+                             </div>
+                        </a>
+                        <a href="mailto:{mail}" class="child email_href">
+                             <div class="email_parent">
+                                <div class="email_icon">
+                                    <img src="/img/icon-message.svg" alt="email_icon" id="email">
+                                </div>
+                                <div class="email_adress">
+                                    <p class="email">{mail}</p>
+                                </div>
+                             </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="currency_account_parent">
+                    <div class="parent header_city" id="city">
+                        <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png"><span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span></a>
+                    </div>
+                    <div class="parent account">
+                        <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon icon-logout"></span></div>':'');?>
+                        <div class="child nav_account" data-href="/my/" title="Перейти в личный кабинет">
+                            <div>
+                                <span onselectstart="return false">Личный кабинет</span>
+                                <span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_line_menu">
+            <div class="left_sidebar">
+                <div class="nav">
+                    <div class="nav_container">
+                        <div class="nav_container_inner">
+                            <div class="nav_wrapper">
+                                <ul>
+                                    <li id="menu_id_2000000000" class="has_sublevel">
+                                        <span class="menu-item-parent" style="font-size: 1em;">Каталог товаров</span>
+                                    </li>
+                                    <li id="menu_id_1000000000" class=""><a href="/" title="Главная"><span class="menu-item-parent" style="font-size: 1em;">Главная</span></a></li>
+                                    <li id="nav_more" class="has_sublevel" style="display: none;"><a href="#"><span style="font-size: 1em;">Ещё</span></a><ul class="nav_sublevel" style="display: none;">&nbsp;</ul></li>
+                                </ul>
+                                <?
+                                //$menu->display('top-catalog',0,false);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top_line">
+                <div class="top_line1">
+                    <div class="header_search" id="search">
+                        <input type="text" placeholder="Поиск по сайту"/><span class="icon icon-search"></span>
+                    </div>
+                    <div class="goods">
+                        <a href="#" class="goods_a">
+                            <span class="goods_icon"><img src="/img/heart-outline.svg" class="goods_img"></span>
+                            <span class="goods_title">Отложенные</span>
+                        </a>
+                    </div>
+                    <div class="comparison">
+                        <a href="#" class="comparison_a">
+                            <span class="comparison_icon"><img src="/img/adv_04.svg" class="comparison_img"></span>
+                            <span class="comparison_title">Сравнение</span>
+                        </a>
+                    </div>
+                    <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
+                        <span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"></span>
+                        <div class="cart_title">
+                            <span onselectstart="return false">Корзина<span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span></span>
+                            <span onselectstart="return false" class="desc"><?=$order->getCartSum()?transform::price_o($order->getCartSum()).'&nbsp;руб':'нет товаров'?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_line2">
+                    <span class="advanced_search"><a href="#" class="advanced_search">Расширенный поиск</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="clr"></div>
+        <div class="main">
+            <div class="main_container">
+                <div class="main_container_inner">
+                    <?if($merge_carts){?>
+                    <div id="popup_mergecart" class="popup" style="width:24.2em;margin-left:-11.3em;top:45%;">
+                        <div class="popup_header">
+                            <p>Объединить корзины?</p>
+                        </div>
+                        <div class="popup_header_close popup_close">
+                            <span class="icon icon-close"></span>
+                        </div>
+                        <div class="clr"></div>
+                        <p>Мы обнаружили корзину с товарами с Вашего прошлого визита <?=$old_cart_date;?>.</p>
+                        <p>Нам стоит объединить товары старой и новой корзины?</p>
 
-		<div class="header">
-			<div class="header_container">
-				<div class="header_top_line">
-					<div class="header_top_left">
-						<div class="parent header_city" id="city">
-							<a class="child city_href" href="#"><img id="map_icon" src="/img/map.png"><span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span></a>
-						</div>
-					</div>
-					<div class="header_top_right">
-						<div class="contact_parent">
-							<div class="parent header_phone" id="contacts">
-								<div class="child child_contacts">
-									<p class="phone"><a href="tel:{tel_office_nobr}">{tel_office}</a></p>
-									<p class="schedule"><span class="schedule_content">пн-пт: 09:00 - 18:00</span></p>
-								</div>
-							</div>
-							<div class="parent social_icons">
-		              <a href="https://wa.me/79105199977" class="child whatsapp_href" target="_blank">
-		                  <div class="whatsapp_icon">
-		                      <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
-		                  </div>
-		              </a>
-		              <a href="viber://chat?number={tel_office}" class="child viber_href" target="_blank">
-		                  <div class="viber_icon">
-		                      <img src="/img/viber.png" alt="viber_icon" id="viber">
-		                  </div>
-		              </a>
-		              <a href="mailto:{mail}" class="child email_href">
-										<div class="email_parent">
-			                <div class="email_icon">
-			                    <img src="/img/icon-message.svg" alt="email_icon" id="email">
-			                </div>
-			                <div class="email_adress">
-			                    <p class="email">{mail}</p>
-			                </div>
-										</div>
-		              </a>
-							</div>
-						</div>
-						<div class="currency_account_parent">
-							<div class="parent currency">
-								<p class="child currency">Валюта: RUB</p>
-							</div>
-							<div class="parent account">
-								<?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon icon-logout"></span></div>':'');?>
-								<div class="child nav_account" data-href="/my/" title="Перейти в личный кабинет">
-									<div>
-										<span onselectstart="return false">Личный кабинет</span>
-										<span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="header_bottom_line">
-					<div class="header_bottom_right">
-						<div class="header_logo" id="logo">
-							<a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
-						</div>
-					</div>
-					<div class="header_bottom_left">
-						<div class="header_bottom_left1">
-							<div class="header_search" id="search">
-								<input type="text" placeholder="Поиск по сайту"/><span class="icon icon-search"></span>
-							</div>
-							<div class="goods">
-								<a href="#" class="goods_a">
-									<span class="goods_icon"><img src="/img/heart-outline.svg" class="goods_img"></span>
-									<span class="goods_title">Отложенные</span>
-								</a>
-							</div>
-							<div class="comparison">
-								<a href="#" class="comparison_a">
-									<span class="comparison_icon"><img src="/img/adv_04.svg" class="comparison_img"></span>
-									<span class="comparison_title">Сравнение</span>
-								</a>
-							</div>
-							<div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
-								<span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"></span>
-								<div class="cart_title">
-									<span onselectstart="return false">Корзина<span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span></span>
-									<span onselectstart="return false" class="desc"><?=$order->getCartSum()?transform::price_o($order->getCartSum()).'&nbsp;руб':'нет товаров'?></span>
-								</div>
-							</div>
-						</div>
-						<div class="header_bottom_left2">
-							<span class="advanced_search"><a href="#" class="advanced_search">Расширенный поиск</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="clr"></div>
-		<div class="main">
-			<div class="main_container">
-				<div class="main_container_inner">
-					<?if($merge_carts){?>
-					<div id="popup_mergecart" class="popup" style="width:24.2em;margin-left:-11.3em;top:45%;">
-						<div class="popup_header">
-							<p>Объединить корзины?</p>
-						</div>
-						<div class="popup_header_close popup_close">
-							<span class="icon icon-close"></span>
-						</div>
-						<div class="clr"></div>
-						<p>Мы обнаружили корзину с товарами с Вашего прошлого визита <?=$old_cart_date;?>.</p>
-						<p>Нам стоит объединить товары старой и новой корзины?</p>
+                        <div class="login_authorization_form_input_container" style="text-align:center;width:100%;">
+                            <button type="submit" class="med_button orange" id="popup_mergecart_yes">Да, объединить корзины</button>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="login_authorization_form_input_container" style="text-align:center;width:100%;">
+                            <button type="submit" class="med_button" id="popup_mergecart_no">Нет, оставить только новую корзину</button>
+                        </div>
 
-						<div class="login_authorization_form_input_container" style="text-align:center;width:100%;">
-							<button type="submit" class="med_button orange" id="popup_mergecart_yes">Да, объединить корзины</button>
-						</div>
-						<div class="clr"></div>
-						<div class="login_authorization_form_input_container" style="text-align:center;width:100%;">
-							<button type="submit" class="med_button" id="popup_mergecart_no">Нет, оставить только новую корзину</button>
-						</div>
-
-					</div>
-					<?}?>
-					<?$content->getContent();?>
-				</div>
-			</div>
-		</div>
+                    </div>
+                    <?}?>
+                    <?$content->getContent();?>
+                </div>
+            </div>
+        </div>
 	</div>
 	<div id="footer">
 		<div id="footer-container">

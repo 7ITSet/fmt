@@ -776,54 +776,54 @@ loadCatalog=function(){
 					}
 				});
 			/* МЕНЮ КАТАЛОГА ТОВАРОВ */
-			$(".nav_wrapper li li")
-				.on("mouseenter",function(e,d0){
-					//задержка открытия меню при наведении курсора
-					d0=d0?0:200;
-					var sender=$(this);
-					clearTimeout(intervalID);
-					sender.children("ul.nav_sublevel").dequeue();
-					intervalID=setTimeout(function(){
-						sender.siblings().find('ul').hide();
-						sender.children("ul.nav_sublevel").fadeIn(0,function(){
-							var menu_height=menu_first_height;
-							$("#menu_id_2000000000 ul.nav_sublevel:visible").each(function(index,el){
-								if($(el).outerHeight()>menu_height)
-									menu_height=$(el).outerHeight();
-							});
-							$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_height);
-						});
-					},d0);
-				})
-				.on("mouseleave",function(e,close){
-					close=close?true:false;
-					var sender=$(this),
-						first_li=$(".nav_wrapper > ul > li > ul > li:first").attr('id');
-					if (sender.attr('id')==first_li&&!close) return false;
-					clearTimeout(intervalID2);
-					clearTimeout(intervalID);
-					sender.children("ul.nav_sublevel").dequeue();
-					intervalID2=setTimeout(function(){
-						sender.children("ul.nav_sublevel").fadeOut(0,function(){
-							$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_first_height);
-							var menu_height=menu_first_height;
-							$("#menu_id_2000000000 ul.nav_sublevel:visible").each(function(index,el){
-								if($(el).outerHeight()>menu_height)
-									menu_height=$(el).outerHeight();
-							});
-							$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_height);
-						});
-					},300);
-				});
+			// $(".nav_wrapper li li")
+			// 	.on("mouseenter",function(e,d0){
+			// 		//задержка открытия меню при наведении курсора
+			// 		d0=d0?0:200;
+			// 		var sender=$(this);
+			// 		clearTimeout(intervalID);
+			// 		sender.children("ul.nav_sublevel").dequeue();
+			// 		intervalID=setTimeout(function(){
+			// 			sender.siblings().find('ul').hide();
+			// 			sender.children("ul.nav_sublevel").fadeIn(0,function(){
+			// 				var menu_height=menu_first_height;
+			// 				$("#menu_id_2000000000 ul.nav_sublevel:visible").each(function(index,el){
+			// 					if($(el).outerHeight()>menu_height)
+			// 						menu_height=$(el).outerHeight();
+			// 				});
+			// 				$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_height);
+			// 			});
+			// 		},d0);
+			// 	})
+			// 	.on("mouseleave",function(e,close){
+			// 		close=close?true:false;
+			// 		var sender=$(this),
+			// 			first_li=$(".nav_wrapper > ul > li > ul > li:first").attr('id');
+			// 		if (sender.attr('id')==first_li&&!close) return false;
+			// 		clearTimeout(intervalID2);
+			// 		clearTimeout(intervalID);
+			// 		sender.children("ul.nav_sublevel").dequeue();
+			// 		intervalID2=setTimeout(function(){
+			// 			sender.children("ul.nav_sublevel").fadeOut(0,function(){
+			// 				$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_first_height);
+			// 				var menu_height=menu_first_height;
+			// 				$("#menu_id_2000000000 ul.nav_sublevel:visible").each(function(index,el){
+			// 					if($(el).outerHeight()>menu_height)
+			// 						menu_height=$(el).outerHeight();
+			// 				});
+			// 				$("#menu_id_2000000000 ul.nav_sublevel").css("min-height",menu_height);
+			// 			});
+			// 		},300);
+			// 	});
 			$("#menu_id_2000000000 span:first").text("КАТАЛОГ ТОВАРОВ");
-			$("li#menu_id_2000000000 a").on("click", function () {
-                document.location.href='/catalog/';
-            })
+			// $("li#menu_id_2000000000 a").on("click", function () {
+            //     document.location.href='/catalog/';
+            // })
 			var menu_first_height=$(".nav_sublevel:first").height()-1;
 			$(".nav_sublevel .nav_sublevel").css("min-height",$(".nav_sublevel:first").height());
 			//убираем меню при клике в тень или в строку поиска
 			$('.main_content,.header,.nav_sublevel,.left_sidebar').on('click',function(){
-				$(".nav_wrapper > ul > li > ul > li").trigger('mouseleave',[true]);
+				$(".nav_wrapper > ul > li > ul > li").trigger('mousedown',[true]);
 			});
 		}
 	);

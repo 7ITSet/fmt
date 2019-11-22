@@ -494,15 +494,13 @@ img.gif-mini-preloader{
 	margin-right: .2em;}
 
 .page-wrapper{
-	background:#ededed;
 	color:#000;
 	font:1em/1.4 'Roboto',sans-serif;
 	font-weight:400;
 	width:100%;
 	text-align:center;
 	min-height: 100%;
-	height: auto !important;
-	height: 100%;}
+}
 * html .page-wrapper {
     height: 100%;
 }
@@ -512,18 +510,13 @@ img.gif-mini-preloader{
 .header{
 	position:relative;
 	background-color:#fff;
-	height:auto;
-	text-align:center;}
-.header_container{
-	position: relative;
-    max-width: 82.5em;
-    height: 100%;
-    margin: 0 auto;
-	padding:0 1em;}
-.header_grid{
-	display:table;
-	width:100%;
-	height:100%;}
+	max-width: 82.5em;
+	height: 100%;
+	margin: 0 auto .5em;
+	text-align:center;
+	border-bottom: 1px solid #ddd;
+	padding: 1em 0;
+}
 .email{
 	font-weight:400;}
 .header a{
@@ -534,16 +527,13 @@ img.gif-mini-preloader{
 	border-bottom-color:rgba(255,255,255,0.6);}
 .header a:hover,.header a.hover{
 	color:#74aeff;
-	border-bottom-color:rgba(116,174,255,0.3);}
-
-/* header_top_line */
-.header_top_line {
-    border-bottom: 1px solid #ddd;
-		padding: 1em 0;
+	border-bottom-color:rgba(116,174,255,0.3);
 }
 .header_top_left {
 	float: left;
-	width: 22.7%;
+	width: 20.7%;
+	margin-right: 2%;
+	margin-top: 5px;
 }
 .header_top_right {
 	display: flex;
@@ -554,7 +544,7 @@ img.gif-mini-preloader{
 	display: flex;
 }
 .account, .social_icons {
-    margin-left: 2em;
+    margin-left: 3em;
 }
 .parent {
 	display: flex;
@@ -628,22 +618,23 @@ span.schedule_content {
 }
 
 
-/* header_bottom_line */
-.header_bottom_line {
+/* top_line */
+.top_line_menu {
+	overflow: hidden;
+	margin: auto;
+	max-width: 82.5em;
+}
+.top_line {
 	padding: 1em 0;
+	display: flex;
+	flex-direction: column;
+	width: 77.3%;
+	float: right;
 }
-.header_bottom_right {
-  	float: left;
-	width: 20.6%;
-	margin-right: 2%;
-	margin-top: 7px;
+.top_line_left {
+
 }
-.header_bottom_left {
-  	display: flex;
-  	flex-direction: column;
-	width: 77.4%;
-}
-.header_bottom_left1 {
+.top_line1 {
   display: flex;
   justify-content: space-between;
 }
@@ -960,6 +951,11 @@ span.city_span {
 .left_sidebar {
 	width: 22%;
 	float: left;
+	margin: 1em 0;
+}
+.left_advert {
+	width: 22%;
+	float: left;
 }
 .nav{
 	position: relative;
@@ -992,7 +988,7 @@ span.city_span {
 .nav_wrapper > ul > li > a, .nav_wrapper > ul > li > span{
     position: relative;
     display: block;
-    line-height: 3.15em;
+    line-height: 3em;
     padding: 0 1.7em;
     transition: .1s ease-in-out;}
 .nav_wrapper > ul > li.hover > a{
@@ -1036,13 +1032,11 @@ span.city_span {
 	z-index:1000;}
 #menu_id_2000000000 > ul.nav_sublevel{
 	border-left:none;
-	display: block!important;
 	min-height: 42.1875px!important;
 	border: 1px solid #ddd;
 }
 .nav_sublevel li{
 	clear:both;
-	/* background:#fff; */
 	width:100%;
 }
 .nav_sublevel li a{
@@ -1067,16 +1061,6 @@ span.city_span {
 }
 .nav_sublevel li:hover > a span,.nav_sublevel li:hover > span{
 	color:#74aeff;}
-/* .nav_sublevel li.has_sublevel > a span:after,.nav_sublevel li.has_sublevel > span:after{
-	content:url(/img/arrow-right.svg);
-	position: absolute;
-    top: 30%;
-    right: 1em;
-	height:.5em;
-	width:.25em;
-	transform: translateY(-50%);} */
-/* .nav_sublevel li.has_sublevel:hover > a span:after,.nav_sublevel li.has_sublevel:hover > span:after{
-	content:url(/img/arrow-right-active.svg);} */
 .nav_sublevel .nav_sublevel{
 	position:absolute;
 	top:-1px;
@@ -1219,19 +1203,25 @@ li#menu_id_1000000000 {
   background: #F9C22D;
   padding: 1em;
 }
-.left_sidebar_discount > h1 {
+.left_advert_discount {
+	position: relative;
+	margin: 0 1em 0 0;
+	background: #F9C22D;
+	padding: 1em;
+}
+.left_advert_discount > h1 {
   color: #F75048;
   font-size: 2em;
   margin-bottom: 0.4em;
 }
-.left_sidebar_discount > strong, .left_sidebar_discount > span {
+.left_advert_discount > strong, .left_advert_discount > span {
   text-align: left;
   display: inline-block;
   width: 100%;
   font-size: 0.8em;
 	margin-bottom: 1em;
 }
-.left_sidebar_discount input[type="email"] {
+.left_advert_discount input[type="email"] {
   width: 95%;
   line-height: 2.5em;
   padding: 0 1em;
@@ -1252,7 +1242,7 @@ button#button1 {
 input[type="email"]:invalid {
 	border: 2px solid #F75048;
 }
-.left_sidebar_discount p {
+.left_advert_discount p {
   text-align: left;
 }
 .discount_last_p {
