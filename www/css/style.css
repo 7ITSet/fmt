@@ -620,9 +620,11 @@ span.schedule_content {
 
 /* top_line */
 .top_line_menu {
-	overflow: hidden;
 	margin: auto;
 	max-width: 82.5em;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
 .top_line {
 	padding: 1em 0;
@@ -630,6 +632,7 @@ span.schedule_content {
 	flex-direction: column;
 	width: 77.3%;
 	float: right;
+	background: #fff;
 }
 .top_line_left {
 
@@ -950,8 +953,11 @@ span.city_span {
 
 .left_sidebar {
 	width: 22%;
+	height: 87.333px;
 	float: left;
-	margin: 1em 0;
+	padding: 1em 0 0;
+	position: absolute;
+	background: #fff;
 }
 .left_advert {
 	width: 22%;
@@ -959,13 +965,13 @@ span.city_span {
 }
 .nav{
 	position: relative;
-  top: auto;
-  left: auto;
-  background-color: #fff;
-  height: auto;
-  overflow: visible;
+  	top: auto;
+  	left: auto;
+  	background-color: #fff;
+  	height: auto;
+  	overflow: visible;
 	width:100%;
-	/* z-index:2000; */}
+}
 .nav_container{
 	height:100%;
 	padding-right: 1em;
@@ -1093,6 +1099,15 @@ li#menu_id_2000000000{
 	position:relative;
 	z-index:999;
 	background: #60C0AA;
+}
+li#menu_id_2000000000:hover >.nav_sublevel {
+	display: block;
+}
+.nav_sublevel > li:hover > ul.nav_sublevel{
+	display: block;
+}
+.nav_sublevel li > ul.nav_sublevel li:hover > ul {
+	display: block;
 }
 li#menu_id_2000000000 > ul > li:last-child > a{
 	border-bottom:none;

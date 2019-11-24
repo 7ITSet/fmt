@@ -98,7 +98,6 @@ $(document).ready(function(){
 		.on("mouseleave",function(){
 			$(this).removeClass("hover");
 		});
-	$("#menu_id_2000000000 span:first").text("КАТАЛОГ ТОВАРОВ");
 
 	$('#footer-info-social span')
 		.on('mouseenter',function(){
