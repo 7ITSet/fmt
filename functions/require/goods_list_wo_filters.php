@@ -1,4 +1,21 @@
 <div class="main_container_body">
+    <div class="main_products_filters">
+        <div class="main_products_filters_block">
+            <?
+            $menu->displayLeftCat();
+            ?>
+        </div>
+        <div class="main_products_filters_block">
+            <div class="main_products_filters_count">
+                <p>Выбрано <span>{products_count}</span> товаров</p>
+                <button class="main_products_filters_count_button button_reset"><span>Сбросить</span></button>
+                <button class="main_products_filters_count_button button_show"><span>Показать</span></button>
+            </div>
+        </div>
+        <div style="display:none">
+            {attributes}
+        </div>
+    </div>
 	<div class="main_content wlb">
         <div class="main_container_header">
             <div class="breadcrumbs">
@@ -6,23 +23,6 @@
             </div>
             <div class="clr"></div>
             <h1><?=$current['h1']?></h1>
-        </div>
-        <div class="main_products_filters">
-            <div class="main_products_filters_block">
-                <div class="main_products_filters_count">
-                    <p>Выбрано <span>{products_count}</span> товаров</p>
-                    <button class="main_products_filters_count_button button_reset"><span>Сбросить</span></button>
-                    <button class="main_products_filters_count_button button_show"><span>Показать</span></button>
-                </div>
-            </div>
-            <div class="main_products_filters_block">
-                <?
-                $menu->displayLeftCat();
-                ?>
-            </div>
-            <div style="display:none">
-                {attributes}
-            </div>
         </div>
 		<div class="main_products_list_toppanel">							
 			<div class="main_products_list_toppanel_sort">

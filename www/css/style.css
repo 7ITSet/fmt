@@ -952,7 +952,7 @@ span.city_span {
 	margin:0;}
 
 .left_sidebar {
-	width: 22%;
+	width: 21%;
 	height: 87.333px;
 	float: left;
 	padding: 1em 0 0;
@@ -971,10 +971,6 @@ span.city_span {
   	height: auto;
   	overflow: visible;
 	width:100%;
-}
-.nav_container{
-	height:100%;
-	padding-right: 1em;
 }
 .nav_container_inner{
 	max-width: 82.5em;
@@ -1496,44 +1492,46 @@ img.timer_product_img_big {
 
 /* PRODUCTS_LIST */
 .main_products_filters{
-	width:25%;
-	border-right:1px solid rgba(160,160,160,.2);
-	float:right;
+	width: 21%;
+	float: left;
+	margin: .5em 1em 0 0;
+	padding: 1em;
+	box-sizing: border-box;
+	background: #F3F3F3;
 }
 .main_products_filters_block{
-	border:none!important;
 	position:relative;
-	box-sizing: border-box;}
+	box-sizing: border-box;
+}
 .main_products_filters_block.active{
 	border-left: .1875em solid #3aa800;
 	padding-left:1.3125em;}
-.main_products_filters_block:first-child{
-	padding-top:0;}
-.main_products_filters_block:not(:first-child):hover{
-	background:rgba(250,250,250,1);}
 .main_products_filters_count p{
 	color:#666;
 	font-size:.875em;
 	margin-bottom:.2em!important;}
+.main_products_filters_count {
+	padding-top: 1em;
+}
 .clwg .main_products_filters_count{
 	visibility:hidden;
 }
 .main_products_filters_count_button{
+	width: 45%;
 	height:2.2em;
 	border-radius:.2em;
-	padding:0 .6em!important;
-	/* -webkit-transform: skew(-30deg);
-	-moz-transform: skew(-30deg);
-	-o-transform: skew(-30deg); */
+	padding:0 .6em;
 	border:none;
 	outline:none;
 	cursor:pointer;
-	padding:0;
-	margin-right:.2em;}
+	margin-right:.2em;
+	box-sizing: border-box;
+}
 .main_products_filters_count_button.button_reset{
 	background:#bbb;}
 .main_products_filters_count_button.button_show{
-	background:#3aa800;}
+	background: linear-gradient(to top, #02643D, #2CA44A);
+}
 .main_products_filters_count_button span{
 	display:block;
 	color:#fff;}
@@ -1553,8 +1551,12 @@ img.timer_product_img_big {
 .main_products_filters ul li:hover span.menu-item-parent{
 	background:rgba(160,160,160,.2);}
 .main_products_filters ul li.current span.menu-item-parent{
-	background:#3aa800;
-	color:#fff;}
+	background:#60C0AA;
+	color:#fff;
+}
+.main_products_filters ul li span.menu-item-parent{
+	color:#000;
+}
 .main_products_filters_body{
 	display:none;
 	text-align:left;}

@@ -11,22 +11,22 @@
 ?>	
 	<div class="main_products_filters">
 		<div class="main_products_filters_block">
-			<div class="main_products_filters_count">
-				<p>Выберите категорию</p>
-			</div>
-		</div>
-		<div class="main_products_filters_block">
 			<?
 				$menu->displayLeftSubMenu();
 			?>
 		</div>
+        <div class="main_products_filters_block">
+            <div class="main_products_filters_count">
+                <p>Выберите категорию</p>
+            </div>
+        </div>
 	</div>
 <?
 }
 ?>
-	<div class="main_content wlb">
-		<div class="main_content_container">
-			<?=$current['content'];?>
-		</div>
-	</div>
+<div class="main_content wlb">
+    <div class="main_content_container">
+        <?=$current['content'];?>
+    </div>
+</div>
 </div>	
