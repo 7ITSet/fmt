@@ -952,7 +952,7 @@ span.city_span {
 	margin:0;}
 
 .left_sidebar {
-	width: 21%;
+	width: 22.7%;
 	height: 87.333px;
 	float: left;
 	padding: 1em 0 0;
@@ -970,7 +970,7 @@ span.city_span {
   	background-color: #fff;
   	height: auto;
   	overflow: visible;
-	width:100%;
+	width:91%;
 }
 .nav_container_inner{
 	max-width: 82.5em;
@@ -1116,11 +1116,11 @@ li#menu_id_2000000000 > a span{
 	padding: 0;
 }
 li#menu_id_2000000000 > a span::after{
-	content:url(/img/menu_catalog.svg);
+	content: url(/img/menu_catalog.svg);
 	position: absolute;
-  top: 10%;
 	height: 1em;
-  left: 17.5em;
+	left: 17.5em;
+	top: 10%;
 }
 li#menu_id_1000000000 {
   display: none;
@@ -1539,7 +1539,7 @@ img.timer_product_img_big {
 	border:1px solid rgba(160,160,160,.2);
 	padding:.2em .6em;
 	margin-top:.5em;
-	text-align:right;
+	text-align:left;
 	cursor:pointer;
 	font-weight:400;
 	font-size:.875em;
@@ -3606,21 +3606,6 @@ li.footer_midle_right_item a {
 #footer-logo{
 	margin-right:0;
 	display:block;}
-@media (max-width:1300px){
-	#footer-links-subscribe,
-	#footer-info-social{
-		display:none!important;}
-}
-@media (max-width:960px){
-	#footer-links-about,
-	#footer-logo{
-		display:none!important;}
-}
-/* 480 OK */
-@media (max-width:640px){
-	#footer-links-info{
-		display:none!important;}
-}
 
 /*ERROR 404*/
 div.error404 {
@@ -3753,6 +3738,12 @@ span.comment{
 
 /*MEDIA CHANGES*/
 
+@media only screen  and (min-width: 1225px) {
+	.header_mobile {
+		display: none;
+	}
+}
+
 /*width 1000-1200px*/
 @media only screen  and (max-width: 1224px)  {
 	a.comparison_a, a.goods_a {
@@ -3798,5 +3789,116 @@ span.comment{
 	.nav_account div span {
 		font-size: .9em;
 	}
+	.header_mobile {
+		display: none;
+	}
+}
 
+
+@media only screen  and (max-width: 480px) {
+	.header, .top_line_menu {
+		display: none;
+	}
+	.header_mobile {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: .5em;
+	}
+	#select_city {
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.popup {
+		left: 0;
+		margin-left: 0;
+		top: 0;
+ 		margin-top: 0;
+		padding: 20px 15px 15px;
+	}
+	.select_city_list{
+		display: none;
+	}
+	.select_city_search, .select_city_selected {
+		float: none;
+		margin-bottom: 1em;
+	}
+	li#menu_id_2000000000 > a span::after{
+		left: 1.3em;
+	}
+	.nav_wrapper > ul > li > a, .nav_wrapper > ul > li > span{
+		line-height: 2.8em;
+	}
+	.header_mobile .nav_cart {
+		width: 10%;
+	}
+	.header_mobile .nav_cart > span{
+		margin: auto;
+	}
+	.header_mobile .nav_cart img.cart_icon {
+		width: auto;
+		margin: auto;
+		padding-top: 0;
+	}
+	.header_mobile #logo {
+		display: flex;
+		width: 50%;
+	}
+	.header_mobile #logo > a {
+		margin: auto;
+	}
+	#city a {
+		padding-top: 0;
+		margin: auto 0;
+	}
+	#cookie_policy {
+		display: none!important;
+	}
+	#footer {
+		height: auto;
+	}
+	#footer-inner {
+		padding-top: 0;
+	}
+	.footer_floor {
+		flex-direction: column;
+		padding: .5em 0;
+	}
+	#footer-info-social {
+		text-align: center;
+		height: 30px;
+	}
+	#footer-logo {
+		height: 45px;
+		margin-bottom: 1em;
+	}
+	.footer_contacts1, .footer_contacts2, .footer_contacts3 {
+		padding: 0.5em 0;
+	}
+	.footer_midle_left {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.footer_midle_center {
+		display: none;
+	}
+	.footer_midle_right_child {
+		text-align: left;
+		margin-left: 1.5em;
+	}
+	.footer_midle_right_child:first-child {
+		margin-left: 0;
+	}
+	.footer_bottom_center, .footer_midle_right {
+		display: none;
+	}
+	.footer_city, .footer_tel {
+		margin: 0;
+		font-size: .9em;
+	}
+	span.footer_city_street, span.footer_schedule {
+		font-size: .8em;
+	}
+	.footer_bottom_right {
+		text-align: left;
+	}
 }

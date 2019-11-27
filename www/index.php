@@ -17,6 +17,7 @@ if($merge_carts){
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 	<meta name="description" content="<?=isset($current['description'])?$current['description']:''?>" />
 	<meta name="keywords" content="<?=isset($current['keywords'])?$current['keywords']:''?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><? echo $current['title'].($_SERVER['REQUEST_URI']!='/'?' — интернет-магазин formetoo':''); ?></title>
 	<!--[if IE]>
 		<style type="text/css">
@@ -103,10 +104,6 @@ if($merge_carts){
 	</div>
 	<div class="page-wrapper">
 
-        <div id="slide" class="mini">
-            <div id="slide-bg"></div>
-        </div>
-
         <div class="header">
             <div class="header_top_left">
                 <div class="header_logo" id="logo">
@@ -160,6 +157,28 @@ if($merge_carts){
                 </div>
             </div>
         </div>
+
+        <div class="header_mobile">
+            <div class="parent header_city" id="city">
+                <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png"><span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span></a>
+            </div>
+            <div class="header_logo" id="logo">
+                <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
+            </div>
+            <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
+                <span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"><span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span></span>
+            </div>
+            <div class="nav_wrapper">
+                <ul>
+                    <li id="menu_id_2000000000" class="has_sublevel">
+                    </li>
+                    <li id="menu_id_1000000000" class=""><a href="/" title="Главная"><span class="menu-item-parent" style="font-size: 1em;">Главная</span></a></li>
+                    <li id="nav_more" class="has_sublevel" style="display: none;"><a href="#"><span style="font-size: 1em;">Ещё</span></a><ul class="nav_sublevel" style="display: none;">&nbsp;</ul></li>
+                </ul>
+            </div>
+
+        </div>
+
         <div class="top_line_menu">
             <div class="left_sidebar">
                 <div class="nav">
@@ -314,25 +333,25 @@ if($merge_carts){
                             <span class="footer_midle_right_title">О компании</span>
                             <ul class="footer_midle_right_list">
                                 <li class="footer_midle_right_item"><a href="/about/company/">Реквизиты</a></li>
-																<li class="footer_midle_right_item"><a href="/about/contacts/">Контакты</a></li>
-																<li class="footer_midle_right_item"><a href="/about/feedback/">Обратная связь</a></li>
+                                <li class="footer_midle_right_item"><a href="/about/contacts/">Контакты</a></li>
+                                <li class="footer_midle_right_item"><a href="/about/feedback/">Обратная связь</a></li>
                             </ul>
                         </div>
                         <div class="footer_midle_right_child">
-													<span class="footer_midle_right_title">Покупателям</span>
-													<ul class="footer_midle_right_list">
-															<li class="footer_midle_right_item"><a href="/info/delivery/">Доставка</a></li>
-															<li class="footer_midle_right_item"><a href="/info/return">Возврат товара</a></li>
-															<li class="footer_midle_right_item"><a href="/info/payments/">Способ оплаты</a></li>
-													</ul>
+                            <span class="footer_midle_right_title">Покупателям</span>
+                            <ul class="footer_midle_right_list">
+                                <li class="footer_midle_right_item"><a href="/info/delivery/">Доставка</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/return">Возврат товара</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/payments/">Способ оплаты</a></li>
+                            </ul>
                         </div>
-												<div class="footer_midle_right_child">
-													<span class="footer_midle_right_title">Информация</span>
-													<ul class="footer_midle_right_list">
-															<li class="footer_midle_right_item"><a href="/info/terms-of-sale/">Условия продажи<br>товаров</a></li>
-															<li class="footer_midle_right_item"><a href="/info/">Персональные данные</a></li>
-													</ul>
-												</div>
+                        <div class="footer_midle_right_child">
+                            <span class="footer_midle_right_title">Информация</span>
+                            <ul class="footer_midle_right_list">
+                                <li class="footer_midle_right_item"><a href="/info/terms-of-sale/">Условия продажи<br>товаров</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/">Персональные данные</a></li>
+                            </ul>
+                        </div>
 					</div>
 				</div>
 				<div class="footer_floor footer_bottom">

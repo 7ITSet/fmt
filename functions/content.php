@@ -512,7 +512,7 @@ Product.`m_products_show_site`=1
 							$ext = $_foto->ext ? $_foto->ext : 'jpg';
 
                   //  echo "<pre>";
-                    var_dump($foto);
+                  //  var_dump($foto);
                   //  echo "</pre>";
 
 					echo '

@@ -615,10 +615,15 @@ loadCatalog=function(){
 		{},
 		function(data){
 			$('.nav_wrapper').html(data);
-			$("#menu_id_2000000000 span:first").text("КАТАЛОГ ТОВАРОВ");
+			$("#menu_id_2000000000 > a > span").text("КАТАЛОГ ТОВАРОВ");
+			$('.header_mobile #menu_id_2000000000 span:first').text('');
+            var mql = window.matchMedia('only screen and (max-width: 480px)');
+            if (mql.matches) {
+                $("#menu_id_2000000000 a").removeAttr("href");
+            }
 		}
 	);
-}
+};
 JSON.stringify = JSON.stringify || function (obj) {
     var t = typeof (obj);
     if (t != "object" || obj === null) {
