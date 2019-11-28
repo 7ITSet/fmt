@@ -19,6 +19,9 @@
                 <li class="slide"><img class="baner_img" src="/img/baner.jpg"></li>
             </ul>
 		</div>
+        <div class="main_slider_mobile">
+            <img src="/img/baner.jpg" alt="slider">
+        </div>
 		<div class="main_services">
 			<div class="main_service">
 				<a href="#" class="main_service_a">
