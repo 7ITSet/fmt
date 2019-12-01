@@ -3,7 +3,11 @@ defined ('_DSITE') or die ('Access denied');
 
 $_GET['m_products_id']=$current_product['m_products_id'];
 $_GET['m_products_main_product']=$current_product['m_products_main_product'];
-if($attr=$content->getGoodAttributes()){
+
+
+if($attr=$content->getItemAttributes()){
+	$videoItem = $attr['VIDEO'];
+	$docsItem = $attr['DOCS'];
 	//варианты товара
 	$gV=$content->getGoodVariants();
 	$gv_count=sizeof($gV);
@@ -234,13 +238,6 @@ $QNA=$content->getGoodQNA();
 
 $q='SELECT `m_info_city_id`,`m_info_city_name_city_im` FROM `formetoo_main`.`m_info_city`;';
 $cities=$sql->query($q,'m_info_city_id');
-
-$docs=array();
-if($docs=$current_product['m_products_docs']){
-	$docs=explode('|',$docs);
-	$q='SELECT * FROM `formetoo_main`.`m_products_docs` WHERE `m_products_docs_id` IN ('.implode(',',$docs).');';
-	$docs=$sql->query($q);
-}
 
 $attr_main=array();
 if($attr)
@@ -496,22 +493,24 @@ else $captcha_reg=false;
                 </div>
             </div>
 			<div class="clr"></div>
-			<div class="main_products_list_items_info_more">
-                <div class="main_products_list_items_info_more_left">
-				    <div class="main_products_list_items_info_more_header">
-					<div class="main_products_list_items_info_more_header_item active" id="products_tech">Технические характеристики</div>
-					<div class="main_products_list_items_info_more_header_item" id="products_about">О товаре</div>
-					<?=$docs?'<div class="main_products_list_items_info_more_header_item" id="products_docs">Документы и сертификаты<span class="main_products_list_items_info_more_header_item_count">'.sizeof($docs).'</span></div>':'';?>
-					<?=$current_product['m_products_video']?'<div class="main_products_list_items_info_more_header_item" id="products_video">Видео<span class="main_products_list_items_info_more_header_item_count"></span></div>':'';?>
-					<div class="main_products_list_items_info_more_header_item" id="products_reviews">Отзывы<span class="main_products_list_items_info_more_header_item_count"><?=$reviews?sizeof($reviews):0;?></span></div>
-					<div class="main_products_list_items_info_more_header_item" id="products_qa">Вопрос-ответ<span class="main_products_list_items_info_more_header_item_count"><?=$QNA?sizeof($QNA):0;?></span></div>
-				</div>
-				    <div class="clr"></div>
-				    <div class="main_products_list_items_info_more_body">
-					<div class="main_products_list_items_info_more_body_item products_tech active">
-						<?
-							if($attr){
-						?>
+			<div class="detail-info">
+        <div class="detail-info_left">
+				  <div class="detail-info_header">
+						<div class="detail-info_header_item active" id="products_tech">Технические характеристики</div>
+						<div class="detail-info_header_item" id="products_about">О товаре</div>
+						<? if ($docsItem) { ?>
+							<div class="detail-info_header_item" id="products_docs">Документы и сертификаты<span class="detail-info_header_item_count"></span></div>
+						<? } ?>
+						<? if ($videoItem) { ?>
+							<div class="detail-info_header_item" id="products_video">Видео<span class="detail-info_header_item_count"></span></div>
+						<? } ?>
+						<div class="detail-info_header_item" id="products_reviews">Отзывы<span class="detail-info_header_item_count"><?=$reviews?sizeof($reviews):0;?></span></div>
+						<div class="detail-info_header_item" id="products_qa">Вопрос-ответ<span class="detail-info_header_item_count"><?=$QNA?sizeof($QNA):0;?></span></div>
+					</div>
+				  <div class="clr"></div>
+				  <div class="detail-info__body">
+						<div class="detail-info__body_item products_tech active">
+						<? if($attr) { ?>
 							<?
 								$attr_left=array_slice($attr,0,round(sizeof($attr)/2));
 								$attr_right=array_slice($attr,round(sizeof($attr)/2));
@@ -589,44 +588,53 @@ else $captcha_reg=false;
 						<?}?>
 						<div class="clr"></div>
 					</div>
-<!--					<div class="main_products_list_items_info_more_body_item products_about" itemprop="description"><noindex>--><?//=str_replace('<p>&nbsp;</p>','',$text['m_products_desc_text']);?><!--</noindex></div>-->
-                    <div class="main_products_list_items_info_more_body_item products_about" itemprop="description"><noindex><?=str_replace('<p>&nbsp;</p>','',htmlspecialchars_decode($text['m_products_desc_text']));?></noindex></div>
-					<div class="main_products_list_items_info_more_body_item products_docs">
-						<?
-							if($docs){
-								echo '<div class="products_docs_container">';
-								foreach($docs as $_doc){
-									$ext=explode('.',$_doc['m_products_docs_filename']);
-									$ext=array_pop($ext);
-									echo '
-									<div class="products_docs_container_item">
-										<div class="products_docs_container_item_type_img">
-											<span class="icon icon-'.$ext.'"></span>
-										</div>
-										<div class="products_docs_container_item_info">
-											<p class="products_docs_container_item_info_name">'.$_doc['m_products_docs_desc'].'</p>
-											<p class="products_docs_container_item_info_download"><a href="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_doc['m_products_docs_filedir'],0,2).'/SN'.$_doc['m_products_docs_filedir'].'/'.$_doc['m_products_docs_filename'].'" target="_blank">Скачать<span class="underline"></span></a></p>
-											<p class="products_docs_container_item_info_fileinfo">'.$ext.', '.$_doc['m_products_docs_filesize'].'</p>
-										</div>
-										<div class="clr"></div>
-									</div>';
-								}
-								echo '</div>';
-							}
-							else
-								echo '<p class="main_products_list_null">Для товара не размещено документов/сертификатов.</p>';
-						?>
-						<div class="clr"></div>
+<!--					<div class="detail-info__body_item products_about" itemprop="description"><noindex>--><?//=str_replace('<p>&nbsp;</p>','',$text['m_products_desc_text']);?><!--</noindex></div>-->
+          <div class="detail-info__body_item products_about" itemprop="description"><noindex><?=str_replace('<p>&nbsp;</p>','',htmlspecialchars_decode($text['m_products_desc_text']));?></noindex></div>
+					<? if ($docsItem){
+						$docsArray = json_decode($docsItem['m_products_attributes_value']);
+					?>
+					<div class="detail-info__body_item products_docs">
+						<div class="products_docs_container">
+							<?foreach($docsArray as $_doc){
+								$ext=explode('.',$_doc->file);
+								$ext=array_pop($ext);
+								// echo '
+								// <div class="products_docs_container_item">
+								// 	<div class="products_docs_container_item_type_img">
+								// 		<span class="icon icon-'.$ext.'"></span>
+								// 	</div>
+								// 	<div class="products_docs_container_item_info">
+								// 		<p class="products_docs_container_item_info_name">'.$_doc['m_products_docs_desc'].'</p>
+								// 		<p class="products_docs_container_item_info_download"><a href="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_doc['m_products_docs_filedir'],0,2).'/SN'.$_doc['m_products_docs_filedir'].'/'.$_doc['m_products_docs_filename'].'" target="_blank">Скачать<span class="underline"></span></a></p>
+								// 		<p class="products_docs_container_item_info_fileinfo">'.$ext.', '.$_doc['m_products_docs_filesize'].'</p>
+								// 	</div>
+								// 	<div class="clr"></div>
+								// </div>';
+							?>
+								<div class="products_docs_container_item">
+									<div class="products_docs_container_item_type_img">
+										<span class="icon icon-<?=$ext?>"></span>
+									</div>
+									<div class="products_docs_container_item_info">
+										<p class="products_docs_container_item_info_name"><?=$_doc->name?></p>
+										<p class="products_docs_container_item_info_download"><a href="//crm.formetoo.loc/uploads/files/products/<?=$current_product['m_products_id']?>/<?=$_doc->file?>" target="_blank">Скачать<span class="underline"></span></a></p>
+										<p class="products_docs_container_item_info_fileinfo"><?=$ext?>, <?=$_doc->size?></p>
+									</div>
+									<div class="clr"></div>
+								</div>
+							<? } ?>
+							<div class="clr"></div>
+						</div>
 					</div>
-					<div class="main_products_list_items_info_more_body_item products_video">
-						<?
-							if($current_product['m_products_video'])
-								echo '<iframe width="100%" height="720" src="'.$current_product['m_products_video'].'" frameborder="0" allow="encrypted-media"></iframe>';
-							else
-								echo '<p class="main_products_list_null">Для товара нет размещённых видеороликов.</p>';
-						?>
+					<? } ?>
+
+					<? if ($videoItem){ ?>
+					<div class="detail-info__body_item products_video">
+						<?=$videoItem['m_products_attributes_value'];?>
 					</div>
-					<div class="main_products_list_items_info_more_body_item products_reviews">
+					<? } ?>
+
+					<div class="detail-info__body_item products_reviews">
 						<div class="main_products_list_toppanel_sort">
 							<label>Сортировать по&nbsp;</label>
 							<div class="select_default_container">
@@ -780,7 +788,7 @@ else $captcha_reg=false;
 						</div>
 						<div class="clr"></div>
 					</div>
-					<div class="main_products_list_items_info_more_body_item products_qa">
+					<div class="detail-info__body_item products_qa">
 						<div class="main_products_list_toppanel_sort">
 							<label>Сортировать по&nbsp;</label>
 							<div class="select_default_container">
@@ -1049,9 +1057,9 @@ if($captcha_reg){
 		<?}?>
 		/* ВКЛАДКИ С ИНФОРМАЦИЕЙ О ТОВАРЕ */
 		var currentState='';
-		$('.main_products_list_items_info_more_header_item').on('click',function(){
+		$('.detail-info_header_item').on('click',function(){
 			$(this).addClass('active').siblings().removeClass('active');
-			$('.main_products_list_items_info_more_body_item.'+$(this).attr('id')).addClass('active').siblings().removeClass('active');
+			$('.detail-info__body_item.'+$(this).attr('id')).addClass('active').siblings().removeClass('active');
 			//document.location.hash='#'+$(this).attr('id');
 			history.pushState(null,null,'#'+$(this).attr('id'));
 		});

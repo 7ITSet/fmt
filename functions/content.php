@@ -798,7 +798,7 @@ Product.`m_products_show_site`=1
 				$attr_range[0]['max']=$_good['m_products_price_general']>$attr_range[0]['max']?$_good['m_products_price_general']:$attr_range[0]['max'];
 			}
 		$a[0][0]['m_products_attributes_list_name']='Цена';
-		$a[0][0]['m_products_attributes_list_name_url']='price';
+		$a[0][0]['products_attributes_groups_id']='price';
 		$a[0][0]['m_products_attributes_list_type']=2;
 		$a[0][0]['m_products_attributes_list_hint']='';
 		$a[0][0]['m_products_attributes_list_unit']='руб';
@@ -1161,7 +1161,7 @@ Product.`m_products_show_site`=1
 	}
 	
 	//атрибуты товара в карточке товара
-	public function getGoodAttributes(){
+	public function getItemAttributes(){
 		global $e,$sql,$current,$menu;
 		
 		$data['m_products_id']=array(1,null,null,10,1);
@@ -1173,7 +1173,7 @@ Product.`m_products_show_site`=1
 
 			$q='SELECT m_products_attributes_groups_list_id FROM `formetoo_main`.`m_products_attributes_groups` 
 			LEFT JOIN `formetoo_main`.`m_products`
-				ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`m_products_attributes_groups_id`
+				ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id`
 			WHERE 
 			(`m_products`.`m_products_id`='.$data['m_products_id'].');';
 
@@ -1195,9 +1195,13 @@ Product.`m_products_show_site`=1
 					$tempResult = array();
 					foreach($res as $attrId) {
 						$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroup);
-						if ($index) $tempResult[$index] = $attrId;
+						
+						if ($index) {
+							$tempResult[$attrId['m_products_attributes_list_name_url']] = $attrId;
+							$tempResult[$attrId['m_products_attributes_list_name_url']]['sort'] = $index;
+						}
 					}
-					ksort($tempResult);
+					array_multisort(array_column($tempResult, 'sort'), SORT_ASC, $tempResult);
 					return $tempResult;
 				}
 				

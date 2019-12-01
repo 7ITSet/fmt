@@ -1801,7 +1801,7 @@ table td.center{
 	padding-top: .2em;
 	float:left;
 	display: inline-block;}
-.main_products_list_items_info_more_body_item .main_products_list_toppanel_sort label{
+.detail-info__body_item .main_products_list_toppanel_sort label{
 	padding-top: .4em;}
 .select_default_container{
 	position:absolute;
@@ -2236,11 +2236,11 @@ a.good_comparison_item {
 }
 
 /* ПОДРОБНАЯ ИНФОРМАЦИЯ О ТОВАРЕ */
-.main_products_list_items_info_more{
+.detail-info{
 	margin-top:2em;
 	display: flex;
 }
-.main_products_list_items_info_more_left {
+.detail-info_left {
 	width: 70%;
 }
 .free_calc_delivery {
@@ -2257,7 +2257,7 @@ span.free_calc_delivery_title {
 	font-size: 1.7em;
 	font-weight: 300;
 }
-.main_products_list_items_info_more_header_item{
+.detail-info_header_item{
 	font-weight:400;
 	font-size:.9em;
 	text-align:center;
@@ -2268,17 +2268,17 @@ span.free_calc_delivery_title {
 	margin: 0 1em 1em 0;
 	border-radius: 2px;
 }
-.main_products_list_items_info_more_header_item span{
+.detail-info_header_item span{
 	color:#3aa800;
 	display:inline-block;
 	margin-left:.5em;}
-.main_products_list_items_info_more_header_item.active{
+.detail-info_header_item.active{
 	background:#60C0AA;
 	color: #fff;
 }
 
 /* ОПИСАНИЕ ТОВАРА */
-.main_products_list_items_info_more_body_item{
+.detail-info__body_item{
 	display:none;
 	color:#000;
 	padding:1em 1.2em;
@@ -2288,12 +2288,12 @@ span.free_calc_delivery_title {
 	border-radius: 2px;
 	margin: 1em 0;
 }
-.main_products_list_items_info_more_body_item p{
+.detail-info__body_item p{
 	font-weight:300;}
-.main_products_list_items_info_more_body_item.active{
+.detail-info__body_item.active{
 	display:block;}
 .main_content_container table,
-.main_products_list_items_info_more_body_item table{
+.detail-info__body_item table{
 	border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     margin: 0.6em 0 0.8em;
@@ -2312,7 +2312,7 @@ span.free_calc_delivery_title {
 	margin:0!important;}
 .main_content table td,
 .main_content table th,
-.main_products_list_items_info_more_body_item table td{
+.detail-info__body_item table td{
 	padding: .6em .4375em;
 	border-bottom: 1px solid #ddd;
 	border-right: 1px solid #ddd;}
@@ -2324,53 +2324,53 @@ span.free_calc_delivery_title {
 	padding:0;
 	background:none;}
 .main_content table td.left,
-.main_products_list_items_info_more_body_item table td.left{
+.detail-info__body_item table td.left{
 	text-align:left;}
 .main_content table td.right,
-.main_products_list_items_info_more_body_item table td.right{
+.detail-info__body_item table td.right{
 	text-align:right;}
 .main_content table thead td,
 .main_content table td.union,
-.main_products_list_items_info_more_body_item table thead td,
-.main_products_list_items_info_more_body_item table td.union {
+.detail-info__body_item table thead td,
+.detail-info__body_item table td.union {
     background: #f2f2f2;
     font-weight: 700;
     text-align: center;}
 .main_content_container p,
-.main_products_list_items_info_more_body_item p{
+.detail-info__body_item p{
 	line-height: 1.5;}
 .main_content_container ul,
 .main_content_container ol,
-.main_products_list_items_info_more_body_item ul,
-.main_products_list_items_info_more_body_item ol{
+.detail-info__body_item ul,
+.detail-info__body_item ol{
 	margin-left: 2.8125em;
 	position: relative;
 	margin-bottom: .5em;}
 .main_content_container ol,
-.main_products_list_items_info_more_body_item ol{
+.detail-info__body_item ol{
 	margin-left: 4.11em;}
 .main_content_container ul li,
-.main_products_list_items_info_more_body_item ul li,
+.detail-info__body_item ul li,
 .main_content_container ol li,
-.main_products_list_items_info_more_body_item ol li{
+.detail-info__body_item ol li{
 	margin-bottom: 3px;
 	padding-left:1.2em;
 	font-weight:300;
 	background:url(/img/all.svg) -36.9em -27.6em no-repeat;}
 .main_content_container ol li,
-.main_products_list_items_info_more_body_item ol li{
+.detail-info__body_item ol li{
 	background:none;
 	padding-left:0.1em;}
 .main_content_container ol.document li{
 	padding-left:1.2em;}
 .main_content_container ul li p,
 .main_content_container ol li p,
-.main_products_list_items_info_more_body_item ul li p,
-.main_products_list_items_info_more_body_item ol li p{
+.detail-info__body_item ul li p,
+.detail-info__body_item ol li p{
 	margin:0;
 	padding:0;}
 .main_content_container span.ol-fade,
-.main_products_list_items_info_more_body_item span.ol-fade{
+.detail-info__body_item span.ol-fade{
 	display: block;
 	left: -45px;
 	top: 0;
@@ -2385,12 +2385,12 @@ span.free_calc_delivery_title {
 	width:47%;}
 .products_tech ul.list_dotts:first-child{
 	margin-right:3em;}
-.main_products_list_items_info_more_body_item  ul.list_dotts{
+.detail-info__body_item  ul.list_dotts{
 	margin-left:0;}
-.main_products_list_items_info_more_body_item  ul.list_dotts li div{
+.detail-info__body_item  ul.list_dotts li div{
 	padding-bottom:.6em;
 	font-weight:300;}
-.main_products_list_items_info_more_body_item  ul.list_dotts li div.list_dotts_name{
+.detail-info__body_item  ul.list_dotts li div.list_dotts_name{
 	width:20%;
 	color:#666;}
 /* ДОКУМЕНТЫ И СЕРТИФИКАТЫ */

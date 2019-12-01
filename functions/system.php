@@ -768,6 +768,7 @@ class transform
 
 function get_filesize($f_name)
 {
+	var_dump($f_name);
 	$f_size = filesize($f_name);
 	$f_size = ($f_size) ? $f_size : 0;
 	if ($f_size > 1048576)
