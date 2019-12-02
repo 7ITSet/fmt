@@ -617,7 +617,7 @@ loadCatalog=function(){
 			$('.nav_wrapper').html(data);
 			$("#menu_id_2000000000 > a > span").text("КАТАЛОГ ТОВАРОВ");
 			$('.header_mobile #menu_id_2000000000 span:first').text('');
-            var mql = window.matchMedia('only screen and (max-width: 480px)');
+            var mql = window.matchMedia('only screen and (max-width: 768px)');
             if (mql.matches) {
                 $("#menu_id_2000000000 > a").removeAttr("href");
                 $('#menu_id_2000000000 > a').click(function () {
