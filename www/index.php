@@ -180,7 +180,7 @@ if($merge_carts){
         </div>
 
         <div class="top_line_menu">
-            <div class="left_sidebar">
+            <div class="left_sidebar_cat">
                 <div class="nav">
                     <div class="nav_container">
                         <div class="nav_container_inner">
