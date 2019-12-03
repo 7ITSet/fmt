@@ -48,9 +48,31 @@ class user{
 			if($cookie=$this->registerAuto())
 				setcookie('uid',$cookie,dtu($t_time),'/','.'.$_SERVER['SERVER_NAME'],true,false);
 		} */
+		
+		$this->settings = self::getMainSettings();
 	}
 	function __destruct(){
 		session_write_close();
+	}
+
+	private function getMainSettings() {
+		global $sql;
+		$q='SELECT `key`,`value` FROM `formetoo_main`.`m_settings` WHERE `module_id`="main"';
+		$res=$sql->query($q);
+		
+		$arr = array();
+		foreach($res as $item) {
+			$arr[$item['key']] = $item['value'];
+		}
+
+		return $arr;
+	}
+
+	public function isVisiblePrice() {
+		if ($this->getInfo() || $this->settings['price_guest_visible']) {
+			return true;
+		}
+		return false;
 	}
 
 	public function getInfo($field='m_users_id'){
