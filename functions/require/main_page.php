@@ -441,7 +441,7 @@
             </div>
             <div id="carousel" class="carousel">
                 <span class="carousel_title">Наши партнеры</span>
-								<button class="arrow prev">.</button>
+								<button class="slide_arrow slide_arrow_prev">.</button>
                 <div class="gallery">
                     <ul class="images">
                         <li><img src="/img/tm copy.svg"></li>
@@ -465,7 +465,7 @@
                         <li><img src="/img/tm copy.svg"></li>
                     </ul>
                 </div>
-								<button class="arrow next">.</button>
+								<button class="slide_arrow slide_arrow_next">.</button>
             </div>
 		</div>
 	</div>
@@ -487,7 +487,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-<script type="text/javascript">
+<script>
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
     var slideInterval = setInterval(nextSlide,2000);
@@ -498,7 +498,7 @@ $(document).ready(function(){
         slides[currentSlide].className = 'slide showing';
     }
 </script>
-<script type="text/javascript">
+<script>
 
     let i = 1;
     for(let li of carousel.querySelectorAll('li')) {
@@ -516,7 +516,7 @@ $(document).ready(function(){
 
     let position = 0; // положение ленты прокрутки
 
-    carousel.querySelector('.prev').onclick = function() {
+    carousel.querySelector('.slide_arrow_prev').onclick = function() {
       // сдвиг влево
       position += width * count;
       // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
@@ -524,7 +524,7 @@ $(document).ready(function(){
       list.style.marginLeft = position + 'px';
     };
 
-    carousel.querySelector('.next').onclick = function() {
+    carousel.querySelector('.slide_arrow_next').onclick = function() {
       // сдвиг вправо
       position -= width * count;
       // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
