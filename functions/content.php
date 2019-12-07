@@ -802,7 +802,7 @@ Product.`m_products_show_site`=1
 		$a[0][0]['m_products_attributes_list_type']=2;
 		$a[0][0]['m_products_attributes_list_hint']='';
 		$a[0][0]['m_products_attributes_list_unit']='руб';
-		$a[0][0]['m_products_attributes_list_active']=1;
+		$a[0][0]['is_active']=1;
 		$a[0][0]['m_products_attributes_list_required']=0;
 		$a[0][0]['m_products_attributes_list_site_filter']=1;
 		$a[0][0]['m_products_attributes_list_site_open']=1;
@@ -1188,7 +1188,7 @@ Product.`m_products_show_site`=1
 					(
 						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_id'].' OR 
 						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_main_product'].') AND 
-					`m_products_attributes_list_active`=1;';
+					`is_active`=1;';
 
 			if($res=$sql->query($q)) {
 				if(!empty($attrsGroup)) {

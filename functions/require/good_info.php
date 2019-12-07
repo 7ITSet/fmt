@@ -37,7 +37,7 @@ if($attr=$content->getItemAttributes()){
 				ON `m_products_attributes_values`.`m_products_attributes_values_id`=`m_products_attributes`.`m_products_attributes_value`
 				WHERE
 				`m_products_attributes`.`m_products_attributes_product_id` IN ('.implode(',',array_keys($goodVariants)).') AND
-				`m_products_attributes_list_active`=1
+				`is_active`=1
 			ORDER BY `m_products_attributes_list_name`,`m_products_attributes_values_value`;';
 	$attr_variants=$sql->query($q,'m_products_attributes_list_id');
 	$attr_values=array();
