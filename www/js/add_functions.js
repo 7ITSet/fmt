@@ -620,9 +620,11 @@ loadCatalog=function(){
             var mql = window.matchMedia('only screen and (max-width: 768px)');
             if (mql.matches) {
                 $("#menu_id_2000000000 > a").removeAttr("href");
-                $('#menu_id_2000000000 > a').click(function () {
+                $('#menu_id_2000000000 > a > span').click(function () {
                     $('#menu_id_2000000000').toggleClass('active_mobile');
+                    $('body').toggleClass('active_cat');
                 });
+                $('#popup_quicksubmit').css({'width':'100%', 'height':'82%', 'box-sizing':'border-box', 'border-radius':'0px', 'top':'10%', 'margin':'0px'});
             }
 		}
 	);

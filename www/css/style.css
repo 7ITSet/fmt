@@ -13,6 +13,9 @@ body{
 	font-size:16px;
 	font-family:'Roboto',sans-serif;
 }
+body.active_cat {
+	overflow-y: hidden;
+}
 table{
 	border-collapse:separate;
 	border-spacing:0;}
@@ -3849,6 +3852,7 @@ span.comment{
     }
     li#menu_id_2000000000.active_mobile > .nav_sublevel {
         display: block!important;
+		height: 100vh;
     }
     li#menu_id_2000000000:hover >.nav_sublevel {
         display: none;
@@ -4200,12 +4204,16 @@ span.comment{
 	}
 	li#menu_id_2000000000.active_mobile > .nav_sublevel {
 		display: block!important;
+		height: 100vh;
 	}
 	li#menu_id_2000000000:hover >.nav_sublevel {
 		display: none;
 	}
 	li#menu_id_2000000000 > a span::after{
 		left: 1.4em;
+	}
+	li#menu_id_2000000000 > ul > li:last-child > a {
+		border-bottom: 1px solid #ddd;
 	}
 	.icon-cart {
 		width: auto;
@@ -4537,9 +4545,6 @@ span.comment{
     }
     .main_slider_mobile {
         margin-bottom: 5px;
-    }
-    li#menu_id_2000000000.active_mobile {
-        left: 35%;
     }
     .header_mobile .nav_cart {
         width: 7%;
