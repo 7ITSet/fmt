@@ -13,7 +13,7 @@ body{
 	font-size:16px;
 	font-family:'Roboto',sans-serif;
 }
-body.active_cat {
+.page-wrapper.active_cat, body.active_cat {
 	overflow-y: hidden;
 }
 table{
@@ -3806,9 +3806,6 @@ span.comment{
 }
 
 @media only screen  and (min-width: 769px) {
-	.main_slider_mobile {
-		display: none;
-	}
     .main_products_list_items_info_pay_mobile {
         display: none;
     }
@@ -4554,5 +4551,258 @@ span.comment{
         padding: 5px 10px;
         float: left;
         margin: 0 10px 0px 0;
+    }
+}
+
+@media only screen  and (min-width: 769px) and (max-width: 999px) {
+    .header, .top_line_menu, .good_goods, .good_comparison, .select_city_list, .icon-arrow-down, #map_icon {
+        display: none!important;
+    }
+    .header_mobile {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0px;
+        z-index: 10;
+        height: 48px;
+        background: #fff;
+        border-bottom: 1px solid #F2F2F2;
+    }
+    #select_city {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .popup {
+        left: 0;
+        margin-left: 0;
+        top: 0;
+        margin-top: 0;
+        padding: 20px 15px 15px;
+    }
+    .select_city_search, .select_city_selected {
+        float: none;
+        margin-bottom: 1em;
+    }
+    .nav_wrapper > ul > li {
+        margin-right: 0;
+    }
+    li#menu_id_2000000000.active_mobile {
+        left: 60%;
+    }
+    ul.nav_sublevel > li > ul.nav_sublevel {
+        display: none!important;
+    }
+    li#menu_id_2000000000.active_mobile > .nav_sublevel {
+        display: block!important;
+        height: 100vh;
+    }
+    li#menu_id_2000000000:hover >.nav_sublevel {
+        display: none;
+    }
+    li#menu_id_2000000000 > a span::after{
+        left: 1.4em;
+    }
+    li#menu_id_2000000000 > a span {
+        padding-left: 1.5em;
+    }
+    li#menu_id_2000000000 > ul > li:last-child > a {
+        border-bottom: 1px solid #ddd;
+    }
+    .icon-cart {
+        width: auto;
+    }
+    .nav_cart .nav_cart_size {
+        font-size: .7em;
+        min-width: 4%;
+        height: 15%;
+        position: absolute;
+        right: 15%;
+        top: 17%;
+    }
+    .header_mobile .nav_cart {
+        width: 11%;
+        padding: 0 8px 0 5px;
+    }
+    .header_mobile .nav_cart > span{
+        margin: auto;
+    }
+    .header_mobile .nav_cart img.cart_icon {
+        width: auto;
+        max-width: 90%;
+        margin: auto;
+        padding-top: 0;
+    }
+    .header_mobile #logo {
+        display: flex;
+        width: 60%;
+        margin: 0 15px;
+    }
+    .header_mobile #logo > a {
+        margin: auto;
+        width: auto;
+    }
+    #city a {
+        padding-top: 0;
+        margin: auto 0;
+    }
+    #cookie_policy {
+        display: none!important;
+    }
+    #footer {
+        height: auto;
+    }
+    #footer-inner {
+        padding-top: 0;
+    }
+    #footer-info-social {
+        text-align: center;
+        height: 30px;
+    }
+    #footer-logo {
+        height: 45px;
+        margin-bottom: 1em;
+    }
+    .footer_contacts1, .footer_contacts2, .footer_contacts3 {
+        padding: 0.5em 0;
+        justify-content: center;
+    }
+    .footer_floor.footer_midle {
+        flex-direction: column;
+        align-items: baseline;
+        padding: 1em 0;
+    }
+    .footer_top {
+        padding-bottom: 0;
+    }
+    .footer_midle_center {
+        display: none;
+    }
+    .footer_midle_right {
+        padding-top: 1em;
+    }
+    .footer_midle_right_child {
+        text-align: left;
+        margin-left: 5em;
+    }
+    .footer_midle_right_child:first-child {
+        margin-left: 0;
+    }
+    .footer_bottom_center {
+        display: none;
+    }
+    .footer_city, .footer_tel {
+        font-size: .9em;
+    }
+    span.footer_city_street, span.footer_schedule {
+        font-size: .8em;
+    }
+    .footer_bottom_right {
+        text-align: left;
+    }
+    .left_advert {
+        display: none;
+    }
+    .main_container{
+        padding: 0;
+    }
+    .main_content, .main_content.wlb {
+        width: 100%;
+        float: none;
+        margin-bottom: 1em;
+    }
+    .main_slider {
+        height: 400px;
+    }
+    img.baner_img {
+        height: 400px;
+    }
+    .main_container_header{
+        display: none;
+    }
+    .main_products_filters {
+        width: 97%;
+        margin: 2% 1.5%;
+        float: none;
+    }
+    .main_slider_mobile {
+        display: none;
+    }
+    .main_timer_block {
+        margin: 0 1em;
+    }
+    .main_container_inner, .page-wrapper {
+        min-height: auto!important;
+    }
+    .main_container_body > .main_products_list_items {
+        width: 98%;
+        box-sizing: border-box;
+        float: none;
+        margin: 1%;
+    }
+    .main_products_list_items_item {
+        margin: 0.5em 1%;
+        height: auto;
+        min-height: 200px;
+        box-sizing: border-box;
+        width: 48%;
+    }
+    .main_products_list_items_item_info {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .main_products_list_items_item_info .foto {
+        height: auto;
+        width: 15em;
+        max-width: 40%;
+        padding: 0 1em 0 0;
+    }
+    .main_products_list_items_item .title {
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 0;
+    }
+    .main_products_list_items_item_info .title p {
+        text-align: left;
+        font-size: 90%;
+    }
+    .main_products_list_items_item .cart {
+        justify-content: flex-start;
+    }
+    .main_products_list_items_item_price {
+        width: 40%;
+    }
+    .main_products_list_items_item_price .price p {
+        text-align: center;
+        padding-right: 15%;
+        font-size: 90%;
+    }
+    .main_products_list_items_item_cart .btn-cart {
+        height: 30px;
+        font-size: .7em;
+    }
+    .good_whatsapp_icon {
+        width: 2em;
+        height: 30px;
+    }
+    .main_delivery img {
+        width: 100%;
+        box-sizing: border-box;}
+    .next {
+        right: 0;
+    }
+    .prev {
+        left: 0;
+    }
+    #city {
+        line-height: 1;
+        background: #F2F2F2;
+        padding: 0 2em;
+    }
+    span.city_span {
+        border-bottom: none;
+        padding-bottom: 0;
+        font-size: .8em;
     }
 }
