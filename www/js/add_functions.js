@@ -632,6 +632,7 @@ loadCatalog=function(){
                 $('#menu_id_2000000000 > a > span').click(function () {
                     $('#menu_id_2000000000').toggleClass('active_mobile');
                     $('.page-wrapper, body').toggleClass('active_cat');
+                    $('.active_mobile > a').append('<span class="city_span">'+ГОРОД+'</span>');
                 });
                 $('#popup_quicksubmit').css({'width':'100%', 'height':'82%', 'box-sizing':'border-box', 'border-radius':'0px', 'top':'10%', 'margin':'0px'});
             }

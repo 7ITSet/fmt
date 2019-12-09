@@ -160,7 +160,9 @@ if($merge_carts){
 
         <div class="header_mobile">
             <div class="parent header_city" id="city">
-                <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png"><span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span></a>
+                <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png">
+                    <span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span>
+                </a>
             </div>
             <div class="header_logo" id="logo">
                 <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
