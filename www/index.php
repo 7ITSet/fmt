@@ -2,6 +2,7 @@
 define ('_DSITE',1);
 ini_set('display_errors',0);
 require_once(__DIR__.'/../functions/main.php');
+require_once(__DIR__.'/ajax/menu_catalog.php');
 ob_start();
 
 $merge_carts=$order->getCarts();
@@ -159,51 +160,39 @@ if($merge_carts){
         </div>
 
         <div class="header_mobile">
-            <div class="parent header_city" id="city">
-                <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png">
-                    <span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span>
-                </a>
+            <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
+                <span class="icon-cart">
+                    <img src="/img/cart.svg" class="cart_icon">
+                    <span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?> </span>
+                </span>
             </div>
             <div class="header_logo" id="logo">
                 <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
             </div>
-            <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
-                <span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"><span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span></span>
-            </div>
-            <div class="nav_wrapper">
-                <ul>
-                    <li id="menu_id_2000000000" class="has_sublevel">
-                    </li>
-                    <li id="menu_id_1000000000" class=""><a href="/" title="Главная"><span class="menu-item-parent" style="font-size: 1em;">Главная</span></a></li>
-                    <li id="nav_more" class="has_sublevel" style="display: none;">
-                        <a href="#">
-                            <span style="font-size: 1em;">Ещё</span>
-                        </a>
-                        <ul class="nav_sublevel" style="display: none;">&nbsp;</ul>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="top_line_menu">
-            <div class="left_sidebar_cat">
-                <div class="nav">
-                    <div class="nav_container">
-                        <div class="nav_container_inner">
-                            <div class="nav_wrapper">
-                                <ul>
-                                    <li id="menu_id_2000000000" class="has_sublevel">
-                                    </li>
-                                    <li id="menu_id_1000000000" class=""><a href="/" title="Главная"><span class="menu-item-parent" style="font-size: 1em;">Главная</span></a></li>
-                                    <li id="nav_more" class="has_sublevel" style="display: none;"><a href="#"><span style="font-size: 1em;">Ещё</span></a><ul class="nav_sublevel" style="display: none;">&nbsp;</ul></li>
-                                </ul>
-                                <?
-                                //$menu->display('top-catalog',0,false);
-                                ?>
-                            </div>
+            <div class="city_account">
+                <div class="parent header_city" id="city">
+                    <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png">
+                        <span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span>
+                    </a>
+                </div>
+                <div class="parent account">
+                    <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon icon-logout"></span></div>':'');?>
+                    <div class="child nav_account" data-href="/my/" title="Перейти в личный кабинет">
+                        <div>
+                            <span onselectstart="return false">Личный кабинет</span>
+                            <span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="nav_wrapper">
+                <?echo createMenu() ?>
+            </div>
+        </div>
+        <div class="top_line_menu">
+            <div class="left_sidebar_cat">
+                <div class="nav_wrapper">
+                    <?echo createMenu() ?>
                 </div>
             </div>
             <div class="top_line">

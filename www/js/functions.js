@@ -17,16 +17,6 @@ $.expr[":"].contains = $.expr.createPseudo(function(arg) {
         return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
     };
 });
-$.post(
-	'/xhr/al/',
-	{},
-	function(data){
-		if(data){
-			//подгрузка каталога
-			loadCatalog();
-		}
-	}
-);
 $(document).ready(function(){
 	//cookies policy
 	if(getCookie('ucp')!=1){
@@ -711,5 +701,31 @@ $(document).ready(function(){
 		if($('.main_products_list_items_info_pay_types_icons:eq(2)').find('.ssl-verify').length)
 			$('.main_products_list_items_info_pay_types_icons:eq(2)').find('.ssl-verify').html('<table width=125 border=0 cellspacing=0 cellpadding=0 title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information." ><tr><td><span id="ss_img_wrapper_gmogs_image_125-50_en_dblue"><a href="https://www.globalsign.com/" target=_blank title="GlobalSign Site Seal" rel="nofollow"><img alt="SSL" border=0 id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_125-50_en.gif"></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_125-50_en_dblue.js"></script></td></tr></table>');
 	},500);
+
+	$("#menu_id_2000000000 > a > span").text("КАТАЛОГ ТОВАРОВ");
+	var mqn = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
+	if (mqn.matches) {
+		$('.header_mobile #menu_id_2000000000 span:first').text('КАТАЛОГ');
+		$("#menu_id_2000000000 > a").removeAttr("href");
+		$('#menu_id_2000000000 > a > span').click(function () {
+			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
+			$('.page-wrapper, body').toggleClass('active_cat');
+		});
+	}
+	var mql = window.matchMedia('only screen and (max-width: 768px)');
+	if (mql.matches) {
+		$('.header_mobile #menu_id_2000000000 span:first').text('');
+		$("#menu_id_2000000000 > a").removeAttr("href");
+		$('#menu_id_2000000000 > a > span').click(function () {
+			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
+			$('.page-wrapper, body').toggleClass('active_cat');
+			$('.city_account').toggleClass('active_city_account');
+		});
+		$('#popup_quicksubmit').css({'width':'50%', 'left':'25%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
+	};
+	var mql = window.matchMedia('only screen and (max-width: 480px)');
+	if (mql.matches) {
+		$('#popup_quicksubmit').css({'width':'90%', 'left':'5%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
+	};
 
 });

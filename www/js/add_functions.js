@@ -615,27 +615,6 @@ loadCatalog=function(){
 		{},
 		function(data){
 			$('.nav_wrapper').html(data);
-			$("#menu_id_2000000000 > a > span").text("КАТАЛОГ ТОВАРОВ");
-            var mqn = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
-            if (mqn.matches) {
-                $('.header_mobile #menu_id_2000000000 span:first').text('КАТАЛОГ');
-                $("#menu_id_2000000000 > a").removeAttr("href");
-                $('#menu_id_2000000000 > a > span').click(function () {
-                    $('#menu_id_2000000000').toggleClass('active_mobile');
-                    $('.page-wrapper, body').toggleClass('active_cat');
-                });
-            }
-            var mql = window.matchMedia('only screen and (max-width: 768px)');
-            if (mql.matches) {
-                $('.header_mobile #menu_id_2000000000 span:first').text('');
-                $("#menu_id_2000000000 > a").removeAttr("href");
-                $('#menu_id_2000000000 > a > span').click(function () {
-                    $('#menu_id_2000000000').toggleClass('active_mobile');
-                    $('.page-wrapper, body').toggleClass('active_cat');
-                    $('.active_mobile > a').append('<span class="city_span">'+ГОРОД+'</span>');
-                });
-                $('#popup_quicksubmit').css({'width':'100%', 'height':'82%', 'box-sizing':'border-box', 'border-radius':'0px', 'top':'10%', 'margin':'0px'});
-            }
 		}
 	);
 };
