@@ -2,7 +2,6 @@
 defined ('_DSITE') or die ('Access denied');
 
 $_GET['m_products_id']=$current_product['m_products_id'];
-$_GET['m_products_main_product']=$current_product['m_products_main_product'];
 
 if($attr=$content->getItemAttributes()){
 	$videoItem = $attr['VIDEO'];
@@ -12,20 +11,6 @@ if($attr=$content->getItemAttributes()){
 	$gv_count=sizeof($gV);
 	for($i=0;$i<$gv_count;$i++)
 		$goodVariants[$gV[$i]['m_products_id']]=$gV[$i];
-	//удаляем атрибуты основного товара, которые есть у дубля
-	if($current_product['m_products_main_product']&&$current_product['m_products_main_product']!=$current_product['m_products_id']){
-		$attr_count=sizeof($attr);
-		$list_id_del=array();
-		for($i=0;$i<$attr_count;$i++)
-			//если id продукта у текущего атрибута принадлежит дублю (открытая карточка продукта)
-			if($attr[$i]['m_products_attributes_product_id']==$current_product['m_products_id'])
-				//добавляем тип атрибута к удаляемым
-				$list_id_del[]=$attr[$i]['m_products_attributes_list_id'];
-		for($i=0;$i<$attr_count;$i++)
-			//если тип атрибута находится в удаляемых и id продукта атрибута не равен id дубля (открытой карточки продукта)
-			if(in_array($attr[$i]['m_products_attributes_list_id'],$list_id_del)&&$attr[$i]['m_products_attributes_product_id']!=$current_product['m_products_id'])
-				unset($attr[$i]);
-	}
 
 
 	//выбираем все атрибуты всех вариантов (для возможности выбора в карточке товара), сгруппированные по типу атрибута
@@ -238,11 +223,6 @@ $QNA=$content->getGoodQNA();
 $q='SELECT `m_info_city_id`,`m_info_city_name_city_im` FROM `formetoo_main`.`m_info_city`;';
 $cities=$sql->query($q,'m_info_city_id');
 
-$attr_main=array();
-if($attr)
-	foreach($attr as $_attr)
-		if($_attr['m_products_attributes_list_main'])
-			$attr_main[]=$_attr;
 $price=$content->getGoodPrice();
 
 $uact=$user->getUserActions();
@@ -636,58 +616,16 @@ else $captcha_reg=false;
 				  <div class="detail-info__body">
 						<div class="detail-info__body_item products_tech active">
 						<? if($attr) { ?>
-							<?
-								$attr_left=array_slice($attr,0,round(sizeof($attr)/2));
-								$attr_right=array_slice($attr,round(sizeof($attr)/2));
-							?>
 							<ul class="list_dotts">
 							<?
-
-                            //было
-//                            '.($_attr['m_products_attributes_list_type']==2?$_attr['m_products_attributes_value'].'&nbsp;'.$_attr['m_products_attributes_list_unit']:$attr_values_all[$_attr['m_products_attributes_value']][0]['m_products_attributes_values_value']).'
-
-								foreach($attr_left as $_attr)
-									echo '
-										<li>
-											<div class="list_dotts_name" data-list-id="'.$_attr['m_products_attributes_list_id'].'">
-												<span class="list_dotts_name_text">'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_hint']?'<span class="icon icon-question-circle main_products_filters_name_hint"></span>':'').'</span>
-											</div>
-											<div class="list_dotts_value">
-
-
-
-											'.($_attr['m_products_attributes_list_type']==2?$_attr['m_products_attributes_value'].'&nbsp;'.$_attr['m_products_attributes_list_unit']:$_attr['m_products_attributes_value']).'
-
-
-
-											</div>',
-											($_attr['m_products_attributes_list_hint']?'
-											<div class="main_products_filters_desc_container">
-												<span class="main_products_filters_desc">
-													<noindex><b>'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_unit']?'&nbsp;<span>'.$_attr['m_products_attributes_list_unit'].'<span>':'').'</b>
-													'.$_attr['m_products_attributes_list_hint'].'</noindex>
-													<span class="icon icon-close"></span>
-												</span>
-											</div>':''),
-										'</li>
-										';
-							?>
-							</ul>
-							<ul class="list_dotts">
-							<?
-
-                            //было
-//                            '.($_attr['m_products_attributes_list_type']==2?$_attr['m_products_attributes_value'].'&nbsp;'.$_attr['m_products_attributes_list_unit']:$attr_values_all[$_attr['m_products_attributes_value']][0]['m_products_attributes_values_value']).'
-
-
-								foreach($attr_right as $_attr)
-									echo '
-										<li>
-											<div class="list_dotts_name"  data-list-id="'.$_attr['m_products_attributes_list_id'].'">
-												<span class="list_dotts_name_text">'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_hint']?'<span class="icon icon-question-circle main_products_filters_name_hint"></span>':'').'</span>
-											</div>
-											<div class="list_dotts_value">
-
+								foreach($attr as $_attr) {
+									if ( $_attr['is_visible_detail']) {
+										echo '
+											<li>
+												<div class="list_dotts_name" data-list-id="'.$_attr['m_products_attributes_list_id'].'">
+													<span class="list_dotts_name_text">'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_hint']?'<span class="icon icon-question-circle main_products_filters_name_hint"></span>':'').'</span>
+												</div>
+												<div class="list_dotts_value">
 
 
 
@@ -695,19 +633,19 @@ else $captcha_reg=false;
 
 
 
-
-
-											</div>',
-											($_attr['m_products_attributes_list_hint']?'
-											<div class="main_products_filters_desc_container">
-												<span class="main_products_filters_desc">
-													<noindex><b>'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_unit']?'&nbsp;<span>'.$_attr['m_products_attributes_list_unit'].'<span>':'').'</b>
-													'.$_attr['m_products_attributes_list_hint'].'</noindex>
-													<span class="icon icon-close"></span>
-												</span>
-											</div>':''),
-										'</li>
+												</div>',
+												($_attr['m_products_attributes_list_hint']?'
+												<div class="main_products_filters_desc_container">
+													<span class="main_products_filters_desc">
+														<noindex><b>'.$_attr['m_products_attributes_list_name'].($_attr['m_products_attributes_list_unit']?'&nbsp;<span>'.$_attr['m_products_attributes_list_unit'].'<span>':'').'</b>
+														'.$_attr['m_products_attributes_list_hint'].'</noindex>
+														<span class="icon icon-close"></span>
+													</span>
+												</div>':''),
+											'</li>
 										';
+									}
+								}
 							?>
 							</ul>
 						<?}?>

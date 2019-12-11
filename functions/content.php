@@ -263,30 +263,17 @@ class content{
 )';
 		}
 		
-/* 		$q='SELECT 
-				SQL_CALC_FOUND_ROWS
-				Product.*[SELECT]
-			FROM `formetoo_main`.`m_products` Product
-[JOIN]
-			WHERE
-[WHERE]
-Product.`m_products_categories_id` IN('.implode(',',$this->getChCategories($data['current'])).') AND
-Product.`m_products_show_site`=1 
-			GROUP BY Product.`m_products_main_product` 
-			ORDER BY '.$order.',`m_products_order` DESC
-			LIMIT '.$start.','.$limit.';'; */
 		//запрос без лимитов пагинации для правильного расчета кол-ва товаров по каждому фильтру	
 		$q_wo_l='SELECT 
 				SQL_CALC_FOUND_ROWS
 				/* Product.`m_products_id`,Product.`m_products_show_site`,Product.`m_products_categories_id`[SELECT] */
-				Product.`m_products_id`, `slug`, `m_products_main_product`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
+				Product.`m_products_id`, `slug`,`m_products_id_isolux`,`m_products_categories_id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
 			FROM `formetoo_main`.`m_products` Product
 [JOIN]
 			WHERE
 [WHERE]
 Product.`m_products_categories_id` IN('.implode(',',$this->getChCategories($data['current'])).') AND
 Product.`m_products_show_site`=1 
-			GROUP BY Product.`m_products_main_product`
 			ORDER BY '.$order.',`m_products_order` DESC;';
 			
 		//формируем запрос
@@ -382,14 +369,6 @@ Product.`m_products_show_site`=1
 			//обновление страницы без фильтров
 			if(!$result&&!$data['FILTER[]']) {
 				$ch=$this->getChCategories();
-
-          // $q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`slug`,`m_products_main_product`,`m_products_id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
-					// FROM `formetoo_main`.`m_products` 
-					// WHERE `m_products_categories_id` IN('.implode(',',($ch?$ch:array($menu->nodes_id[$current['id']]['category']))).') AND
-					// 	`m_products_show_site`=1
-					// ORDER BY '.$order.',`m_products_order` DESC
-					// LIMIT '.$start.','.$limit.';'; 
-
 				$q = 'SELECT SQL_CALC_FOUND_ROWS `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 					RIGHT JOIN `formetoo_main`.`m_products_category` 
 						ON `m_products_category`.`category_id` IN('.implode(',',($ch?$ch:array($menu->nodes_id[$current['id']]['category']))).') AND `m_products`.`m_products_id`=`m_products_category`.`product_id` 
@@ -409,7 +388,7 @@ Product.`m_products_show_site`=1
 				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `m_products_id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
-					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`m_products_main_product`,`m_products_id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`, `m_products_id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`m_products_id` IN('.implode(',',$links).') AND
 						`m_products_show_site`=1 
@@ -432,7 +411,7 @@ Product.`m_products_show_site`=1
 						$viewed[]=$_result;
 				}
 				if($viewed){
-					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`slug`,`m_products_main_product`,`m_products_id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `m_products_id`,`slug`, `m_products_id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`m_products_multiplicity`,`m_products_min_order`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_dir`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`m_products_id` IN('.implode(',',$viewed).') AND
 						`m_products_show_site`=1 
@@ -489,7 +468,7 @@ Product.`m_products_show_site`=1
 					//if($j==='FOUND_ROWS()') continue;
 					//если товар есть в массиве выведенных (его мог внести дублирующий товар),
 					//или это товар, дубли или главныей товар которого уже выводдились - не выводим товар
-					if(in_array($_good['m_products_main_product'],$goods_id)||in_array($_good['m_products_id'],$goods_id)) continue;
+					if(in_array($_good['m_products_id'],$goods_id)) continue;
 					//средняя оценка
 					/* $m_rating=0;
 					if($rating&&isset($rating[$_good['m_products_id']])){
@@ -571,8 +550,6 @@ Product.`m_products_show_site`=1
 						</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['m_products_id'];
-					if($_good['m_products_main_product'])
-						$goods_id[]=$_good['m_products_main_product'];	
 				}
 				if(!isset($viewed)&&!isset($links))
 					echo '<div class="main_products_list_items_more_delimeter clr"></div>';
@@ -1165,12 +1142,9 @@ Product.`m_products_show_site`=1
 		global $e,$sql,$current,$menu;
 		
 		$data['m_products_id']=array(1,null,null,10,1);
-		$data['m_products_main_product']=array(1,null,null,null,1);
 		array_walk($data,'check',true);
 		
 		if(!$e){
-			$data['m_products_main_product']=$data['m_products_main_product']?$data['m_products_main_product']:0;
-
 			$q='SELECT m_products_attributes_groups_list_id FROM `formetoo_main`.`m_products_attributes_groups` 
 			LEFT JOIN `formetoo_main`.`m_products`
 				ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id`
@@ -1179,16 +1153,21 @@ Product.`m_products_show_site`=1
 
 			if($res=$sql->query($q)) {
 				$attrsGroup = explode('|', $res[0]['m_products_attributes_groups_list_id']);
-			}
+			} 
 
-			$q='SELECT * FROM `formetoo_main`.`m_products_attributes_list` 
-				RIGHT JOIN `formetoo_main`.`m_products_attributes`
-					ON `m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`
-				WHERE
-					(
-						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_id'].' OR 
-						`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_main_product'].') AND 
-					`is_active`=1;';
+			// $q='SELECT * FROM `formetoo_main`.`m_products_attributes_list` 
+			// 	RIGHT JOIN `formetoo_main`.`m_products_attributes`
+			// 		ON `m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`
+			// 	WHERE
+			// 		(
+			// 			`m_products_attributes`.`m_products_attributes_product_id`='.$data['m_products_id'].' AND 
+			// 		`is_active`=1;';
+			$q = 'SELECT * FROM `formetoo_main`.`m_products_attributes`
+			LEFT JOIN `formetoo_main`.`m_products_attributes_list` ON
+				`m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`  
+				AND `is_active`=1 
+			WHERE
+				`m_products_attributes_product_id`=' . $data['m_products_id'] . ';'; 
 
 			if($res=$sql->query($q)) {
 				if(!empty($attrsGroup)) {
@@ -1207,6 +1186,7 @@ Product.`m_products_show_site`=1
 				
 				return $res;
 			}
+			var_dump(false);
 			return false;
 		}
 		return false;
@@ -1218,19 +1198,11 @@ Product.`m_products_show_site`=1
 		if($this->goodVariants) return $this->goodVariants;
 		
 		$data['m_products_id']=array(1,null,null,10,1);
-		$data['m_products_main_product']=array(1,null,null,null,1);
 		array_walk($data,'check',true);
 
 		if(!$e){
 			$q='SELECT `m_products_id`,`slug`,`m_products_name`,`m_products_name_full` FROM `formetoo_main`.`m_products` WHERE
-					`m_products_id`='.$data['m_products_id'].' OR 
-					`m_products_main_product`='.$data['m_products_id'].' 
-					'.($data['m_products_main_product']
-						?' OR
-							`m_products_id`='.$data['m_products_main_product'].' OR 
-							`m_products_main_product`='.$data['m_products_main_product']
-						:''
-					).';';
+					`m_products_id`='.$data['m_products_id'].';';
 			if($res=$sql->query($q))
 				return $this->goodVariants=$res;
 		}
@@ -1240,7 +1212,6 @@ Product.`m_products_show_site`=1
 		global $e,$sql;
 		
 		$data['m_products_id']=array(1,null,null,10,1);
-		$data['m_products_main_product']=array(1,null,null,null,1);
 		array_walk($data,'check',true);
 		
 		if(!$e){
@@ -1248,13 +1219,6 @@ Product.`m_products_show_site`=1
 					`m_products_desc_id`='.$data['m_products_id'].' LIMIT 1;';
 			if($res=$sql->query($q))
 				return $res;
-			//если у дубля нет своего текста - показываем текст основного товара
-			else{
-				$q='SELECT * FROM `formetoo_main`.`m_products_desc` WHERE
-					`m_products_desc_id`='.$data['m_products_main_product'].' LIMIT 1;';
-				if($res=$sql->query($q))
-					return $res;
-			}
 			return false;
 		}
 		return false;
