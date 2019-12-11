@@ -27,10 +27,53 @@ class content{
 		
 		//ед. измерения
 		$this->units=$sql->query('SELECT * FROM `formetoo_cdb`.`m_info_units`;','m_info_units_id');
+
+		/////
+		$uri = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
+		$uri = explode( '/', $uri );
+		$uri = array_filter( $uri );
+		$uri = array_values( $uri );
+		$this->uri =$uri;
+		if (count($uri) == 0) {
+			$this->pageType = 'main';
+		}
+
+		if ($uri[0] == 'catalog') {
+			$i = 1;
+			for ($i = 1; $i < count($uri); $i++) {
+				$res = getCategory($uri[$i]);
+				if (empty($res) && count($uri) - 1 !== $i) {
+					require_once(__DIR__.'/../www/404.php');
+					exit;
+				}
+				
+				if (!empty($res) && count($uri) - 1 !== $i) {
+					continue;
+				}
+				
+				if (!empty($res)) {
+					$this->pageType = 'catalog';
+					continue;
+				}
+				if (count($uri) - 1 === $i) {
+					if (!$res = getProduct($uri[$i])) {
+						require_once(__DIR__.'/../www/404.php');
+						exit;
+					}
+
+					$this->pageType = 'product';
+
+				} else {
+					require_once(__DIR__.'/../www/404.php');
+					exit;
+				}
+			}
+		}
+		///////
 		
 		//если метатеги страницы не заполнены - отображаем стандартные на основе категории
 		//если открыта категория товаров (/catalog/)
-		if(is_array($path)&&isset($path[sizeof($path)-1])&&$path[sizeof($path)-1]=='catalog'){	
+		if($this->pageType=='catalog'){	
 			if(!$current['title']){
 				$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `m_products_categories_id`='.$menu->nodes_id[$current['menu']]['category'].' LIMIT 1;';
 				$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
@@ -50,7 +93,7 @@ class content{
 			}
 		}
 		//если открыта карточка товара
-		elseif(is_array($path)&&isset($path[sizeof($path)-1])&&$path[sizeof($path)-1]=='product'){
+		elseif($this->pageType =='product'){
 
 			$current['menu']=$current['id'];
 
@@ -66,6 +109,26 @@ class content{
 		}
 	}
 	
+function getCategory($name) {
+	global $sql;
+	$q = 'SELECT * FROM `formetoo_main`.`menu` 
+		WHERE `url`="' . $name . '" 
+		LIMIT 1;';
+	
+	$res = $sql->query($q);
+
+	return $res;
+}
+function getProduct($name) {
+	global $sql;
+	$q = 'SELECT * FROM `formetoo_main`.`m_products` 
+		WHERE `slug`="' . $name . '" 
+		LIMIT 1;';
+	
+	$res = $sql->query($q);
+
+	return $res;
+}
 	//показ контента в зависимости от типа меню
 	function getContent(){
 		global 	$current,
@@ -80,11 +143,11 @@ class content{
 				$user,
 				$order;
 		//если открыта главная страница
-		if(!is_array($path)||!isset($path[sizeof($path)-1])||$path[sizeof($path)-1]==''){
+		if($this->pageType == 'main'){
 			require_once(__DIR__.'/require/main_page.php');
 		}
 		//если открыта категория товаров (/catalog/)
-		elseif(is_array($path)&&isset($path[sizeof($path)-1])&&$path[sizeof($path)-1]=='catalog'){
+		elseif($this->uri[0]=='catalog' && $this->pageType !='product' ){
 			//ПОКАЗЫВАТЬ ТОВАРЫ С ФИЛЬТРАМИ, ТОВАРЫ БЕЗ ФИЛЬТРОВ, ИЛИ КАТЕГОРИИ С ТОВАРАМИ ИЛИ БЕЗ НИХ
 			$q='SELECT 
 				`m_products_categories_show_attributes`,
@@ -95,7 +158,7 @@ class content{
 				`m_products_categories_active`=1 
 				LIMIT 1;';
 			//если открыт весь каталог
-			if($path[0]=='catalog'&&sizeof($path)==1){
+			if($this->uri[0]=='catalog'&&sizeof($this->uri)==1){
 				$q='SELECT 
 					`m_products_categories_id`,
 					`m_products_categories_parent` 
@@ -115,14 +178,10 @@ class content{
 					`m_products_categories_active`=1 
 					LIMIT 1;';
 			}
-				
 			//если фильтры показывать не надо - выходим
 			if($res=$sql->query($q)){
 				//товары с фильтрами
-				if(
-					$res[0]['m_products_categories_show_attributes']&&
-					$res[0]['m_products_categories_show_goods']
-				)
+				if ($res[0]['m_products_categories_show_attributes'] && $res[0]['m_products_categories_show_goods'])
 					require_once(__DIR__.'/require/goods_list_w_filters.php');
 				//товары без фильтров
 				elseif(
@@ -143,7 +202,7 @@ class content{
 			
 		}
 		//если открыта карточка товара
-		elseif(is_array($path)&&isset($path[sizeof($path)-1])&&$path[sizeof($path)-1]=='product'){
+		elseif($this->pageType =='product'){
 			require_once(__DIR__.'/require/good_info.php');
 		}
 		//выбрасываем анонимов из личного кабинета
@@ -162,8 +221,8 @@ class content{
 	public function getChCategories($cur=''){
 		global $current,$menu;
 		//находим дочерние меню текущего меню
-		$ch=array();
-		$cur=!$cur?$current['menu']:$cur;
+		$ch = array();
+		$cur = !$cur ? $current['menu'] : $cur;
 		$menu->childs($cur,$ch);
 		$ch[]=$menu->nodes_id[$cur];
 		//ищем меню, к которым привязаны разделы каталога товаров
@@ -330,7 +389,6 @@ Product.`m_products_show_site`=1
 	//прием параметров фильтра (не ajax) и вывод готовых товарных позиций
 	public function getGoods($result=null,$view='table',$limit=24){
 		global $e,$sql,$current,$menu, $user;
-
 		$data['p']=array(null,1,500,null,1);
 		$data['FILTER[]']=array();
 		$data['sort']=array();
@@ -1006,7 +1064,7 @@ Product.`m_products_show_site`=1
 	//КАТЕГОРИИ КАРТИНКАМИ
 	public function getCategories($open_cat=true){
 		global $e,$sql,$current,$menu;
-		
+
 		if($open_cat){
 			//выводим подкатегории открытой категории с информацией о товарах в них
 			$cats=$cat_ids=array();
@@ -1214,7 +1272,6 @@ Product.`m_products_show_site`=1
 				
 				return $res;
 			}
-			var_dump(false);
 			return false;
 		}
 		return false;
