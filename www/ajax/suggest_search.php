@@ -6,11 +6,11 @@ require_once(__DIR__.'/../../functions/ccdb.php');
 require_once(__DIR__.'/../../functions/user.php');
 $sql=new sql();
 $user=new user(false);
-if(!$user->getInfo('m_users_id')){
-	unset($user);
-	unset($sql);
-	exit;
-};
+// if(!$user->getInfo('m_users_id')){
+// 	unset($user);
+// 	unset($sql);
+// 	exit;
+// };
 
 function tag_b($text,$b,$bl){
 	foreach($b as &$_b)
@@ -48,8 +48,8 @@ if ($w){
 					$record['m_products_id'],
 					'" rel="',
 					$record['m_products_name_full'],
-					'" href="/product/',
-					$record['m_products_id'],
+					'" href="/catalog/',
+					$record['slug'],
 					// '/" data-category="',
 					// $record['m_products_categories_id'],
 					'"><span class="grey">[',
@@ -91,8 +91,8 @@ if ($w){
 						$_record['m_products_id'],
 						'" rel="',
 						$_record['m_products_name_full'],
-						'" href="/product/',
-						$_record['m_products_id'],
+						'" href="/catalog/',
+						$_record['slug'],
 						// '/"  data-category="',
 						// $_record['m_products_categories_id'],
 						'"><span class="grey">[',
