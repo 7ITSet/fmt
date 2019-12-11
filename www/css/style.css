@@ -2606,7 +2606,6 @@ span.free_calc_delivery_title {
 	flex-direction: column;
 	justify-content: space-between;
 	padding:1em;
-	height:25em;
 	overflow:hidden;
 	margin: .625em 1.06em;
 	border:1px solid rgba(160,160,160,.2);
@@ -2913,8 +2912,22 @@ img.whatsapp {
 	padding: 0;
 	margin: 0;
 	font-size: .65em;
-	background:linear-gradient(to top, #02643D, #2CA44A);}
-
+	background:linear-gradient(to top, #02643D, #2CA44A);
+}
+.main_products_list_item_char {
+	margin-top: 1em;
+	box-sizing: border-box;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	padding: 1em;
+	color: #02643D;
+}
+.main_products_list_item_char li {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+}
 
 /* ПАГИНАЦИЯ */
 .main_products_list_items_more{
