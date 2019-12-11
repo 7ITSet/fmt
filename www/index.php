@@ -176,10 +176,10 @@ if($merge_carts){
                     </a>
                 </div>
                 <div class="parent account">
-                    <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon icon-logout"></span></div>':'');?>
+                    <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти"><span class="icon icon-logout"></span></div>':'');?>
                     <div class="child nav_account" data-href="/my/" title="Перейти в личный кабинет">
                         <div>
-                            <span onselectstart="return false">Личный кабинет</span>
+                            <span onselectstart="return false">Войти</span>
                             <span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
                         </div>
                     </div>
