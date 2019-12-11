@@ -565,74 +565,62 @@ Product.`m_products_show_site`=1
 								</a>
 							</div>
 							<div class="main_products_list_items_item_info">
-								<div class="foto">',
-									($_good['m_products_id_isolux']
-//										? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($_good['m_products_id_isolux'],0,2).'/SN'.$_good['m_products_id_isolux'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//										: '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-
-//                                        ? '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-//                                        : '<a href="/product/'.$_good['slug'].'/">'.($foto?'<img src="https://www.formetoo.ru/images/products'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>':'<img src="/img/empty_foto.svg" alt="Фото товара отсутствует"/>').'</a>'
-
-                                        ? '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
-                                        : '<a href="/product/'.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>'
-
-
-
-									),
-								'</div>
+								<div class="foto">
+									<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>
+								</div>
 								<div class="title">
 									<p>
-										<a href="/product/'.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
+										<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
 									</p>
 								</div>
 							</div>
 							<div class="main_products_list_items_item_cart">
-                                <div class="cart">';
-                                    if ($user->isVisiblePrice()) {
-                                        echo
-                                        '<div class="main_products_list_items_item_price">
-                                            <div class="price">
-                                                <p>
-                                                    ' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['m_products_price_currency']], 2)) . ' <span>руб.</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="product_id hidden" data-value="' . $_good['m_products_id'] . '"></div>
-                                        <div class="product_count hidden" data-value="' . round($_good['m_products_multiplicity'], 4) . '"></div>
-                                        <button class="btn-cart">Купить</button>';
-                                    }
-                                    echo
-                                    '<a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                                        <div class="good_whatsapp_icon">
-                                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                                        </div>
-                                    </a>
-                                </div>
+								<div class="cart">';
+										if ($user->isVisiblePrice()) {
+												echo
+												'<div class="main_products_list_items_item_price">
+														<div class="price">
+																<p>
+																		' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['m_products_price_currency']], 2)) . ' <span>руб.</span>
+																</p>
+														</div>
+												</div>
+												<div class="product_id hidden" data-value="' . $_good['m_products_id'] . '"></div>
+												<div class="product_count hidden" data-value="' . round($_good['m_products_multiplicity'], 4) . '"></div>
+												<button class="btn-cart">Купить</button>';
+										}
+										echo
+										'<a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
+												<div class="good_whatsapp_icon">
+														<img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+												</div>
+										</a>
+								</div>
 							</div>
 							<div class="main_products_list_item_char">
-							    <ul class="list_dots">
-							        <li>
-							            <span class="list_dotts_name">Масса</span>
-							            <span class="list_dotts_value">5кг</span> 
-                                    </li>
-                                    <li>
-							            <span class="list_dotts_name">Длина</span>
-							            <span class="list_dotts_value">20м</span> 
-                                    </li>
-                                    <li>
-							            <span class="list_dotts_name">Ширина</span>
-							            <span class="list_dotts_value">15см</span> 
-                                    </li>
-                                    <li>
-							            <span class="list_dotts_name">Высота</span>
-							            <span class="list_dotts_value">10см</span> 
-                                    </li>
-                                    <li>
-							            <span class="list_dotts_name">Материал</span>
-							            <span class="list_dotts_value">Пластик</span> 
-                                    </li>
-                                </ul>
-                            </div>
+								<ul class="list_dots">
+									<li>
+										<span class="list_dotts_name">Масса</span>
+										<span class="list_dotts_value">5кг</span> 
+									</li>
+									<li>
+										<span class="list_dotts_name">Длина</span>
+										<span class="list_dotts_value">20м</span> 
+									</li>
+									<li>
+										<span class="list_dotts_name">Ширина</span>
+										<span class="list_dotts_value">15см</span> 
+									</li>
+									<li>
+										<span class="list_dotts_name">Высота</span>
+										<span class="list_dotts_value">10см</span> 
+									</li>
+									<li>
+										<span class="list_dotts_name">Материал</span>
+										<span class="list_dotts_value">Пластик</span> 
+									</li>
+								</ul>
+							</div>
 						</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['m_products_id'];
@@ -1069,31 +1057,6 @@ Product.`m_products_show_site`=1
 			//выводим подкатегории открытой категории с информацией о товарах в них
 			$cats=$cat_ids=array();
 			$menu->displayLeftCat($cats,$cat_ids);
-				
-			/* $show_cat_ids=array();
-			foreach($cats as $_cat)
-				$show_cat_ids[]=$_cat['category'];
-			$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `m_products_categories_id` IN ('.implode(',',$show_cat_ids).');';
-			$cats=$sql->query($q);
-			foreach($cats as $_cat){
-				if($_cat['m_products_categories_products_count'])
-					echo '<div class="main_products_list_items_item product_category">
-							<div class="main_products_list_items_item_info">
-								<div class="foto">
-									<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.$_cat['m_products_categories_foto'].'_med.jpg" alt="'.$_cat['m_products_categories_name'].'"/>',
-								'</div>
-								<div class="title">
-									<p>
-										<a href="'.$_cat['m_products_categories_name_seo'].'/" title="'.$_cat['m_products_categories_name'].'">'.$_cat['m_products_categories_name'].'</a>
-									</p>
-								</div>
-								<div class="clr"></div>
-								<div class="count">
-									<p>'.$_cat['m_products_categories_products_count'].'&nbsp;'.transform::word_ending($_cat['m_products_categories_products_count'],array('товар','товара','товаров')).'</p>
-								</div>
-							</div>
-						</div>';
-			} */
 			
 			$q = 'SELECT `m_products`.`m_products_id`,`m_products`.`slug`,`m_products`.`m_products_foto`,`m_products`.`m_products_foto_category`, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id 
 				FROM `formetoo_main`.`m_products` 
