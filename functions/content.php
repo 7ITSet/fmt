@@ -329,7 +329,7 @@ Product.`m_products_show_site`=1
 	
 	//прием параметров фильтра (не ajax) и вывод готовых товарных позиций
 	public function getGoods($result=null,$view='table',$limit=24){
-		global $e,$sql,$current,$menu;
+		global $e,$sql,$current,$menu, $user;
 
 		$data['p']=array(null,1,500,null,1);
 		$data['FILTER[]']=array();
@@ -528,25 +528,27 @@ Product.`m_products_show_site`=1
 									</p>
 								</div>
 							</div>
-							<div class="main_products_list_items_item_cart">
-								<div class="cart">
-								    <div class="main_products_list_items_item_price">
-                                        <div class="price">
-                                            <p>
-                                                '.transform::price_o(round($_good['m_products_price_general']*$this->ec[$_good['m_products_price_currency']],2)).' <span>руб.</span>
-                                            </p>
-                                        </div>
-								    </div>
+							<div class="main_products_list_items_item_cart">';
+							if ($user->isVisiblePrice()) {
+								echo '<div class="cart">
+									<div class="main_products_list_items_item_price">
+										<div class="price">
+											<p>
+												'.transform::price_o(round($_good['m_products_price_general']*$this->ec[$_good['m_products_price_currency']],2)).' <span>руб.</span>
+											</p>
+										</div>
+									</div>
 									<div class="product_id hidden" data-value="'.$_good['m_products_id'].'"></div>
 									<div class="product_count hidden" data-value="'.round($_good['m_products_multiplicity'],4).'"></div>
 									<button class="btn-cart">Купить</button>
 									<a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                                      <div class="good_whatsapp_icon">
-                                          <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                                      </div>
-		                            </a>
-								</div>
-							</div>
+										<div class="good_whatsapp_icon">
+											<img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+										</div>
+									</a>
+								</div>';
+							}
+							echo '</div>
 						</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['m_products_id'];
