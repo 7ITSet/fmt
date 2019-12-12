@@ -21,13 +21,8 @@
 		<?
 			if($menu->isParent($current['menu'])||$menu->nodes_id[$current['menu']]['parent']!=0){
 		?>
-			<div class="main_products_filters" style="border-right:none;">
+			<div class="main_products_filters" style="border-right:none; display: none">
 				<div class="main_products_filters_block" style="padding:0;"></div>
-				<!--<div class="main_products_filters_block" style="border-right:1px solid rgba(160,160,160,.2);">
-					<div class="main_products_filters_count">
-						<p></p>
-					</div>
-				</div>-->
 				<div class="main_products_filters_block" style="border-right:1px solid rgba(160,160,160,.2);">
 					<?
 						$menu->displayLeftSubMenu();

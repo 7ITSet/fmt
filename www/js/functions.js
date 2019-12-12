@@ -709,7 +709,8 @@ $(document).ready(function(){
 		$("#menu_id_2000000000 > a").removeAttr("href");
 		$('#menu_id_2000000000 > a > span').click(function () {
 			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
-			$('.page-wrapper, body').toggleClass('active_cat');
+			$('body').toggleClass('active_cat');
+			$('.city_account').toggleClass('active_city_account');
 		});
 	}
 	var mql = window.matchMedia('only screen and (max-width: 768px)');
@@ -718,7 +719,7 @@ $(document).ready(function(){
 		$("#menu_id_2000000000 > a").removeAttr("href");
 		$('#menu_id_2000000000 > a > span').click(function () {
 			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
-			$('.page-wrapper, body').toggleClass('active_cat');
+			$('body').toggleClass('active_cat');
 			$('.city_account').toggleClass('active_city_account');
 		});
 		$('#popup_quicksubmit').css({'width':'50%', 'left':'25%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
@@ -727,5 +728,9 @@ $(document).ready(function(){
 	if (mql.matches) {
 		$('#popup_quicksubmit').css({'width':'90%', 'left':'5%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
 	};
+
+	$('.main_products_list_items_item').hover(function() {
+		$(this).toggleClass('active');
+	});
 
 });

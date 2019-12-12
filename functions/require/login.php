@@ -149,7 +149,7 @@ else{
 			<div class="login_authorization_form_sep">
 				<span class="icon icon-arrow-left"></span>
 			</div>
-			<div class="login_authorization_form_input_container">
+			<div class="login_authorization_form_input_container captcha">
 				<img src="/ajax/captcha/captcha.php?<?rand(1,10000);?>" class="captcha_img" title="Нажмите, чтобы сменить изображение"/>
 			</div>
 			<div class="clr"></div>
