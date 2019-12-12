@@ -427,9 +427,11 @@ Product.`m_products_show_site`=1
 			//обновление страницы без фильтров
 			if(!$result&&!$data['FILTER[]']) {
 				$ch=$this->getChCategories();
-				$q = 'SELECT SQL_CALC_FOUND_ROWS `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
+				$q = 'SELECT SQL_CALC_FOUND_ROWS `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id, GROUP_CONCAT(`m_products_attributes_groups`.`m_products_attributes_groups_list_id` SEPARATOR \'|\') AS attributes_groups_id FROM `formetoo_main`.`m_products` 
 					RIGHT JOIN `formetoo_main`.`m_products_category` 
 						ON `m_products_category`.`category_id` IN('.implode(',',($ch?$ch:array($menu->nodes_id[$current['id']]['category']))).') AND `m_products`.`m_products_id`=`m_products_category`.`product_id` 
+					LEFT JOIN `formetoo_main`.`m_products_attributes_groups`
+						ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id` 
 					WHERE `m_products_show_site`=1 
 					GROUP BY `m_products_category`.`product_id` 
 					ORDER BY '.$order.',`m_products_order` DESC
@@ -439,6 +441,36 @@ Product.`m_products_show_site`=1
 
 				$count=$sql->query('SELECT FOUND_ROWS();');
 				$count=$count[0]['FOUND_ROWS()'];
+				foreach ($res as &$productsRes) {
+					if (!empty($productsRes['attributes_groups_id'])) {
+						$attrsGroupRes = explode('|', $productsRes['attributes_groups_id']);
+
+						$q = 'SELECT * FROM `formetoo_main`.`m_products_attributes` 
+									RIGHT JOIN `formetoo_main`.`m_products_attributes_list` 
+									ON `m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id` 
+										AND `m_products_attributes_list`.`m_products_attributes_list_id` IN('.implode(',',$attrsGroupRes).') 
+										AND `m_products_attributes_list`.`is_active`=1 
+										AND `m_products_attributes_list`.`is_visible_catalog`=1 
+									WHERE `m_products_attributes_product_id`=' . $productsRes['m_products_id'] . ';'; 
+
+						if($resAttr=$sql->query($q)) {
+							if(!empty($attrsGroupRes)) {
+								$tempResult = array();
+								foreach($resAttr as $attrId) {
+									$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroupRes);
+									
+									if ($index) {
+										$tempResult[$attrId['m_products_attributes_list_name_url']] = $attrId;
+										$tempResult[$attrId['m_products_attributes_list_name_url']]['sort'] = $index;
+									}
+								}
+								array_multisort(array_column($tempResult, 'sort'), SORT_ASC, $tempResult);
+								$productsRes['attrs'] = $tempResult;
+							}
+						}
+					}
+				}
+				unset($productsRes);
 			}
 
 			//похожие товары
@@ -596,32 +628,22 @@ Product.`m_products_show_site`=1
 												</div>
 										</a>
 								</div>
-							</div>
+							</div>';
+							
+							if (!empty($_good['attrs'])) { ?>
 							<div class="main_products_list_item_char">
 								<ul class="list_dots">
+								<?foreach ($_good['attrs'] as $_goodAttr) {?>
 									<li>
-										<span class="list_dotts_name">Масса</span>
-										<span class="list_dotts_value">5кг</span> 
+										<span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?></span>
+										<span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span> 
 									</li>
-									<li>
-										<span class="list_dotts_name">Длина</span>
-										<span class="list_dotts_value">20м</span> 
-									</li>
-									<li>
-										<span class="list_dotts_name">Ширина</span>
-										<span class="list_dotts_value">15см</span> 
-									</li>
-									<li>
-										<span class="list_dotts_name">Высота</span>
-										<span class="list_dotts_value">10см</span> 
-									</li>
-									<li>
-										<span class="list_dotts_name">Материал</span>
-										<span class="list_dotts_value">Пластик</span> 
-									</li>
+								<? } ?>
 								</ul>
 							</div>
-						</div>';
+							<?
+							}
+						echo '</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['m_products_id'];
 				}
