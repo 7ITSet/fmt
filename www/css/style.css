@@ -2958,6 +2958,19 @@ img.whatsapp {
     font-weight: 600;
     padding-bottom: 6px;
 }
+.char_parent span.list_dotts_name {
+    width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.char_parent span.list_dotts_value {
+    width: 33%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
 .main_products_list_item_char li:nth-child(5){
     border: none;
 }
