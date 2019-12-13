@@ -2606,7 +2606,6 @@ span.free_calc_delivery_title {
 	flex-direction: column;
 	justify-content: space-between;
 	padding:1em;
-	overflow:hidden;
 	margin: .625em 1.06em;
 	border:1px solid rgba(160,160,160,.2);
 	box-sizing:border-box;
@@ -2619,9 +2618,9 @@ span.free_calc_delivery_title {
 .main_products_list_items_item p{
 	text-align:left;}
 .main_products_list_items_item:hover{
-	-webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.4);
-	-moz-box-shadow:    0px 0px 15px 0px rgba(50, 50, 50, 0.4);
-	box-shadow:         0px 0px 15px 0px rgba(50, 50, 50, 0.4);}
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow:    0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+	box-shadow:         0px 5px 15px 0px rgba(50, 50, 50, 0.4);}
 .main_products_list_items.mb{
 	margin-bottom:2em;
 	overflow:hidden;}
@@ -2914,25 +2913,41 @@ img.whatsapp {
 	font-size: .65em;
 	background:linear-gradient(to top, #02643D, #2CA44A);
 }
+.char_parent {
+    min-height: 33em;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow:    0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+    box-shadow:         0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+    transition: opacity .2s, visibility 0s linear 0.3s;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 3px;
+}
+.main_products_list_items_item.active {
+    box-shadow: none;
+    border: none;
+    z-index: 2;
+}
+.char_parent.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
 .main_products_list_item_char {
     position: absolute;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 1em;
     color: #02643D;
     overflow: hidden;
     left: 0;
-    top: 5.2em;
+    bottom: 2px;
     background: #fff;
-    width: 90%;
+    width: 89.5%;
     height: 8.5em;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .7s, visibility 0s linear 0.3s;
-}
-.main_products_list_items_item.active .main_products_list_item_char {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
 }
 .main_products_list_item_char li {
 	display: flex;

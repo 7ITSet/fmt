@@ -730,7 +730,9 @@ $(document).ready(function(){
 	};
 
 	$('.main_products_list_items_item').hover(function() {
-		$(this).toggleClass('active');
+		$(this).children('.char_parent').toggleClass('active');
+		if ($(this).children('.char_parent').length > 0) {
+			$(this).toggleClass('active');
+		};
 	});
-
 });

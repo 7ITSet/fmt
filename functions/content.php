@@ -631,17 +631,19 @@ Product.`m_products_show_site`=1
 							</div>';
 							
 							if (!empty($_good['attrs'])) { ?>
-							<div class="main_products_list_item_char">
-								<ul class="list_dots">
-								<?foreach ($_good['attrs'] as $_goodAttr) {?>
-									<li>
-										<span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?></span>
-										<span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span> 
-									</li>
-								<? } ?>
-								</ul>
-							</div>
-							<?
+                            <div class="char_parent">
+                                <div class="main_products_list_item_char">
+                                    <ul class="list_dots">
+                                    <?foreach ($_good['attrs'] as $_goodAttr) {?>
+                                        <li>
+                                            <span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?></span>
+                                            <span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span>
+                                        </li>
+                                    <? } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                                <?
 							}
 						echo '</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
