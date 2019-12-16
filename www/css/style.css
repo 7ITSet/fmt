@@ -15,6 +15,7 @@ body{
 }
 body.active_cat {
 	overflow-y: hidden;
+	max-height: 100vh;
 }
 iframe {
 	width: 100%;
