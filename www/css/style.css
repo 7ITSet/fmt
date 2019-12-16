@@ -2927,6 +2927,7 @@ img.whatsapp {
     opacity: 0;
     visibility: hidden;
     border-radius: 3px;
+	background: #fff;
 }
 .main_products_list_items_item.active {
     box-shadow: none;
@@ -3904,6 +3905,9 @@ span.comment{
     .main_content_container p {
         padding: 0 1em;
     }
+	.char_parent {
+		display: none;
+	}
 }
 
 @media only screen  and (min-width: 769px) {
@@ -4182,6 +4186,7 @@ span.comment{
         max-width: 18em;
         max-height: 20em;
         margin: 0 auto;
+		padding: 0;
     }
     .main_products_list_items_info_foto_gallery_container {
         width: auto;
@@ -4577,6 +4582,7 @@ span.comment{
         max-width: 20em;
         max-height: 22em;
         margin: 0 auto;
+		padding: 0;
     }
     .main_products_list_items_info_foto_gallery_container {
         width: auto;
@@ -4991,6 +4997,7 @@ span.comment{
         height: auto;
         max-width: none;
         margin: 0;
+		padding: 0;
     }
     .main_products_list_items_info_foto_gallery_container {
         width: auto;
