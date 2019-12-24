@@ -1,5 +1,5 @@
-<div class="main_container_body">
-    <div class="left_advert">
+<div class="main_container_body row">
+    <div class="left_advert col-lg-3">
         <form method="post" class="left_advert_discount">
             <h1>Скидка 10%</h1>
             <strong>При подписке на рассылку Вы получите купон<br></strong>
@@ -9,7 +9,7 @@
             <p class="discount_last_p"><input type="checkbox" name="option3" value="" checked><span>Я даю согласие на обработку своих персональных данных</span></p>
         </form>
     </div>
-	<div class="main_content">
+	<div class="main_content col-lg-9">
 		<div class="main_slider">
             <ul id="slides">
                 <li class="slide showing"><img class="baner_img" src="/img/baner.jpg"></li>
@@ -78,363 +78,606 @@
                 </div>
             </div>
         </div>
+    </div>
+		<div class="clr"></div>
+		<div class="main_products_list_items col-lg-offset-3 col-lg-9" style="margin-right: 0px;">
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
+            <div class="main_products_list_items_item">
+                <div class="main_products_list_items_item_info">
+                    <div class="foto">
+                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                    </div>
+                    <div class="title">
+                        <p>
+                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="main_products_list_items_item_cart">
+                    <div class="cart"><div class="main_products_list_items_item_price">
+                            <div class="price">
+                                <p>
+                                    12 342 <span>руб.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="product_id hidden" data-value="2985892480"></div>
+                        <div class="product_count hidden" data-value="1"></div>
+                        <button class="btn-cart">Купить</button></div>
+                </div>
+                <div class="good_icons">
+                    <div class="abs"></div>
+                    <div>
+                        <a class="like"></a>
+                        <a class="comparison"></a>
+                    </div>
+                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                    </a>
+                </div>                            <div class="char_parent">
+                    <div class="main_products_list_item_char">
+                        <ul class="list_dots">
+                            <li>
+                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фуцафц</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">|</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фацуацфу</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">фафцуа</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">китай</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">суфсф</span>
+                            </li>
+                            <li>
+                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                <span class="list_dotts_value">202</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div> </div>
 		</div>
 		<div class="clr"></div>
-		<div class="main_products_list_items" style="margin-right: 0px;">
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9483179001/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9483179001/" title="Жироуловитель под мойку. Эконом. Тестовый товар 1.">Жироуловитель под мойку. Эконом. Тестовый товар 1.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    4 500,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9483179001"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9270273185/"><img src="https://crm.formetoo.ru/images/products/9270273185/9RacSvMmejUk_med.jpg" alt="Жироуловитель под мойку. Тестовый товар 3"></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9270273185/" title="Жироуловитель под мойку. Тестовый товар 3">Жироуловитель под мойку. Тестовый товар 3</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    5 200,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9270273185"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9483179001/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9483179001/" title="Жироуловитель под мойку. Эконом. Тестовый товар 1.">Жироуловитель под мойку. Эконом. Тестовый товар 1.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    4 500,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9483179001"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9270273185/"><img src="https://crm.formetoo.ru/images/products/9270273185/9RacSvMmejUk_med.jpg" alt="Жироуловитель под мойку. Тестовый товар 3"></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9270273185/" title="Жироуловитель под мойку. Тестовый товар 3">Жироуловитель под мойку. Тестовый товар 3</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    5 200,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9270273185"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9483179001/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9483179001/" title="Жироуловитель под мойку. Эконом. Тестовый товар 1.">Жироуловитель под мойку. Эконом. Тестовый товар 1.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    4 500,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9483179001"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9270273185/"><img src="https://crm.formetoo.ru/images/products/9270273185/9RacSvMmejUk_med.jpg" alt="Жироуловитель под мойку. Тестовый товар 3"></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9270273185/" title="Жироуловитель под мойку. Тестовый товар 3">Жироуловитель под мойку. Тестовый товар 3</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    5 200,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9270273185"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9483179001/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9483179001/" title="Жироуловитель под мойку. Эконом. Тестовый товар 1.">Жироуловитель под мойку. Эконом. Тестовый товар 1.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    4 500,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9483179001"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9270273185/"><img src="https://crm.formetoo.ru/images/products/9270273185/9RacSvMmejUk_med.jpg" alt="Жироуловитель под мойку. Тестовый товар 3"></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9270273185/" title="Жироуловитель под мойку. Тестовый товар 3">Жироуловитель под мойку. Тестовый товар 3</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    5 200,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9270273185"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="main_products_list_items_item">
-                <div class="good_goods">
-                    <a href="#" class="good_goods_a">
-                        <span class="good_goods_icon"></span>
-                    </a>
-                </div>
-                <div class="good_comparison">
-                    <a href="#" class="good_comparison_a">
-                        <span class="good_comparison_icon"></span>
-                    </a>
-                </div>
-                <div class="main_products_list_items_item_info">
-                    <div class="foto"><a href="/product/9483179001/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a></div>
-                    <div class="title">
-                        <p>
-                            <a href="/product/9483179001/" title="Жироуловитель под мойку. Эконом. Тестовый товар 1.">Жироуловитель под мойку. Эконом. Тестовый товар 1.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart">
-                        <div class="main_products_list_items_item_price">
-                            <div class="price">
-                                <p>
-                                    4 500,00 <span>руб.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="product_id hidden" data-value="9483179001"></div>
-                        <div class="product_count hidden" data-value="1"></div>
-                        <button class="btn-cart">Купить</button>
-                        <a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-                            <div class="good_whatsapp_icon">
-                                <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-		</div>
-		<div class="clr"></div>
-		<div class="main_content_container">
+		<div class="main_content_container col-lg-12">
             <!--<?=$current['content'];?>-->
             <div class="main_delivery">
                 <img src="/img/ad240.png" alt="бесплатная доставка" class="main_delivery_img">

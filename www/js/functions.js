@@ -607,11 +607,11 @@ $(document).ready(function(){
 	// });
 
 	//СМЕНА ЦВЕТА ПРИ КЛИКЕ ЗНАЧКОВ НРАВИТСЯ И СРАВНИТЬ
-	$('.good_goods').click(function() {
+	$('.like').click(function() {
 		$(this).toggleClass('active');
 	});
 
-	$('.good_comparison').click(function() {
+	$('.comparison').click(function() {
 		$(this).toggleClass('active');
 	});
 
@@ -730,9 +730,10 @@ $(document).ready(function(){
 	};
 
 	$('.main_products_list_items_item').hover(function() {
-		$(this).children('.char_parent').toggleClass('active');
+		$(this).children('.char_parent, .good_icons').toggleClass('active');
 		if ($(this).children('.char_parent').length > 0) {
 			$(this).toggleClass('active');
+			$(this).children('.good_icons').toggleClass('shadow');
 		};
 	});
 });

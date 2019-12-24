@@ -38,6 +38,7 @@ if($merge_carts){
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.structure.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.theme.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/flexboxgrid.min.css"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -106,53 +107,31 @@ if($merge_carts){
 	<div class="page-wrapper">
 
         <div class="header">
-            <div class="header_top_left">
-                <div class="header_logo" id="logo">
-                    <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
+            <div class="header_container row between-lg center-lg">
+                <div class="left col-lg-3">
+                    <p class="phone"><a href="tel:{tel_office_nobr}">{tel_office}</a></p>
+                    <a href="https://wa.me/79105199977" class="social_icons" target="_blank">
+                        <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
+                    </a>
+                    <a href="viber://chat?number={tel_office}" class="social_icons" target="_blank">
+                            <img src="/img/viber.png" alt="viber_icon" id="viber">
+                    </a>
+                    <a href="mailto:{mail}" class="social_icons">
+                        <img src="/img/icon-message.svg" alt="email_icon" id="email">
+                    </a>
                 </div>
-            </div>
-            <div class="header_top_right">
-                <div class="contact_parent">
-                    <div class="parent header_phone" id="contacts">
-                        <div class="child child_contacts">
-                            <p class="phone"><a href="tel:{tel_office_nobr}">{tel_office}</a></p>
-                            <p class="schedule"><span class="schedule_content">пн-пт: 09:00 - 18:00</span></p>
-                        </div>
-                    </div>
-                    <div class="parent social_icons">
-                        <a href="https://wa.me/79105199977" class="child whatsapp_href" target="_blank">
-                            <div class="whatsapp_icon">
-                                <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
-                            </div>
-                        </a>
-                        <a href="viber://chat?number={tel_office}" class="child viber_href" target="_blank">
-                             <div class="viber_icon">
-                                 <img src="/img/viber.png" alt="viber_icon" id="viber">
-                             </div>
-                        </a>
-                        <a href="mailto:{mail}" class="child email_href">
-                             <div class="email_parent">
-                                <div class="email_icon">
-                                    <img src="/img/icon-message.svg" alt="email_icon" id="email">
-                                </div>
-                                <div class="email_adress">
-                                    <p class="email">{mail}</p>
-                                </div>
-                             </div>
-                        </a>
-                    </div>
+                <div class="center col-lg-6">
+                    <a href="/">
+                        <p>FMT <span>formetu.ru</span></p>
+                    </a>
                 </div>
-                <div class="currency_account_parent">
-                    <div class="parent header_city" id="city">
-                        <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png"><span class="city_span">{ГОРОД}</span><span class="icon icon-arrow-down"></span></a>
-                    </div>
-                    <div class="parent account">
-                        <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon icon-logout"></span></div>':'');?>
-                        <div class="child nav_account" data-href="/my/" title="Перейти в личный кабинет">
-                            <div>
-                                <span onselectstart="return false">Личный кабинет</span>
-                                <span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
-                            </div>
+                <div class="right col-lg-3">
+                    <a href="#"><img src="/img/map.png"><span>город: {ГОРОД}</span></a>
+                    <div class="account">
+                        <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon-logout"></span></div>':'');?>
+                        <div class="nav_account" data-href="/my/" title="Перейти в личный кабинет">
+                            <span onselectstart="return false">Войти</span>
+                            <span onselectstart="return false" class="desc"><?=($user->getInfo('m_users_name')?transform::some($user->getInfo('m_users_name'),20,true):'')?></span>
                         </div>
                     </div>
                 </div>
@@ -189,39 +168,35 @@ if($merge_carts){
                 <?echo createMenu() ?>
             </div>
         </div>
-        <div class="top_line_menu">
-            <div class="left_sidebar_cat">
-                <div class="nav_wrapper">
-                    <?echo createMenu() ?>
-                </div>
-            </div>
-            <div class="top_line">
-                <div class="top_line1">
-                    <div class="header_search" id="search">
-                        <input type="text" placeholder="Поиск по сайту"/><span class="icon icon-search"></span>
-                    </div>
-                    <div class="goods">
-                        <a href="#" class="goods_a">
-                            <span class="goods_icon"><img src="/img/heart-outline.svg" class="goods_img"></span>
-                            <span class="goods_title">Отложенные</span>
-                        </a>
-                    </div>
-                    <div class="comparison">
-                        <a href="#" class="comparison_a">
-                            <span class="comparison_icon"><img src="/img/adv_04.svg" class="comparison_img"></span>
-                            <span class="comparison_title">Сравнение</span>
-                        </a>
-                    </div>
-                    <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
-                        <span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"></span>
-                        <div class="cart_title">
-                            <span onselectstart="return false">Корзина<span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span></span>
-                            <span onselectstart="return false" class="desc"><?=$order->getCartSum()?transform::price_o($order->getCartSum()).'&nbsp;руб':'нет товаров'?></span>
+        <div class="top_line">
+            <div>
+                <div class="top_line_container row center-lg">
+                    <div class="left col-lg-3">
+                        <div class="nav_wrapper">
+                            <?echo createMenu() ?>
                         </div>
                     </div>
-                </div>
-                <div class="top_line2">
-                    <span class="advanced_search"><a href="#" class="advanced_search">Расширенный поиск</a></span>
+                    <div class="right col-lg-9">
+                        <div class="row">
+                            <div class="header_search col-lg-8" id="search">
+                                <input type="text" placeholder="Поиск по сайту"/><span class="icon icon-search"></span>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#" class="likes">
+                                    <span class="likes_icon"><img src="/img/heart-outline.svg" class="likes_img"></span>
+                                    <span class="likes_title">Отложенные</span>
+                                </a>
+                                <a href="#" class="comparisons">
+                                    <span class="comparison_icon"><img src="/img/adv_04.svg" class="comparison_img"></span>
+                                    <span class="comparison_title">Сравнение</span>
+                                </a>
+                                <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
+                                    <span class="icon-cart"><img src="/img/cart.svg" class="cart_icon"></span>
+                                    <span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -448,6 +423,7 @@ if($merge_carts){
 			</div>
 		</noindex>
 	</div>
+
 </body>
 </html>
 <?

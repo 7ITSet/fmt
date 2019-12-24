@@ -586,66 +586,58 @@ Product.`m_products_show_site`=1
 
 					echo '
 						<div class="main_products_list_items_item">
-						    <div class="good_goods">
-								<a href="#" class="good_goods_a">
-									<span class="good_goods_icon"></span>
-								</a>
-							</div>
-							<div class="good_comparison">
-								<a href="#" class="good_comparison_a">
-									<span class="good_comparison_icon"></span>
-								</a>
-							</div>
 							<div class="main_products_list_items_item_info">
 								<div class="foto">
 									<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['m_products_id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>
 								</div>
 								<div class="title">
-									<p>
-										<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
-									</p>
-								</div>
+                                    <p>
+                                        <a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
+                                    </p>
+                                </div>
 							</div>
 							<div class="main_products_list_items_item_cart">
 								<div class="cart">';
-										if ($user->isVisiblePrice()) {
-												echo
-												'<div class="main_products_list_items_item_price">
-														<div class="price">
-																<p>
-																		' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['m_products_price_currency']], 2)) . ' <span>руб.</span>
-																</p>
-														</div>
-												</div>
-												<div class="product_id hidden" data-value="' . $_good['m_products_id'] . '"></div>
-												<div class="product_count hidden" data-value="' . round($_good['m_products_multiplicity'], 4) . '"></div>
-												<button class="btn-cart">Купить</button>';
-										}
-										echo
-										'<a href="https://wa.me/79105199977" class="good_child good_whatsapp_href" target="_blank">
-												<div class="good_whatsapp_icon">
-														<img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-												</div>
-										</a>
-								</div>
+                                    if ($user->isVisiblePrice()) {
+                                        echo
+                                        '<div class="main_products_list_items_item_price">
+                                                <div class="price">
+                                                        <p>
+                                                                ' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['m_products_price_currency']], 2)) . ' <span>руб.</span>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                        <div class="product_id hidden" data-value="' . $_good['m_products_id'] . '"></div>
+                                        <div class="product_count hidden" data-value="' . round($_good['m_products_multiplicity'], 4) . '"></div>
+                                        <button class="btn-cart">Купить</button>';
+                                    }
+                                    echo
+                                '</div>
+							</div>
+							<div class="good_icons">
+					            <div class="abs"></div>
+                                <div>
+                                    <a class="like"></a>
+                                    <a class="comparison"></a>
+                                </div>
+							    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                                    <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                                </a>
 							</div>';
-							
-							if (!empty($_good['attrs'])) { ?>
+                            if (!empty($_good['attrs'])) { ?>
                             <div class="char_parent">
                                 <div class="main_products_list_item_char">
                                     <ul class="list_dots">
                                     <?foreach ($_good['attrs'] as $_goodAttr) {?>
                                         <li>
-                                            <span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?></span>
+                                            <span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?>: &nbsp&nbsp</span>
                                             <span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span>
                                         </li>
                                     <? } ?>
                                     </ul>
                                 </div>
-                            </div>
-                                <?
-							}
-						echo '</div>';
+                            </div> <? }
+                    echo '</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['m_products_id'];
 				}
