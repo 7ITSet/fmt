@@ -234,13 +234,13 @@ if($merge_carts){
 	<div id="footer">
 		<div id="footer-container">
 			<div id="footer-inner">
-				<div class="footer_floor footer_top">
-					<div class="footer_top_left">
+				<div class="footer_floor footer_top row between-lg">
+					<div class="footer_top_left col-lg-3">
 						<div id="footer-logo">
                             <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
                         </div>
 					</div>
-					<div class="footer_top_right">
+					<div class="footer_top_right col-lg-3">
 						<div id="footer-info-social">
 							<a href="#https://vk.com/formetoo-su" title="Formetoo in VK" target="_blank"><span class="icon-social-vk"><img src="/img/icons-vkontakte.svg"></span></a>
 							<a href="#https://www.facebook.com/formetoo-su" title="Formetoo in Facebook" target="_blank"><span class="icon-social-fb"><img src="/img/icons-facebook.svg"></span></a>
@@ -250,8 +250,8 @@ if($merge_carts){
 						</div>
 					</div>
 				</div>
-				<div class="footer_floor footer_midle">
-					<div class="footer_midle_left">
+				<div class="footer_floor footer_midle row between-lg">
+					<div class="footer_midle_left col-lg-4">
                         <div class="footer_contacts1">
                             <a href="mailto:{mail}" class="child footer_email_href">
                                 <div class="email_parent">
@@ -295,11 +295,11 @@ if($merge_carts){
                             </div>
                         </div>
 					</div>
-					<div class="footer_midle_center">
+					<div class="footer_midle_center col-lg-2">
                         <a href="#" class="download_price"><img src="/img/download-price.svg" alt="скачать прайс-лист"></a>
                         <a href="#" class="yamarket"><img src="/img/market.svg" alt="яндекс маркет"></a>
 					</div>
-					<div class="footer_midle_right">
+					<div class="footer_midle_right col-lg-5">
                         <div class="footer_midle_right_child">
                             <span class="footer_midle_right_title">О компании</span>
                             <ul class="footer_midle_right_list">
@@ -325,12 +325,12 @@ if($merge_carts){
                         </div>
 					</div>
 				</div>
-				<div class="footer_floor footer_bottom">
-					<div class="footer_bottom_left">
+				<div class="footer_floor footer_bottom row between-lg">
+					<div class="footer_bottom_left col-lg-3">
                         <span class="footer_bottom_left_info">Copyright © 2008 - 2019</span>
                         <span class="footer_bottom_left_info">Formetoo</span>
 					</div>
-					<div class="footer_bottom_center">
+					<div class="footer_bottom_center col-lg-3">
 						<div id="footer-info-paysystems">
                             <span class="paysystem_title">Принимаем к оплате</span>
 							<span class="icon icon-visa-mini nolink" title="Принимаем к оплате карты VISA"></span>
@@ -338,7 +338,7 @@ if($merge_carts){
 							<span class="icon icon-mir-mini nolink" title="Принимаем к оплате карты МИР"></span>
 						</div>
 					</div>
-					<div class="footer_bottom_right">
+					<div class="footer_bottom_right col-lg-3">
                         <span class="footer_bottom_right_info"><a href="#">Политика конфеденциальности</a></span>
                         <span class="footer_bottom_right_info"><a href="#">Публичная оферта</a></span>
 					</div>

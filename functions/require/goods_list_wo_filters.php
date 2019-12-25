@@ -1,12 +1,6 @@
-<div class="main_container_header">
-    <div class="breadcrumbs">
-        <?$menu->breadcrumbs()?>
-    </div>
-    <div class="clr"></div>
-    <h1><?=$current['h1']?></h1>
-</div>
 <div class="main_container_body row">
     <div class="main_products_filters col-lg-3">
+        <h1>Фильтры</h1>
         <div class="main_products_filters_block">
             <?
             $menu->displayLeftCat();
@@ -24,6 +18,13 @@
         </div>
     </div>
 	<div class="main_content wlb col-lg-9">
+        <div class="main_container_header">
+            <div class="breadcrumbs">
+                <?$menu->breadcrumbs()?>
+            </div>
+            <div class="clr"></div>
+            <h1><?=$current['h1']?></h1>
+        </div>
 		<div class="main_products_list_toppanel">							
 			<div class="main_products_list_toppanel_sort">
 				<label>Сортировать по&nbsp;</label>
