@@ -126,7 +126,7 @@ if($merge_carts){
                     </a>
                 </div>
                 <div class="right col-lg-3">
-                    <a href="#"><img src="/img/map.png"><span>город: {ГОРОД}</span></a>
+                    <a href="#" class="city" id="city"><img src="/img/map.png"><span>город: {ГОРОД}</span></a>
                     <div class="account">
                         <?=($user->getInfo('m_users_name')?'<div class="nav_logout" data-href="/logout/" title="Выйти из аккаунта"><span class="icon-logout"></span></div>':'');?>
                         <div class="nav_account" data-href="/my/" title="Перейти в личный кабинет">

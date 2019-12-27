@@ -615,7 +615,6 @@ Product.`m_products_show_site`=1
                                 '</div>
 							</div>
 							<div class="good_icons">
-					            <div class="abs"></div>
                                 <div>
                                     <a class="like"></a>
                                     <a class="comparison"></a>

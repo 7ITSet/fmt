@@ -549,6 +549,12 @@ img.gif-mini-preloader{
 	color: #333;
 	font-weight: 600;
 }
+.nav_account.active span {
+	color: #e37218;
+}
+.city:hover span {
+	color: #e37218;
+}
 
 /*TOP LINE*/
 .top_line {
@@ -754,18 +760,17 @@ span.likes_title, span.comparison_title {
 .good_info_comparison_a.active .good_info_comparison_icon {
 	background: url(/img/adv_04_active.svg) no-repeat;
 }
-.good_info_goods_icon {
+.good_info_like_icon {
 	background: url(/img/heart-outline.svg) no-repeat;
 	width: 25px;
 	height: 20px;
-	margin-left: .9em!important;
 }
-.good_info_goods_a.active .good_info_goods_icon {
+.good_info_goods_a.active .good_info_like_icon {
 	background: url(/img/heart-outline_active.svg) no-repeat;
 }
 
 /* LOGO */
-#logo,#city,#contacts{
+#logo,#contacts{
 	height:auto;
 	width:auto;
 	overflow:visible;
@@ -1077,7 +1082,7 @@ span.city_span {
 	color:#74aeff;}
 .nav_sublevel .nav_sublevel{
 	position: absolute;
-	top: 13%;
+	top: 10%;
 	left: 98%;
 	min-width: 15em;
 	min-height: 100%;
@@ -1097,9 +1102,7 @@ span.city_span {
 	padding-bottom: 2em;
 }
 .nav_sublevel li:last-child{
-	border-radius: 7px;
-	margin-top: -5px;
-	padding-top: 5px;
+	border-radius: 0 0 7px 7px;
 }
 .nav_sublevel li:first-child {
 	padding-top: 1.5em;
@@ -1522,6 +1525,9 @@ img.timer_product_img_big {
 	position: relative;
 	box-sizing: border-box;
 	margin-bottom: 1em;
+	background: #fff;
+	padding: 1em;
+	border-radius: 5px;
 }
 .main_products_filters_block.active{
 	border-left: .1875em solid #3aa800;
@@ -1556,7 +1562,6 @@ img.timer_product_img_big {
 	display:block;
 	color:#fff;}
 .main_products_filters ul li span.menu-item-parent{
-	border:1px solid #ccc;
 	padding:.2em .6em;
 	margin-top:.5em;
 	text-align:left;
@@ -1887,7 +1892,7 @@ p.select_default_option_selected{
 .main_products_list_items.after_good{
 	padding:1em 1.5em .5em;}
 .main_products_list_items.product_links{
-	background:#f9f9f9!important;
+	background:#f6f6f6;
 	display: flex;
 	overflow:auto!important;
 	flex-direction: row;
@@ -1898,29 +1903,21 @@ p.select_default_option_selected{
 	overflow:initial;}
 .good_info .main_products_list_items,
 .main_products_list_items.no-background{
-	background:#fff;}
+	background:#fff;
+	padding: 1em;
+	box-sizing: border-box;
+	border-radius: 7px;
+}
 .good_info {
 	overflow: hidden;
 	min-height: 31em;
 	position: relative;
 	box-sizing: border-box;
+	border-radius: 7px;
+	margin-top: 1em;
 }
 .about_good h1 {
-	font-size: 1.5em;
-	margin-bottom: .2em;
-	width: 80%;
-}
-.good_title_share {
-	display: flex;
-	justify-content: space-between;
-}
-a.share {
-	color: #7c7c7c;
-	font-size: .9em;
-	padding: 0 .5em;
-	width: 14%;
-	display: flex;
-	justify-content: space-between;
+	margin-bottom: 1em;
 }
 span.share_text {
 	line-height: 3;
@@ -1928,10 +1925,8 @@ span.share_text {
 
 /* БЛОК ФОТО */
 .main_products_list_items_info_foto{
-	float: left;
 	display: flex;
 	flex-direction: column-reverse;
-	width: 33%;
 }
 .about_good {
 	width: 67%;
@@ -2006,17 +2001,13 @@ span.exist_span {
 	object-position: center;
 	margin:0 auto;}
 .main_products_list_items_info_foto_preview{
-	height:25em;
-	width:25em;
-	overflow:hidden;
-	text-align:center;
-	float:left;
-	position:relative;
-	border: 1px solid #ddd;
-	border-radius: 2px;
-	padding: 1em;
+	height: 26em;
+	width: 25em;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	border-radius: 5px;
 	box-sizing: border-box;
-	margin-bottom: 1em;
 }
 .main_products_list_items_info_foto_preview_container{
 	display:inline-block;
@@ -2027,6 +2018,33 @@ span.exist_span {
 	width: 22.9em;
 	box-sizing: border-box;
 	object-fit: cover;
+}
+.good_info .col-lg-8 .col-lg-4 {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-top: 0;
+}
+.good_info .col-lg-4 > div {
+	display: flex;
+}
+.good_info .col-lg-4 a {
+	display: flex;
+	height: 40px;
+	padding-left: 2em;
+}
+.good_info .col-lg-4 > span {
+	width: 50%;
+	height: 40px;
+	padding: 1em;
+	text-align: right;
+}
+.good_info .col-lg-4 a span, .good_info .col-lg-4 a img {
+	margin: auto 0;
+}
+.good_info .col-lg-8 .row:last-child {
+	margin-top: 3em;
 }
 
 /* ВАРИАНТЫ ТОВАРА */
@@ -2108,20 +2126,19 @@ a.good_comparison_item {
 	color: #7C7C7C;
 }
 .main_products_list_items_info_pay{
+	margin-top: 2em;
 	padding: 1.5em;
-	width: 80%;
-	border:1px solid #ddd;
-	border-radius:.2em;
-	text-align:center;
-	box-sizing:border-box;
+	border-radius: 7px;
+	text-align: center;
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	box-shadow: 0px 0px 16px 10px #F3F3F4;
 }
 .main_products_list_items_info_pay_price{
-	font-size:1.4em;
+	font-size:1.2em;
 	font-weight:700;
-	text-align:right;}
+	text-align:left;}
 .main_products_list_items_info_pay_count {
 	margin: 0 1em 0 1.5em;
 }
@@ -2160,6 +2177,7 @@ a.good_comparison_item {
 .main_products_list_items_info_pay_count_inputs{
 	text-align:left;
 	border: 1px solid #ddd;
+	background: #ddd;
 	border-radius: 2px;
 	padding: 0 .5em;
 	margin-right: .5em;
@@ -2187,7 +2205,7 @@ a.good_comparison_item {
 .main_products_list_items_info_pay_count_inputs #pay_count_minus{
 	text-align:center;
 	font-size: 1.2em;
-	margin-top: .4em;
+	margin-top: .3em;
 }
 #pay_count_minus{
 	border-bottom-right-radius:.2em;}
@@ -2221,20 +2239,19 @@ a.good_comparison_item {
 	margin: auto 0;
 }
 #pay_add_cart{
-	background: linear-gradient(to top, #02643D, #2CA44A);
+	border: 1px solid #ddd;
 	border-radius: .2em;
-	color: #fff;
-	height: 3.5em;
-	/*padding: 0 2em;*/
-	width: 8em;
-	font-size: .8em;
-	font-family: 'Roboto', sans-serif;
+	color: #666;
+	padding: .8em 1.8em;
+	font-size: .9em;
 	font-weight: 600;
 	text-transform: uppercase;
 	position: relative;
 	box-sizing: border-box;
 	cursor: pointer;
-	line-height: 3.5em;
+}
+#pay_add_cart:hover {
+	background: #ddd;
 }
 .main_products_list_items_info_pay_buy #pay_add_cart {
 	margin: auto;
@@ -2247,7 +2264,12 @@ a.good_comparison_item {
 	border-radius: 2px;
 }
 .good_info_whatsapp_href {
-	margin: auto .5em;
+	margin: auto 0;
+	padding-left: 1em;
+}
+.good_info_whatsapp_href img {
+	display: flex;
+	width: 1.9em;
 }
 #pay_oneclick{
 	color: #0091D0;
@@ -2258,57 +2280,39 @@ a.good_comparison_item {
 }
 
 /* ПОДРОБНАЯ ИНФОРМАЦИЯ О ТОВАРЕ */
-.detail-info{
-	margin-top:2em;
+.detail-info_header {
 	display: flex;
-}
-.detail-info_left {
-	width: 70%;
-}
-.free_calc_delivery {
-	width: 28%;
-	padding: inherit;
-	box-sizing: border-box;
-	border: 1px solid #ddd;
-	border-radius: 2px;
-	margin: 0 1em .9em;
-}
-span.free_calc_delivery_title {
-	display: block;
-	padding: .5em;
-	font-size: 1.7em;
-	font-weight: 300;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #ddd;
 }
 .detail-info_header_item{
-	font-weight:400;
-	font-size:.9em;
-	text-align:center;
-	padding:.5em 1em;
-	float:left;
-	background:#e8e8e8;
-	cursor:pointer;
-	margin: 0 1em 1em 0;
-	border-radius: 2px;
+	font-weight: 400;
+	font-size: 1em;
+	text-align: center;
+	padding: .5em 0;
+	float: left;
+	cursor: pointer;
+	margin: 0 1em 0 0;
+	border-radius: 5px;
 }
 .detail-info_header_item span{
 	color:#3aa800;
 	display:inline-block;
 	margin-left:.5em;}
 .detail-info_header_item.active{
-	background:#60C0AA;
-	color: #fff;
+	background: #ddd;
+	color: #666;
+	padding: .5em 1em;
 }
 
 /* ОПИСАНИЕ ТОВАРА */
 .detail-info__body_item{
 	display:none;
 	color:#000;
-	padding:1em 1.2em;
-	font-size:.875em;
+	padding:1em 0;
 	line-height:1.5;
-	border: 1px solid #ddd;
-	border-radius: 2px;
 	margin: 1em 0;
+	border-radius: 7px;
 }
 .detail-info__body_item p{
 	font-weight:300;}
@@ -2598,10 +2602,18 @@ span.free_calc_delivery_title {
 .products_reviews_body_my_answer .mini-button.hover{
 	visibility:visible;}
 
-.main_products_list_items.after_categories.viewed_goods.product_links,
 .main_products_list_items.after_categories.after_good.viewed_goods_header{
 	display:none;
 	box-sizing: border-box;
+	margin-top: 1em;
+	background: #f6f6f6;
+}
+.main_products_list_items.after_categories.viewed_goods.product_links {
+	display:none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background: #f6f6f6;
 }
 .viewed_goods .slick-slide,
 .links_goods .slick-slide{
@@ -2993,7 +3005,7 @@ img.whatsapp {
 	top: 22.5em;
 	left: 0;
 	box-sizing: border-box;
-	border-radius: 7px;
+	border-radius: 0 0 7px 7px;
 	padding: .5em 1em;
 	display: none;
 	background: #f9f9f9;
@@ -3008,15 +3020,6 @@ img.whatsapp {
 }
 .good_icons > div {
 	margin-top: 4px;
-}
-.abs {
-	position: absolute;
-	margin: 0;
-	width: 100%;
-	height: 5px;
-	top: -4px;
-	left: 0;
-	background: #f9f9f9;
 }
 
 /* ПАГИНАЦИЯ */
