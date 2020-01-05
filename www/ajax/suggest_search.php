@@ -38,22 +38,22 @@ if ($w){
 	$wl=transform::layout($w);
 	$w=explode(' ',$w);
 	$wl=explode(' ',$wl);
-	$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `m_products_id` LIKE \'%'.implode(' ',$w).'%\' OR `m_products_name_full` LIKE \'%'.implode(' ',$w).'%\' OR `m_products_name_full` LIKE \'%'.implode(' ',$wl).'%\' ORDER BY `m_products_name_full` LIMIT 1000;';
+	$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `id` LIKE \'%'.implode(' ',$w).'%\' OR `m_products_name_full` LIKE \'%'.implode(' ',$w).'%\' OR `m_products_name_full` LIKE \'%'.implode(' ',$wl).'%\' ORDER BY `m_products_name_full` LIMIT 1000;';
 	if($res=$sql->query($q)){
 		$i=0;
 		echo '<p class="result-title">Товары</p>';
 		foreach($res as $record){
 			if($i<=10)
 				echo '<a data-id="',
-					$record['m_products_id'],
+					$record['id'],
 					'" rel="',
 					$record['m_products_name_full'],
 					'" href="/catalog/',
 					$record['slug'],
 					// '/" data-category="',
-					// $record['m_products_categories_id'],
+					// $record['id'],
 					'"><span class="grey">[',
-					tag_b($record['m_products_id'],$w,$wl),
+					tag_b($record['id'],$w,$wl),
 					']</span>&nbsp;',
 					tag_b($record['m_products_name_full'],$w,$wl),
 				'</a>';
@@ -88,15 +88,15 @@ if ($w){
 			foreach($res as $_record){
 				if($i<=10)
 					echo '<a data-id="',
-						$_record['m_products_id'],
+						$_record['id'],
 						'" rel="',
 						$_record['m_products_name_full'],
 						'" href="/catalog/',
 						$_record['slug'],
 						// '/"  data-category="',
-						// $_record['m_products_categories_id'],
+						// $_record['id'],
 						'"><span class="grey">[',
-						tag_b($_record['m_products_id'],$w,$wl),
+						tag_b($_record['id'],$w,$wl),
 						']</span>&nbsp;',
 						$_record['m_products_name_full'],
 						'</a>';

@@ -1,7 +1,7 @@
 <?
 defined ('_DSITE') or die ('Access denied');
 
-$_GET['m_products_id']=$current_product['m_products_id'];
+$_GET['id']=$current_product['id'];
 
 if($attr=$content->getItemAttributes()){
 	$videoItem = $attr['VIDEO'];
@@ -10,7 +10,7 @@ if($attr=$content->getItemAttributes()){
 	$gV=$content->getGoodVariants();
 	$gv_count=sizeof($gV);
 	for($i=0;$i<$gv_count;$i++)
-		$goodVariants[$gV[$i]['m_products_id']]=$gV[$i];
+		$goodVariants[$gV[$i]['id']]=$gV[$i];
 
 
 	//выбираем все атрибуты всех вариантов (для возможности выбора в карточке товара), сгруппированные по типу атрибута
@@ -45,7 +45,7 @@ if($attr=$content->getItemAttributes()){
 	$active_variants=array();
 	foreach($attr_variants as $_type=>$_variants)
 		foreach($_variants as $j=>$_variant){
-			if($_variant['m_products_attributes_product_id']==$current_product['m_products_id'])
+			if($_variant['m_products_attributes_product_id']==$current_product['id'])
 				$active_variants[$_type]=$_variant['m_products_attributes_value'];
 		}
 	/*------*/
@@ -89,7 +89,7 @@ if($attr=$content->getItemAttributes()){
 					//или вариант есть в массиве пересечений, но это не текущй открытый вариант (очередной вариант типа, открытого в данный момент, но не сам тип)
 					isset($print_variants_cross[$_type][$_value['m_products_attributes_value']])&&
 					in_array($_value['m_products_attributes_value'],$print_variants_cross[$_type][$_value['m_products_attributes_value']])&&
-					!($_value['m_products_attributes_product_id']==$current_product['m_products_id'])&&
+					!($_value['m_products_attributes_product_id']==$current_product['id'])&&
 					($_value['m_products_attributes_product_id']!=$print_variants_cross[$_type][$_value['m_products_attributes_value']]['m_products_attributes_product_id'])
 				)
 			) continue;
@@ -97,7 +97,7 @@ if($attr=$content->getItemAttributes()){
 			elseif(sizeof($active_variants)==1) $printed_0[]=$_value['m_products_attributes_value'];
 			$active=$inactive=false;
 			//если вариант сейчас открыт (если пересечений нет)
-			if($_value['m_products_attributes_product_id']==$current_product['m_products_id'])
+			if($_value['m_products_attributes_product_id']==$current_product['id'])
 				//выделяем активный пункт
 				$active=true;
 			//если варианта нет в пересечениях - помечаем его как неактивный
@@ -129,14 +129,14 @@ foreach($attr_variants as $_type=>$_variants){
 
 	$arr_variants[$_type]=array();
 	foreach($_variants as $_variant){
-		$active=$_variant['m_products_attributes_product_id']==$current_product['m_products_id']?true:false;
+		$active=$_variant['m_products_attributes_product_id']==$current_product['id']?true:false;
 		$inactive=false;
 		if(!$active)
 			foreach($attr_variants as $__type=>$__variants)
 				if($__type!=$_type)
 					foreach($__variants as $__variant)
 						if($__variant['m_products_attributes_value']!=$active_variants[$__variant['m_products_attributes_list_id']])
-							if($__variant['m_products_attributes_product_id']!=$current_product['m_products_id'])
+							if($__variant['m_products_attributes_product_id']!=$current_product['id'])
 								$inactive=true;
 
 		$arr_variants_['product']=$_variant['m_products_attributes_product_id'];
@@ -183,7 +183,7 @@ foreach($arr_variants as $_type=>$_values){
 			continue;
 		$active=false;
 		$inactive=false;
-		if($_value['product']==$current_product['m_products_id'])
+		if($_value['product']==$current_product['id'])
 			$active=true;
 		if(in_array($_value['value_id'],$print_variants_cross[$_type][$_value['value_id']])&&$_value['active'])
 			$active=true;
@@ -262,14 +262,14 @@ else $captcha_reg=false;
                                     foreach($current_product['m_products_foto'] as $_foto)
                                         echo '
                                             <div class="main_products_list_items_info_foto_gallery_item'.($_foto['main']?' selected':'').'">
-                                                <a data-fancybox="gallery" href=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'" onclick="return false;">
-                                                    <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_min.'.$_foto['ext'].'  " data-med=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-max=" https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'"'.($_foto['main']?' itemprop="image"':'').' >
+                                                <a data-fancybox="gallery" href=" https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'" onclick="return false;">
+                                                    <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src=" https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_min.'.$_foto['ext'].'  " data-med=" https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-max=" https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'"'.($_foto['main']?' itemprop="image"':'').' >
                                                 </a>
                                             </div>';
 
                                     //было так
-//                     <a data-fancybox="gallery" href="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg" onclick="return false;">
-//                     <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_min.jpg" data-med="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-max="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg"'.($_foto['main']?' itemprop="image"':'').' >
+//                     <a data-fancybox="gallery" href="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_max.jpg" onclick="return false;">
+//                     <img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_min.jpg" data-med="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_med.jpg" data-max="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_max.jpg"'.($_foto['main']?' itemprop="image"':'').' >
                             ?>
                             </div>
                         </div>
@@ -281,14 +281,14 @@ else $captcha_reg=false;
                                 $mainfoto=0;
                                 foreach($current_product['m_products_foto'] as $_foto)
                                     if($_foto['main']){
-//                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg">';
-                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
+//                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_max.jpg">';
+                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
                                         $mainfoto=1;
                                     }
                                 if(!$mainfoto)
                                     foreach($current_product['m_products_foto'] as $_foto){
-//                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg">';
-                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
+//                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_med.jpg" data-origin="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_max.jpg">';
+                                        echo '<img title="'.htmlspecialchars($current_product['m_products_name_full']).'" src="https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_med.'.$_foto['ext'].'" data-origin="https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'">';
                                         break;
                                     }
                         ?>
@@ -316,7 +316,7 @@ else $captcha_reg=false;
                             <div class="main_products_list_items_miniinfo">
                                 <?
                                 echo '
-                        <div class="main_products_list_items_miniinfo_art">Код товара: <span class="grey">'.substr($current_product['m_products_id'],0,3).''.substr($current_product['m_products_id'],3,3).''.substr($current_product['m_products_id'],6).'</span></div>
+                        <div class="main_products_list_items_miniinfo_art">Код товара: <span class="grey">'.substr($current_product['id'],0,3).''.substr($current_product['id'],3,3).''.substr($current_product['id'],6).'</span></div>
                         <div class="main_products_list_items_miniinfo_rating">
                             <div class="rating" title="'.($current_product['m_products_rate']?'Средняя оценка: '.$current_product['m_products_rate'].' на основании '.$current_product['m_products_feedbacks'].' '.transform::numberof(($current_product['m_products_rate']?$current_product['m_products_feedbacks']:0),'оцен',array('ки','ок','ок')):'У товара пока нет оценок и отзывов').'">
                                 <div class="stars">';
@@ -448,7 +448,7 @@ else $captcha_reg=false;
                                         </div>
                                         <div class="main_products_list_items_info_pay_buy">
                                             <span id="pay_add_cart" onselectstart="return false">Купить</span>
-                                            <input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['m_products_id'];?>" value="<?=$current_product['m_products_id'];?>"/>
+                                            <input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['id'];?>" value="<?=$current_product['id'];?>"/>
                                         </div>
                                     </form>
                                 <? } ?>
@@ -570,7 +570,7 @@ else $captcha_reg=false;
                                                         <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
                                                     </div>
                                                 </a>
-                                                <input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['m_products_id'];?>" value="<?=$current_product['m_products_id'];?>"/>
+                                                <input class="product_id" type="hidden" name="product_id" data-value="<?=$current_product['id'];?>" value="<?=$current_product['id'];?>"/>
                                             </div>
                                         </div>
                                         <div class="fast_pay">
@@ -682,7 +682,7 @@ else $captcha_reg=false;
                                                     </div>
                                                     <div class="products_docs_container_item_info">
                                                         <p class="products_docs_container_item_info_name"><?=$_doc->name?></p>
-                                                        <p class="products_docs_container_item_info_download"><a href="//crm.formetoo.loc/uploads/files/products/<?=$current_product['m_products_id']?>/<?=$_doc->file?>" target="_blank">Скачать<span class="underline"></span></a></p>
+                                                        <p class="products_docs_container_item_info_download"><a href="//crm.formetoo.loc/uploads/files/products/<?=$current_product['id']?>/<?=$_doc->file?>" target="_blank">Скачать<span class="underline"></span></a></p>
                                                         <p class="products_docs_container_item_info_fileinfo"><?=$ext?>, <?=$_doc->size?></p>
                                                     </div>
                                                     <div class="clr"></div>
@@ -772,7 +772,7 @@ else $captcha_reg=false;
 										</div>
 									</div><div class="clr"></div>';
                                                 //пометка отзыва о другом варианте товара
-                                                if($_review['m_products_feedbacks_products_id']!=$current_product['m_products_id']){
+                                                if($_review['m_products_feedbacks_products_id']!=$current_product['id']){
                                                     echo '
 											<div class="products_reviews_other_variant">
 												<p>Этот отзыв о другом варианте товара: <a class="underline" href="/product/'.$_review['m_products_feedbacks_products_id'].'/">'.$goodVariants[$_review['m_products_feedbacks_products_id']]['m_products_name'].'</a></p>
@@ -917,7 +917,7 @@ else $captcha_reg=false;
 									</div>
 									<div class="clr"></div>';
                                                 //пометка вопроса о другом варианте товара
-                                                if($_review['m_products_qna_products_id']!=$current_product['m_products_id']){
+                                                if($_review['m_products_qna_products_id']!=$current_product['id']){
                                                     echo '
 									<div class="products_reviews_other_variant">
 										<p>Этот вопрос о другом варианте товара: <a class="underline" href="/product/'.$_review['m_products_qna_products_id'].'/">'.$goodVariants[$_review['m_products_qna_products_id']]['m_products_name'].'</a></p>
@@ -961,7 +961,7 @@ else $captcha_reg=false;
 									</div>
 									<div class="clr"></div>';
                                                         //пометка ответа о другом варианте товара
-                                                        if($__review['m_products_qna_products_id']!=$current_product['m_products_id']){
+                                                        if($__review['m_products_qna_products_id']!=$current_product['id']){
                                                             echo '
 									<div class="products_reviews_other_variant">
 										<p>Этот ответ о другом варианте товара: <a class="underline" href="/product/'.$__review['m_products_qna_products_id'].'/">'.$goodVariants[$__review['m_products_qna_products_id']]['m_products_name'].'</a></p>
@@ -997,7 +997,7 @@ else $captcha_reg=false;
 		</div>
 		<div class="clr"></div>
 		<div class="main_products_list_items after_categories links_goods product_links">
-			<?$content->getGoods($current_product['m_products_id'],'table',20);?>
+			<?$content->getGoods($current_product['id'],'table',20);?>
 		</div>
 <?}?>
 		<div class="clr"></div>
@@ -1103,7 +1103,7 @@ if($captcha_reg){
 						foreach($current_product['m_products_foto'] as $_foto)
 							echo '
 								{
-								src : "https://crm.formetoo.ru/images/products/'.$_GET['m_products_id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'",
+								src : "https://crm.formetoo.ru/images/products/'.$_GET['id'].'/'.$_foto['file'].'_max.'.$_foto['ext'].'",
 
 									opts:{
 										caption : "'.$current_product['m_products_name_full'].'"
@@ -1111,7 +1111,7 @@ if($captcha_reg){
 								},';
 
 						//было раньше так
-//									src : "//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['m_products_id_isolux'],0,2).'/SN'.$current_product['m_products_id_isolux'].'/'.$_foto['file'].'_max.jpg",
+//									src : "//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($current_product['id_isolux'],0,2).'/SN'.$current_product['id_isolux'].'/'.$_foto['file'].'_max.jpg",
 
                         ?>
 					], {padding:0,index:index});
@@ -1241,7 +1241,7 @@ if($captcha_reg){
 		//	$.get(
 		//		'/ajax/get_exist.php',
 		//		{
-		//			id:"<?//=$current_product['m_products_id'];?>//"
+		//			id:"<?//=$current_product['id'];?>//"
 		//		},
 		//		function(data){
         //
@@ -1317,10 +1317,10 @@ if($captcha_reg){
 			}
 		}
 		viewedGoods(<?
-			echo $current_product['m_products_id'],',[';
+			echo $current_product['id'],',[';
 			if(!empty($attr))
 				foreach($gV as $j=>$_val)
-					echo $j!=0?','.$_val['m_products_id']:$_val['m_products_id'];
+					echo $j!=0?','.$_val['id']:$_val['id'];
 			echo ']';
 		?>);
 		//ПОКАЗ НЕДАВНО ПРОСМОТРЕННЫХ ТОВАРОВ

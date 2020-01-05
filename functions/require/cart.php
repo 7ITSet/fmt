@@ -20,8 +20,8 @@ if($order->getCart()){
 	$goods=array();
 	foreach($order->getCart()->items as &$_item)
 		$goods[]=$_item->product_id;
-	$q='SELECT `m_products_id`,`slug`,`m_products_name_full`,`m_products_name`,`m_products_foto`,`m_products_unit`,`m_products_id_isolux` FROM `formetoo_main`.`m_products` WHERE `m_products_id` IN ('.implode(',',$goods).');';
-	if($products=$sql->query($q,'m_products_id')){
+	$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_name`,`m_products_foto`,`m_products_unit`,`id_isolux` FROM `formetoo_main`.`m_products` WHERE `id` IN ('.implode(',',$goods).');';
+	if($products=$sql->query($q,'id')){
 		//ед. измерения
 		$units=$sql->query('SELECT * FROM `formetoo_cdb`.`m_info_units`;','m_info_units_id');
 		$q='SELECT * FROM `formetoo_main`.`m_products_attributes_list` 
@@ -131,9 +131,9 @@ if($order->getCart()){
 				echo '
 					<tr data-id="'.$_item->product_id.'" data-price='.$_item->product_price.'>
 						<td>',
-							($products[$_item->product_id][0]['m_products_id_isolux']
-								? ($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($products[$_item->product_id][0]['m_products_id_isolux'],0,2).'/SN'.$products[$_item->product_id][0]['m_products_id_isolux'].'/'.$foto.'_min.jpg" alt="'.$products[$_item->product_id][0]['m_products_name_full'].'"/>':'<img src="/foto/products/empty_foto.svg" alt="Фото товара отсутствует"/>')
-								: ($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$products[$_item->product_id][0]['m_products_id'].'/'.$foto.'_min.jpg" alt="'.$products[$_item->product_id][0]['m_products_name_full'].'"/>':'<img src="/foto/products/empty_foto.svg" alt="Фото товара отсутствует"/>')
+							($products[$_item->product_id][0]['id_isolux']
+								? ($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.substr($products[$_item->product_id][0]['id_isolux'],0,2).'/SN'.$products[$_item->product_id][0]['id_isolux'].'/'.$foto.'_min.jpg" alt="'.$products[$_item->product_id][0]['m_products_name_full'].'"/>':'<img src="/foto/products/empty_foto.svg" alt="Фото товара отсутствует"/>')
+								: ($foto?'<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/v/'.$products[$_item->product_id][0]['id'].'/'.$foto.'_min.jpg" alt="'.$products[$_item->product_id][0]['m_products_name_full'].'"/>':'<img src="/foto/products/empty_foto.svg" alt="Фото товара отсутствует"/>')
 							),
 						'</td>
 						<td class="name"><a href="/product/'.$_item->product_id.'/">'.$products[$_item->product_id][0]['m_products_name'].'</a><br/><span class="grey">арт. '.substr($_item->product_id,0,4).'-'.substr($_item->product_id,4).'</span></td>

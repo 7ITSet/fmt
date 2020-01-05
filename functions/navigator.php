@@ -89,7 +89,7 @@ $is_product = false;
 
 				$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 					LEFT JOIN `formetoo_main`.`m_products_category` 
-						ON `m_products_category`.`product_id`=`m_products`.`m_products_id` 
+						ON `m_products_category`.`product_id`=`m_products`.`id` 
 					WHERE `slug`=\''.$uri[$i].'\' 
 					GROUP BY `m_products_category`.`product_id` 
 					LIMIT 1;';
@@ -163,11 +163,11 @@ $is_product = false;
 	// //если открыта карточка товара
 	// if(is_numeric($path[0])&&strlen($path[0])==10&&$path[1]=='product'&&sizeof($path)==2){
 	// 	//выбираем товар
-	// 	//$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `m_products_id`=\''.$path[0].'\' LIMIT 1;';
+	// 	//$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `id`=\''.$path[0].'\' LIMIT 1;';
 	// 	$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 	// 		LEFT JOIN `formetoo_main`.`m_products_category` 
-	// 			ON `m_products_category`.`product_id`=`m_products`.`m_products_id` 
-	// 		WHERE `m_products_id`=' . $id . '  
+	// 			ON `m_products_category`.`product_id`=`m_products`.`id` 
+	// 		WHERE `id`=' . $id . '  
 	// 		GROUP BY `m_products_category`.`product_id` 
 	// 		LIMIT 1;';
 	// 	if($current_product=$sql->query($q)){
@@ -188,7 +188,7 @@ $is_product = false;
 	// 	//$q='SELECT * FROM `formetoo_main`.`m_products` WHERE `slug`=\''.$path[0].'\' LIMIT 1;';
 	// 	$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 	// 		LEFT JOIN `formetoo_main`.`m_products_category` 
-	// 			ON `m_products_category`.`product_id`=`m_products`.`m_products_id` 
+	// 			ON `m_products_category`.`product_id`=`m_products`.`id` 
 	// 		WHERE `slug`=\''.$path[0].'\' 
 	// 		GROUP BY `m_products_category`.`product_id` 
 	// 		LIMIT 1;';

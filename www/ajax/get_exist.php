@@ -24,10 +24,10 @@ array_walk($data,'check',true);
 
 if(!$e){
 
-	$q='SELECT `m_products_id_isolux` FROM `formetoo_main`.`m_products` WHERE `m_products_id`='.$data['id'].' LIMIT 1;';
+	$q='SELECT `id_isolux` FROM `formetoo_main`.`m_products` WHERE `id`='.$data['id'].' LIMIT 1;';
 	if($res=$sql->query($q)){
 
-		$q='SELECT `url` FROM `p-islx`.`ci_goods` WHERE `id`=\'СН'.$res[0]['m_products_id_isolux'].'\' LIMIT 1;';
+		$q='SELECT `url` FROM `p-islx`.`ci_goods` WHERE `id`=\'СН'.$res[0]['id_isolux'].'\' LIMIT 1;';
 		if($res=$sql_islx->query($q))
 			if($html=file_get_contents($res[0]['url'])){
 				libxml_use_internal_errors(TRUE);
