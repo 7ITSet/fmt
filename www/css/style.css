@@ -115,11 +115,6 @@ sub,sup{
 	font-size:75%;}
 
 input[type=text],textarea,select {
-	/* transition:all 0.10s ease-in-out;
-	-webkit-transition:all 0.10s ease-in-out;
-	-moz-transition:all 0.10s ease-in-out;
-	-ms-transition:all 0.10s ease-in-out;
-	-o-transition:all 0.10s ease-in-out; */
 	outline:none;
 	padding:3px;
 	margin:0;
@@ -130,11 +125,7 @@ input:read-only,textarea:read-only,input:read-only:focus,textarea:read-only:focu
 	border:none;
 	background:transparent;
 	box-shadow:none;
-	/* transition:all 0 ease 0;
-	-webkit-transition:all 0 ease 0;
-	-moz-transition:all 0 ease 0;
-	-ms-transition:all 0 ease 0;
-	-o-transition:all 0 ease 0; */}
+}
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	color:#999;}
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -965,10 +956,6 @@ span.city_span {
 	display:block;
 	text-align:center;}
 
-
-#contacts{
-}
-
 #contacts .phone a{
 	font-size:1.2em!important;
 	font-family:'Roboto',sans-serif;
@@ -982,21 +969,6 @@ span.city_span {
 	color:#666;
 	margin:0;}
 
-.left_sidebar {
-	display: none;
-}
-.left_sidebar_cat {
-	width: 22.7%;
-	height: 87.333px;
-	float: left;
-	padding: 1em 0 0;
-	position: absolute;
-	background: #fff;
-}
-.left_advert {
-	width: 22%;
-	float: left;
-}
 .nav_wrapper > ul{
 	padding: 0;
 	box-sizing: content-box;}
@@ -1787,8 +1759,6 @@ input.main_products_filters_checkbox[type="radio"]:checked:disabled + label::bef
 
 
 .main_content{
-	float:right;
-	width: 77.3%;
 	text-align:left;
 	margin-bottom: 1em;
 	box-sizing: border-box;
@@ -2205,7 +2175,7 @@ a.good_comparison_item {
 .main_products_list_items_info_pay_count_inputs #pay_count_minus{
 	text-align:center;
 	font-size: 1.2em;
-	margin-top: .3em;
+	margin-top: .4em;
 }
 #pay_count_minus{
 	border-bottom-right-radius:.2em;}
@@ -3247,12 +3217,24 @@ img.whatsapp {
 
 /* ФОРМА АВТОРИЗАЦИИ И РЕГИСТРАЦИИ */
 .login_authorization{
-	float:left;
-	padding-right:1em;
-	border-right:1px solid #ddd;
-	margin-right:1.4em;}
+  width: 45%;
+  float: left;
+  margin-right: 1.4em;
+  margin-top: 2em;
+  background: #fff;
+  border-radius: 7px;
+  padding: 1em;}
 .login_registration{
-	float:left;}
+  width: 48%;
+	float:left;
+  margin-top: 2em;
+  background: #fff;
+  padding: 1em;
+  border-radius: 7px;
+}
+.login_authorization > h2, .login_registration > h2 {
+  margin-bottom: 2em;
+}
 .login_authorization_form_input_container{
 	float:left;
 	margin-right:.8em;
@@ -3961,9 +3943,20 @@ span.comment{
 	}
 }
 
+@media only screen  and (max-width: 1000px) {
+  .top_line {
+    display: none;
+  }
+  .nav_wrapper > ul > li {
+    border-radius: 0!important;
+  }
+  .header_mobile .nav_cart {
+    border-radius: 0;
+  }
+}
 
 @media only screen  and (max-width: 480px) {
-	.header, .top_line_menu, .good_goods, .good_comparison{
+	.header, .good_goods, .good_comparison, .main_delivery {
 		display: none;
 	}
 	.header_mobile {
@@ -4010,7 +4003,7 @@ span.comment{
 		display: none;
 	}
 	li#menu_id_2000000000 > a span::after{
-		left: 1.4em;
+		left: 1.2em;
 	}
 	li#menu_id_2000000000 > ul > li:last-child > a {
 		border-bottom: 1px solid #ddd;
@@ -4150,7 +4143,6 @@ span.comment{
 	.main_timer_block {
 		flex-direction: column;
 		height: auto;
-		margin: 0 1em;
 	}
 	.main_container_inner, .page-wrapper {
 		min-height: auto!important;
@@ -4159,6 +4151,7 @@ span.comment{
 		width: 100%;
 		box-sizing: border-box;
 		float: none;
+    padding-bottom: 3em;
 	}
 	.main_products_list_items_item {
 		margin: 0.5em 3.2%;
@@ -4205,10 +4198,6 @@ span.comment{
 	.good_whatsapp_icon {
 		width: 2em;
 		height: 30px;
-	}
-	.main_delivery img {
-		width: 100%;
-		box-sizing: border-box;
 	}
 	.next {
 		right: 0;

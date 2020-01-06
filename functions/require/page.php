@@ -1,16 +1,5 @@
-<div class="main_container_body">
-	<div class="left_sidebar">
-		<div class="nav">
-			<div class="nav_container">
-				<div class="nav_container_inner">
-					<div class="nav_wrapper">
-                        <?echo createMenu() ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="main_content wlb">
+<div class="main_container_body row">
+	<div class="main_content col-lg-12">
 		<div class="main_container_header">
 			<div class="breadcrumbs">
 				<?$menu->breadcrumbs()?>

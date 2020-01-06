@@ -9,7 +9,7 @@
             <p class="discount_last_p"><input type="checkbox" name="option3" value="" checked><span>Я даю согласие на обработку своих персональных данных</span></p>
         </form>
     </div>
-	<div class="main_content col-lg-9">
+	<div class="main_content col-lg-9 col-xs">
 		<div class="main_slider">
             <ul id="slides">
                 <li class="slide showing"><img class="baner_img" src="/img/baner.jpg"></li>
@@ -80,7 +80,7 @@
         </div>
     </div>
 		<div class="clr"></div>
-		<div class="main_products_list_items col-lg-offset-3 col-lg-9" style="margin-right: 0px;">
+		<div class="main_products_list_items col-lg-offset-3 col-lg-9 col-xs-12" style="margin-right: 0px;">
             <div class="main_products_list_items_item">
                 <div class="main_products_list_items_item_info">
                     <div class="foto">
@@ -105,7 +105,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -171,7 +170,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -237,7 +235,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -303,7 +300,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -369,7 +365,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -435,7 +430,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -501,7 +495,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -567,7 +560,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -633,7 +625,6 @@
                         <button class="btn-cart">Купить</button></div>
                 </div>
                 <div class="good_icons">
-                    <div class="abs"></div>
                     <div>
                         <a class="like"></a>
                         <a class="comparison"></a>
@@ -677,7 +668,7 @@
                 </div> </div>
 		</div>
 		<div class="clr"></div>
-		<div class="main_content_container col-lg-12">
+		<div class="main_content_container col-lg-12 col-xs">
             <!--<?=$current['content'];?>-->
             <div class="main_delivery">
                 <img src="/img/ad240.png" alt="бесплатная доставка" class="main_delivery_img">
