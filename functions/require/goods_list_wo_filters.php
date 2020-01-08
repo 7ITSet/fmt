@@ -1,5 +1,5 @@
 <div class="main_container_body row">
-    <div class="main_products_filters col-lg-3">
+    <div class="main_products_filters col-lg-3 col-xs-12">
         <h1>Фильтры</h1>
         <div class="main_products_filters_block">
             <?
@@ -17,7 +17,7 @@
             {attributes}
         </div>
     </div>
-	<div class="main_content wlb col-lg-9">
+	<div class="main_content wlb col-lg-9 col-xs-12">
         <div class="main_container_header">
             <div class="breadcrumbs">
                 <?$menu->breadcrumbs()?>

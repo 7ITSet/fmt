@@ -12,6 +12,7 @@ body{
 	overflow-y: scroll;
 	font-size:16px;
 	font-family:'Roboto',sans-serif;
+	background: #f6f6f6;
 }
 body.active_cat {
 	overflow-y: hidden;
@@ -1342,7 +1343,6 @@ p.main_service_text {
 /*MAIN TIMER*/
 .main_timer_block {
 	display: flex;
-	border: 1px solid #d8d8d8;
 	background: #fff;
 	height: 215px;
 }
@@ -3570,7 +3570,9 @@ button.grey:hover,
 	width:100%;
 	max-width: 82em;
 	margin:0 auto;
-	padding-top:.5em;}
+	padding-top:.5em;
+	border-top: 1px solid #ddd;
+}
 .footer_floor {
 	display: flex;
 	justify-content: space-between;
@@ -3666,7 +3668,7 @@ a.download_price {
 }
 .footer_midle_right_child {
 	text-align: right;
-	margin-left: 3.5em;
+	margin-left: 3em;
 }
 span.footer_midle_right_title {
 	font-size: 1.1em;
@@ -3896,6 +3898,7 @@ span.comment{
 	.nav_account, .nav_account.small {
 		padding: 3px 7px;
 		width: auto;
+		background: #f6f6f6;
 	}
 	.nav_account.small div, .nav_cart.small div {
 		padding-top: 0;
@@ -3917,8 +3920,7 @@ span.comment{
 	}
 	span.city_span {
 		font-size: .9em;
-		padding-bottom: 9px;
-		margin-bottom: 3px;
+		padding-bottom: 4px;
 	}
 	img#map_icon {
 		margin-bottom: -2px;
@@ -3927,7 +3929,7 @@ span.comment{
 		display: none!important;
 	}
 	span.city_span {
-		border-bottom: 2px dashed #333;
+		border-bottom: none;
 	}
 	.main_content_container p {
 		padding: 0 1em;
@@ -3956,7 +3958,7 @@ span.comment{
 }
 
 @media only screen  and (max-width: 480px) {
-	.header, .good_goods, .good_comparison, .main_delivery {
+	.header, .good_goods, .good_comparison, .main_delivery, .good_icons.active {
 		display: none;
 	}
 	.header_mobile {
@@ -3967,7 +3969,10 @@ span.comment{
 		z-index: 10;
 		height: 48px;
 		background: #fff;
-		border-bottom: 1px solid #F2F2F2;
+		box-shadow: 0 1px 6px 0 rgba(0,0,0,.2);
+	}
+	.nav_wrapper > ul > li > a, .nav_wrapper > ul > li > span {
+		padding: 0;
 	}
 	#select_city {
 		width: 100%;
@@ -3998,15 +4003,17 @@ span.comment{
 	li#menu_id_2000000000.active_mobile > .nav_sublevel {
 		display: block!important;
 		height: 100vh;
+		background: #fff;
+		padding-top: 0;
+	}
+	.nav_sublevel li:first-child {
+		padding-top: 1em;
 	}
 	li#menu_id_2000000000:hover >.nav_sublevel {
 		display: none;
 	}
 	li#menu_id_2000000000 > a span::after{
 		left: 1.2em;
-	}
-	li#menu_id_2000000000 > ul > li:last-child > a {
-		border-bottom: 1px solid #ddd;
 	}
 	.icon-cart {
 		width: auto;
@@ -4115,6 +4122,13 @@ span.comment{
 		margin: 2% 1.5%;
 		float: none;
 	}
+	.main_products_filters h1 {
+		margin-bottom: .5em;
+		margin-top: -.5em;
+	}
+	.main_container_body .col-xs-12 {
+		flex-basis: auto;
+	}
 	.main_slider_mobile, .main_slider_mobile img {
 		width: 100%;
 		box-sizing: border-box;
@@ -4151,24 +4165,30 @@ span.comment{
 		width: 100%;
 		box-sizing: border-box;
 		float: none;
-    padding-bottom: 3em;
+    	padding-bottom: 3em;
+		margin: 0 1%;
+	}
+	.wlb .main_products_list_items {
+		margin-left: 1%;
+	}
+	.main_products_list_items {
+		padding-bottom: 3em;
 	}
 	.main_products_list_items_item {
-		margin: 0.5em 3.2%;
+		margin: 2px;
 		height: auto;
 		box-sizing: border-box;
-		width: 93.6%;
+		min-height: 16em;
+		width: calc(49% - 4px);
+		padding: .5em;
+		border-radius: 0;
 	}
 	.main_products_list_items_item_info {
-		display: flex;
-		justify-content: flex-start;
-		margin: 0;
-	}
-	.main_products_list_items_item_info .foto {
 		height: auto;
-		width: 15em;
-		max-width: 40%;
-		padding: 0 1em 0 0;
+		min-height: 13em;
+	}
+	.main_products_list_items_item_info .foto img {
+		max-height: none;
 	}
 	.main_products_list_items_item .title {
 		display: flex;
@@ -4178,10 +4198,23 @@ span.comment{
 	}
 	.main_products_list_items_item_info .title p {
 		text-align: left;
-		font-size: 90%;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		-ms-line-clamp: 2;
+		-webkit-line-clamp: 2;
+		display: -webkit-box;
+		word-wrap: break-word;
+		-webkit-box-orient: vertical;
+		font-size: 75%;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+	.main_products_list_items_item_cart {
+		margin-top: 0;
 	}
 	.main_products_list_items_item .cart {
-		justify-content: flex-start;
+		flex-direction: column;
 	}
 	.main_products_list_items_item_price {
 		width: 40%;
@@ -4194,6 +4227,8 @@ span.comment{
 	.main_products_list_items_item_cart .btn-cart {
 		height: 30px;
 		font-size: .7em;
+		margin-top: .5em;
+		width: 100%;
 	}
 	.good_whatsapp_icon {
 		width: 2em;

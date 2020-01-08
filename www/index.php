@@ -234,7 +234,7 @@ if($merge_carts){
 	<div id="footer">
 		<div id="footer-container">
 			<div id="footer-inner">
-				<div class="footer_floor footer_top row between-lg col-xs">
+				<div class="footer_floor footer_top between-lg col-xs-12">
 					<div class="footer_top_left col-lg-3">
 						<div id="footer-logo">
                             <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
@@ -250,7 +250,7 @@ if($merge_carts){
 						</div>
 					</div>
 				</div>
-				<div class="footer_floor footer_midle row between-lg col-xs">
+				<div class="footer_floor footer_midle between-lg col-xs-12">
 					<div class="footer_midle_left col-lg-4">
                         <div class="footer_contacts1">
                             <a href="mailto:{mail}" class="child footer_email_href">
@@ -325,7 +325,7 @@ if($merge_carts){
                         </div>
 					</div>
 				</div>
-				<div class="footer_floor footer_bottom row between-lg col-xs">
+				<div class="footer_floor footer_bottom between-lg col-xs-12">
 					<div class="footer_bottom_left col-lg-3">
                         <span class="footer_bottom_left_info">Copyright © 2008 - 2019</span>
                         <span class="footer_bottom_left_info">Formetoo</span>
