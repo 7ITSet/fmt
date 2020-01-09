@@ -150,9 +150,7 @@ function getProduct($name) {
 		elseif($this->uri[0]=='catalog' && $this->pageType !='product' ){
 			//ПОКАЗЫВАТЬ ТОВАРЫ С ФИЛЬТРАМИ, ТОВАРЫ БЕЗ ФИЛЬТРОВ, ИЛИ КАТЕГОРИИ С ТОВАРАМИ ИЛИ БЕЗ НИХ
 			$q='SELECT 
-				`m_products_categories_show_attributes`,
-				`m_products_categories_show_goods`,
-				`m_products_categories_show_categories` 
+				`m_products_categories_show_attributes` 
 				FROM `formetoo_main`.`m_products_categories` WHERE 
 				`id`='.$menu->nodes_id[$current['menu']]['category'].' AND 
 				`m_products_categories_active`=1 
@@ -170,9 +168,7 @@ function getProduct($name) {
 				foreach($res as $_res)
 					$_c[]=$_res['id'];
 				$q='SELECT 
-					`m_products_categories_show_attributes`,
-					`m_products_categories_show_goods`,
-					`m_products_categories_show_categories` 
+					`m_products_categories_show_attributes` 
 					FROM `formetoo_main`.`m_products_categories` WHERE 
 					`id` IN('.implode(',',$_c).') AND 
 					`m_products_categories_active`=1 
@@ -181,23 +177,12 @@ function getProduct($name) {
 			//если фильтры показывать не надо - выходим
 			if($res=$sql->query($q)){
 				//товары с фильтрами
-				if ($res[0]['m_products_categories_show_attributes'] && $res[0]['m_products_categories_show_goods'])
+				if ($res[0]['m_products_categories_show_attributes']){
 					require_once(__DIR__.'/require/goods_list_w_filters.php');
-				//товары без фильтров
-				elseif(
-					$res[0]['m_products_categories_show_goods']&&
-					!$res[0]['m_products_categories_show_categories']
-				)
-					require_once(__DIR__.'/require/goods_list_wo_filters.php');
-				//категории картинками с товарами
-				elseif(
-					$res[0]['m_products_categories_show_goods']&&
-					$res[0]['m_products_categories_show_categories']
-				)
+				}
+				else {
 					require_once(__DIR__.'/require/categories_list_w_goods.php');
-				//категории картинками
-				elseif(!$res[0]['m_products_categories_show_goods'])
-					require_once(__DIR__.'/require/categories_list_wo_goods.php');			
+				}	
 			}
 			
 		}
@@ -1170,7 +1155,7 @@ Product.`m_products_show_site`=1
 								'</div>
 								<div class="title">
 									<p>
-										<a href="/catalog/'.$_cat['m_products_categories_name_seo'].'/" title="'.htmlspecialchars($_cat['m_products_categories_name']).'">'.$_cat['m_products_categories_name'].'</a>
+										<a href="/catalog/'.$_cat['slug'].'/" title="'.htmlspecialchars($_cat['m_products_categories_name']).'">'.$_cat['m_products_categories_name'].'</a>
 									</p>
 								</div>
 								<div class="clr"></div>
