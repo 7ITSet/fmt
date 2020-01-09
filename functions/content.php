@@ -85,10 +85,10 @@ class content{
 
 				if($res=$sql->query($q)){
 					$res=$res[0];
-					$current['title']=$res['m_products_categories_name'].', купить в '.$G['CITY']['m_info_city_name_city_pr'].' по выгодной цене';
-					$current['description']=$res['m_products_categories_name'].' с доставкой в '.$G['CITY']['m_info_city_name_city_tv'].'. Купить '.mb_strtolower($res['m_products_categories_name'],'utf-8').' оптом и в розницу в интернет-магазине.';
-					$current['keywords']=$res['m_products_categories_name'];
-					$current['h1']=$res['m_products_categories_name'];
+					$current['title']=$res['name'].', купить в '.$G['CITY']['m_info_city_name_city_pr'].' по выгодной цене';
+					$current['description']=$res['name'].' с доставкой в '.$G['CITY']['m_info_city_name_city_tv'].'. Купить '.mb_strtolower($res['name'],'utf-8').' оптом и в розницу в интернет-магазине.';
+					$current['keywords']=$res['name'];
+					$current['h1']=$res['name'];
 				}
 			}
 		}
@@ -150,34 +150,34 @@ function getProduct($name) {
 		elseif($this->uri[0]=='catalog' && $this->pageType !='product' ){
 			//ПОКАЗЫВАТЬ ТОВАРЫ С ФИЛЬТРАМИ, ТОВАРЫ БЕЗ ФИЛЬТРОВ, ИЛИ КАТЕГОРИИ С ТОВАРАМИ ИЛИ БЕЗ НИХ
 			$q='SELECT 
-				`m_products_categories_show_attributes` 
+				`show_filters` 
 				FROM `formetoo_main`.`m_products_categories` WHERE 
 				`id`='.$menu->nodes_id[$current['menu']]['category'].' AND 
-				`m_products_categories_active`=1 
+				`active`=1 
 				LIMIT 1;';
 			//если открыт весь каталог
 			if($this->uri[0]=='catalog'&&sizeof($this->uri)==1){
 				$q='SELECT 
 					`id`,
-					`m_products_categories_parent` 
+					`parent_id` 
 				FROM `formetoo_main`.`m_products_categories` WHERE 
-				`m_products_categories_parent`=0 AND 
-				`m_products_categories_active`=1;';
+				`parent_id`=0 AND 
+				`active`=1;';
 				$res=$sql->query($q);
 				$_c=array();
 				foreach($res as $_res)
 					$_c[]=$_res['id'];
 				$q='SELECT 
-					`m_products_categories_show_attributes` 
+					`show_filters` 
 					FROM `formetoo_main`.`m_products_categories` WHERE 
 					`id` IN('.implode(',',$_c).') AND 
-					`m_products_categories_active`=1 
+					`active`=1 
 					LIMIT 1;';
 			}
 			//если фильтры показывать не надо - выходим
 			if($res=$sql->query($q)){
 				//товары с фильтрами
-				if ($res[0]['m_products_categories_show_attributes']){
+				if ($res[0]['show_filters']){
 					require_once(__DIR__.'/require/goods_list_w_filters.php');
 				}
 				else {
@@ -1144,18 +1144,18 @@ Product.`m_products_show_site`=1
 		}
 		//показ категории на странице, не связанной с этой категорией
 		else{
-			$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `m_products_categories_parent`=2000000000 ORDER BY `m_products_categories_name`,`m_products_categories_order` DESC;';
+			$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `parent_id`=2000000000 ORDER BY `name`,`order` DESC;';
 			$cats=$sql->query($q);
 			foreach($cats as $_cat){
 				if($_cat['m_products_categories_products_count'])
 					echo '<div class="main_products_list_items_item product_category">
 							<div class="main_products_list_items_item_info">
 								<div class="foto">
-									<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.$_cat['m_products_categories_foto'].'_med.jpg" alt="'.htmlspecialchars($_cat['m_products_categories_name']).'"/>',
+									<img src="//'.$_SERVER['G_VARS']['SERV_ST'].'/'.$_cat['m_products_categories_foto'].'_med.jpg" alt="'.htmlspecialchars($_cat['name']).'"/>',
 								'</div>
 								<div class="title">
 									<p>
-										<a href="/catalog/'.$_cat['slug'].'/" title="'.htmlspecialchars($_cat['m_products_categories_name']).'">'.$_cat['m_products_categories_name'].'</a>
+										<a href="/catalog/'.$_cat['slug'].'/" title="'.htmlspecialchars($_cat['name']).'">'.$_cat['name'].'</a>
 									</p>
 								</div>
 								<div class="clr"></div>
