@@ -8,6 +8,6 @@ $menu=new menu;
 global $e;
 function createMenu() {
   global $menu;
-  $menu->displayMenuCatalog();
+  $menu->displayMegaMenuCatalog();
 }
 ?>

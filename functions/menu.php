@@ -32,23 +32,55 @@ class menu{
 		$this->nodesCatalog = $res;
 	}
 
-	public function displayMenuCatalog() {
+	public function displayMegaMenuCatalog() {
 		$result = '';
 		self::menuCatalogThree($this->nodesCatalog, $result);
 		echo $result;
 	}
-	public function menuCatalogThree($nodes, &$result = '', $link = '/catalog', $parentId = 0, $depth = 0) {
+	public function menuCatalogThree($nodes, &$result = '', $link = '/catalog', $parentNode = null, $depth = 0) {
+		$parentId = empty($parentNode) ? 0 : $parentNode['id'];
+
 		$cats = array_filter($nodes, function($node) use ($parentId) {
 			return $node['parent_id'] == $parentId && $node;
 		});
 
-		if (isset($cats)) {
-			$result.= '<ul ' . ($depth == 0 ? 'class="menu__list"' : '') . '>';
+		if (!isset($cats)) return;
+
+		if ($depth == 0) {
+			$result.= '<ul class="menu__list">';
 			
 			foreach($cats as $category) {
+				$linkCategory = $link . '/' . $category['slug'];
 				$result.= '<li class="menu__item">';
-				$result.= '<a class="menu__link" href="' . $link . '/' . $category['slug'] . '">' . $category['name'] . '</a>';
-				self::menuCatalogThree($nodes, $result, $link . '/' . $category['slug'], $category['id'], ++$depth);
+				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
+				$result.= '</li>';
+			}
+			
+			$result.= '</ul>';
+		} else if ($depth == 1) {
+			$result.= '<div class="sub-menu">';
+			$result.= '<div class="sub-menu__title">' . $parentNode['name'] . '</div>';
+			$result.= '<ul class="menu__list--sub-menu">';
+			
+			foreach($cats as $category) {
+				$linkCategory = $link . '/' . $category['slug'];
+				$result.= '<li class="menu__item">';
+				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
+				$result.= '</li>';
+			}
+			
+			$result.= '</ul>';
+			$result.= '</div>';
+		} else {
+			$result.= '<ul>';
+			
+			foreach($cats as $category) {
+				$linkCategory = $link . '/' . $category['slug'];
+				$result.= '<li class="menu__item">';
+				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
 				$result.= '</li>';
 			}
 			
