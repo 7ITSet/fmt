@@ -592,6 +592,31 @@ img.gif-mini-preloader{
 	right: 1.5em;
 }
 
+/* MENU */
+.nav_wrapper > span {
+	display: flex;
+	height: 49px;
+	align-items: center;
+	border-radius: 5px;
+	background: #60C0AA;
+	padding: 0 1em;
+	color: #fff;
+	font-weight: 600;
+	cursor: default;
+}
+.nav_wrapper > span::after{
+	content: url(/img/menu_catalog.svg);
+	position: absolute;
+	height: 1em;
+	left: 16.8em;
+}
+ul.menu__list {
+	display: none;
+}
+.nav_wrapper:hover ul.menu__list {
+	display: block;
+}
+
 
 
 .email{
@@ -969,176 +994,6 @@ span.city_span {
 	font-size:1.1em;
 	color:#666;
 	margin:0;}
-
-.nav_wrapper > ul{
-	padding: 0;
-	box-sizing: content-box;}
-.nav_wrapper > ul > li,#nav_more > ul > li{
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: -1px;
-}
-.nav_wrapper > ul > li:not(:first-child){
-	max-width:10em;}
-.nav_wrapper > ul > li > a, .nav_wrapper > ul > li > span{
-	position: relative;
-	display: block;
-	line-height: 3em;
-	padding: 1px 1.7em;
-	transition: .1s ease-in-out;
-}
-.nav_wrapper > ul > li.hover > a{
-	/* background:rgba(255,255,255,.4); */
-}
-.nav_wrapper > ul > li > a span{
-	color: #fff;
-	font-size: 1em;}
-.nav_wrapper > ul > li > span{
-	cursor:default;}
-.nav_wrapper > ul > li.current > span{
-	color:#fff;
-	font-weight:900;}
-.nav_wrapper > ul > li > a:before,
-.nav_wrapper > ul > li > span:before,
-.nav_account:after,
-.nav_logout:after{
-	content:"";
-	position: absolute;
-	top: 50%;
-	left: 0;
-	background: rgba(255,255,255,.2);
-	width: 1px;
-	height: 1.75em;
-	transform: translateY(-50%);}
-.nav_account:after,
-.nav_logout:after{
-	left: auto;
-	right:0;}
-.nav_logout~.nav_account:after{
-	display:none;}
-/* ВЫПАДАЮЩИЕ МЕНЮ */
-.nav_sublevel{
-	display:none;
-	box-sizing: border-box;
-	position: absolute;
-	width:100%;
-	z-index:10;
-	padding-top: 1.5em;
-	box-shadow: 0px 21px 10px 0px rgba(0,0,0,.2);
-	border-radius: 7px;
-}
-#menu_id_2000000000 > ul.nav_sublevel{
-	min-height: 42.1875px!important;
-}
-.nav_sublevel li{
-	clear:both;
-	width:100%;
-	background: #fff;
-}
-.nav_sublevel li a{
-	display:block;
-	padding:0.5em 0;
-	height:100%;
-	width:100%;
-}
-.nav_sublevel .nav_sublevel li a{
-	padding:0.5em 0;
-}
-.nav_sublevel li span{
-	color:#333;
-	font-weight:400!important;
-	text-align:left;
-	padding-left:1.4em;
-	font-size: 1em;
-}
-.nav_sublevel li:hover > a span,.nav_sublevel li:hover > span{
-	color:#74aeff;}
-.nav_sublevel .nav_sublevel{
-	position: absolute;
-	top: 10%;
-	left: 98%;
-	min-width: 15em;
-	min-height: 100%;
-	padding-top: 0;
-	background: #fff;
-	box-shadow: 0 15px 10px 0 rgba(0,0,0,.2);
-}
-.nav_sublevel li.current > span{
-	display:block;
-	padding:0.7em 1.8em;
-}
-.nav_sublevel li li.current > span{
-	padding:0.5em 1.7em;}
-.nav_sublevel li.current > span,.nav_sublevel li.active > a span{
-	font-weight:700!important;}
-.nav_sublevel li:last-child > a {
-	padding-bottom: 2em;
-}
-.nav_sublevel li:last-child{
-	border-radius: 0 0 7px 7px;
-}
-.nav_sublevel li:first-child {
-	padding-top: 1.5em;
-}
-
-/* MENU_CATALOG */
-li#menu_id_2000000000{
-	width:100%;
-	text-align:left;
-	position:relative;
-	background: #60C0AA;
-	border-radius: 5px;
-}
-li#menu_id_2000000000:hover >.nav_sublevel {
-	display: block;
-}
-.nav_sublevel > li:hover > ul.nav_sublevel{
-	display: block;
-}
-.nav_sublevel li > ul.nav_sublevel li:hover > ul {
-	display: block;
-}
-li#menu_id_2000000000 a span{
-	font-weight:700;
-	padding:0 1.8em 0 1.36em;}
-li#menu_id_2000000000 > a span{
-	padding: 0;
-}
-li#menu_id_2000000000 > a span::after{
-	content: url(/img/menu_catalog.svg);
-	position: absolute;
-	height: 1em;
-	left: 16.5em;
-	top: 7%;
-}
-li#menu_id_1000000000 {
-	display: none;
-}
-#nav_shadow{
-	display:none;
-	background:rgba(62,86,96,.8);
-	width:100%;
-	height:200%;
-	position:absolute;
-	z-index:99;}
-#nav_more{
-	display:none;
-	text-align:left;
-	position:relative;}
-#nav_more > a{
-	padding-right:2.7em;}
-#nav_more > a > span:after{
-	content:url(/img/arrow-down.svg);
-	position: absolute;
-	top: 5%;
-	right: 1.8em;
-	height:.5em;
-	width:.25em;
-	transform: translateY(-50%);}
-#nav_more:hover > a > span:after{
-	content:url(/img/arrow-up.svg);}
-#nav_more .nav_sublevel{
-	border:none;}
 
 /* ЛИЧНЫЙ КАБИНЕТ И КОРЗИНА */
 .nav_logout{
