@@ -23,6 +23,37 @@ class menu{
 		$this->nodes_parent=$nodes_parent;
 		if(isset($current['menu']))
 			$this->parents($current['menu'],$this->current_parents);
+
+		
+
+		$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `active`=1 AND `show_menu`=1 ORDER BY `order`;';
+		
+		$res=$sql->query($q);
+		$this->nodesCatalog = $res;
+	}
+
+	public function displayMenuCatalog() {
+		$result = '';
+		self::menuCatalogThree($this->nodesCatalog, $result);
+		echo $result;
+	}
+	public function menuCatalogThree($nodes, &$result = '', $link = '/catalog', $parentId = 0, $depth = 0) {
+		$cats = array_filter($nodes, function($node) use ($parentId) {
+			return $node['parent_id'] == $parentId && $node;
+		});
+
+		if (isset($cats)) {
+			$result.= '<ul ' . ($depth == 0 ? 'class="menu__list"' : '') . '>';
+			
+			foreach($cats as $category) {
+				$result.= '<li class="menu__item">';
+				$result.= '<a class="menu__link" href="' . $link . '/' . $category['slug'] . '">' . $category['name'] . '</a>';
+				self::menuCatalogThree($nodes, $result, $link . '/' . $category['slug'], $category['id'], ++$depth);
+				$result.= '</li>';
+			}
+			
+			$result.= '</ul>';
+		}
 	}
 
 	public function parent($el,&$nodes){
