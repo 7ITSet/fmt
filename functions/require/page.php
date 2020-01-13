@@ -1,5 +1,5 @@
 <div class="main_container_body row">
-	<div class="main_content col-lg-12">
+	<div class="main_content col-lg-12 col-xs-12">
 		<div class="main_container_header">
 			<div class="breadcrumbs">
 				<?$menu->breadcrumbs()?>
