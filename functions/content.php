@@ -41,7 +41,8 @@ class content{
 		if ($uri[0] == 'catalog') {
 			$i = 1;
 			for ($i = 1; $i < count($uri); $i++) {
-				$res = getCategory($uri[$i]);
+				$res = getCategoryCatalog($uri[$i]);
+
 				if (empty($res) && count($uri) - 1 !== $i) {
 					require_once(__DIR__.'/../www/404.php');
 					exit;
@@ -75,10 +76,9 @@ class content{
 		//если открыта категория товаров (/catalog/)
 		if($this->pageType=='catalog'){	
 			if(!$current['title']){
-				$q='SELECT * FROM `formetoo_main`.`m_products_categories` WHERE `id`='.$menu->nodes_id[$current['menu']]['category'].' LIMIT 1;';
 				$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 					RIGHT JOIN `formetoo_main`.`m_products_category` 
-						ON `m_products_category`.`category_id`='.$menu->nodes_id[$current['menu']]['category'].' AND `m_products`.`id`=`m_products_category`.`product_id` 
+						ON `m_products_category`.`category_id`='.$current['id'].' AND `m_products`.`id`=`m_products_category`.`product_id` 
 					WHERE `m_products_show_site`=1 
 					GROUP BY `m_products_category`.`product_id` 
 					LIMIT 1;'; 
@@ -91,6 +91,7 @@ class content{
 					$current['h1']=$res['name'];
 				}
 			}
+			$this->childrenCategories = self::getChildrenCategories();
 		}
 		//если открыта карточка товара
 		elseif($this->pageType =='product'){
@@ -119,6 +120,18 @@ function getCategory($name) {
 
 	return $res;
 }
+
+function getCategoryCatalog($name) {
+	global $sql;
+	$q = 'SELECT * FROM `formetoo_main`.`m_products_categories` 
+		WHERE `slug`="' . $name . '" 
+		LIMIT 1;'; 
+	
+	$res = $sql->query($q);
+
+	return $res;
+}
+
 function getProduct($name) {
 	global $sql;
 	$q = 'SELECT * FROM `formetoo_main`.`m_products` 
@@ -152,7 +165,7 @@ function getProduct($name) {
 			$q='SELECT 
 				`show_filters` 
 				FROM `formetoo_main`.`m_products_categories` WHERE 
-				`id`='.$menu->nodes_id[$current['menu']]['category'].' AND 
+				`id`=' . $current['id'] . ' AND 
 				`active`=1 
 				LIMIT 1;';
 			//если открыт весь каталог
@@ -414,7 +427,7 @@ Product.`m_products_show_site`=1
 				$ch=$this->getChCategories();
 				$q = 'SELECT SQL_CALC_FOUND_ROWS `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id, GROUP_CONCAT(`m_products_attributes_groups`.`m_products_attributes_groups_list_id` SEPARATOR \'|\') AS attributes_groups_id FROM `formetoo_main`.`m_products` 
 					RIGHT JOIN `formetoo_main`.`m_products_category` 
-						ON `m_products_category`.`category_id` IN('.implode(',',($ch?$ch:array($menu->nodes_id[$current['id']]['category']))).') AND `m_products`.`id`=`m_products_category`.`product_id` 
+						ON `m_products_category`.`category_id` IN('.implode(',',($ch?$ch:array($current['id']))).') AND `m_products`.`id`=`m_products_category`.`product_id` 
 					LEFT JOIN `formetoo_main`.`m_products_attributes_groups`
 						ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id` 
 					WHERE `m_products_show_site`=1 
@@ -1049,6 +1062,21 @@ Product.`m_products_show_site`=1
 		return $print_res;
 	}
 	
+	public function getChildrenCategories(){
+		global $e,$sql,$current,$menu;
+
+		$parent_id = $current['id'];
+		$childrenCategories = array_filter($menu->nodesCatalog, function($node) use ($parent_id) {
+			return $node['parent_id'] == $parent_id;
+		});
+
+		foreach($childrenCategories as &$category) {
+			$category['link'] = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) . $category['slug'];
+		}
+		unset($category);
+		
+		return $childrenCategories;
+	}
 	//КАТЕГОРИИ КАРТИНКАМИ
 	public function getCategories($open_cat=true){
 		global $e,$sql,$current,$menu;
@@ -1483,7 +1511,7 @@ Product.`m_products_show_site`=1
 				//получаем сниппеты
 				$result['snippets']=implode('<span class="three-dots"> … </span>',snippets($record['content'],$words));
 				//получаем ссылку
-				$result['link']='<span class="search-results-link"><a href="/" target="_blank">membrana.pro<span class="underline"></span></a>';
+				$result['link']='<span class="search-results-link"><a href="/" target="_blank"><span class="underline"></span></a>';
 				$parents=array();
 				$menu->parents($record['id'],$parents);
 				$url='';

@@ -53,6 +53,16 @@ function getCategory($name) {
 
 	return $res;
 }
+function getCategoryCatalog($name) {
+	global $sql;
+	$q = 'SELECT * FROM `formetoo_main`.`m_products_categories` 
+		WHERE `slug`="' . $name . '" 
+		LIMIT 1;'; 
+	
+	$res = $sql->query($q);
+
+	return $res;
+}
 function getProduct($name) {
 	global $sql;
 	$q = 'SELECT * FROM `formetoo_main`.`m_products` 
@@ -66,21 +76,28 @@ function getProduct($name) {
 
 //разбор пути
 $path=get('path');
-if ($path!=''){ 
+if ($path!='') {
 	$uri = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
 				$uri = explode( '/', $uri );
 				$uri = array_filter( $uri );
 				$uri = array_values( $uri );
 $is_product = false;
+
 	if ($uri[0] == 'catalog') {
 		$i = 1;
+		
 		for ($i = 1; $i < count($uri); $i++) {
-			$res = getCategory($uri[$i]);
+			$res = getCategoryCatalog($uri[$i]);
 			if (empty($res) && count($uri) - 1 !== $i) {
 				require_once(__DIR__.'/../www/404.php');
 				exit;
 			}
-			if (!empty($res)) {
+
+
+			if (!empty($res) && count($uri) - 1 === $i) {
+				$current = $res[0];
+			}
+			if (!empty($res) ) {
 				continue;
 			}
 
@@ -108,8 +125,9 @@ $is_product = false;
 				exit;
 			}
 		}
-	} 
-	if (!$is_product) {
+	}
+	
+	if (!$is_product && $uri[0] != 'catalog') {
 		$path=explode('/',$path);
 	array_pop($path);
 	//сначала - последний раздел
