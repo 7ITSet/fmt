@@ -53,7 +53,7 @@ class menu{
 				$linkCategory = $link . '/' . $category['slug'];
 				$result.= '<li class="menu__item">';
 				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
-				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, $depth+1);
 				$result.= '</li>';
 			}
 			
@@ -67,7 +67,7 @@ class menu{
 				$linkCategory = $link . '/' . $category['slug'];
 				$result.= '<li class="menu__item">';
 				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
-				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, $depth+1);
 				$result.= '</li>';
 			}
 			
@@ -80,7 +80,7 @@ class menu{
 				$linkCategory = $link . '/' . $category['slug'];
 				$result.= '<li class="menu__item">';
 				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
-				self::menuCatalogThree($nodes, $result, $linkCategory, $category, ++$depth);
+				self::menuCatalogThree($nodes, $result, $linkCategory, $category, $depth+1);
 				$result.= '</li>';
 			}
 			
