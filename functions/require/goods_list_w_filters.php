@@ -44,13 +44,15 @@
 			</div>
 		</div>
 		<div class="clr"></div>
-		<?if($content->childrenCategories) {
-			foreach($content->childrenCategories as $category) {
-				?>
-				<a class="save_me_life" href="<?=$category['link']?>"><?=$category['name']?></a>
-				<?
-			}
-		}?>
+        <div class="categories_list">
+            <?if($content->childrenCategories) {
+                foreach($content->childrenCategories as $category) {
+                    ?>
+                    <a class="save_me_life" href="<?=$category['link']?>"><?=$category['name']?></a>
+                    <?
+                }
+            }?>
+        </div>
 		<div class="main_products_list_items">
 			<?$content->getGoods();?>
 		</div>

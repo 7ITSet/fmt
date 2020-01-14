@@ -593,7 +593,7 @@ img.gif-mini-preloader{
 }
 
 /* MENU */
-.nav_wrapper > span {
+.nav_wrapper span {
 	display: flex;
 	height: 49px;
 	align-items: center;
@@ -604,18 +604,85 @@ img.gif-mini-preloader{
 	font-weight: 600;
 	cursor: default;
 }
-.nav_wrapper > span::after{
+.nav_wrapper span::after{
 	content: url(/img/menu_catalog.svg);
 	position: absolute;
 	height: 1em;
 	left: 16.8em;
 }
+.menu {
+	position: absolute;
+	width: 100%;
+	height: 75px;
+	top: 0;
+}
 ul.menu__list {
+	position: absolute;
+	width: 100%;
+	min-height: 600px;
+	box-sizing: border-box;
+	text-align: left;
+	background: #fff;
+	padding: 1em 0 1em 1em;
+	top: 4.4em;
+	box-shadow: 0px 20px 20px 0px rgba(0,0,0,.2);
+}
+.sub-menu {
+	position: absolute;
+	padding: 1.5em;
+	box-sizing: border-box;
+	width: 63em;
+	min-height: 600px;
+	top: 0;
+	left: 100%;
+	background: #FFF;
+	box-shadow: 5px 20px 20px 0px rgba(0,0,0,.2);
+	border-left: 2px solid #ddd;
+	text-align: left;
+}
+.sub-menu__title {
+	font-size: 2em;
+	color: #333;
+	padding-bottom: .5em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #DDD;
+}
+.menu__list > li.menu__item > a {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: .5em 0 1em .5em;
+	font-weight: 600;
+	color: #555;
+}
+ul.menu__list--sub-menu {
+	width: 30%;
+	box-sizing: border-box;
+}
+ul.menu__list--sub-menu li.menu__item a {
+	color: #666;
+	display: inline-block;
+	padding: .5em 0;
+}
+ul.menu__list--sub-menu li.menu__item:hover a {
+	border-bottom: none;
+	color: #e37218;
+}
+li.menu__item:hover > a {
+	color: #e37218;
+	padding-left: .2em;
+	border-bottom: 1px solid #e37218;
+}
+ul.menu__list, .sub-menu {
 	display: none;
 }
-.nav_wrapper:hover ul.menu__list {
+.menu__item>ul {
+	display: none;
+}
+.menu:hover ul.menu__list, .menu__item.hover > div {
 	display: block;
 }
+
 
 
 
@@ -1287,9 +1354,29 @@ img.timer_product_img_big {
 	overflow:hidden;
 	background: #f6f6f6;
 }
-
 .main_container_body .col-lg-3 {
 	padding-top: 1em;
+}
+a.save_me_life {
+	background: #fff;
+	padding: 1em;
+	box-sizing: border-box;
+	width: 31.2%;
+	min-height: 110px;
+	float: left;
+	margin: .5em;
+	font-size: 1.3em;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	color: #777;
+	border-radius: 7px;
+}
+a.save_me_life:hover {
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow:    0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+	box-shadow:         0px 5px 15px 0px rgba(50, 50, 50, 0.4);
+	color: #e37218;
 }
 
 .carousel {

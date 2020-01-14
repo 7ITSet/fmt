@@ -174,7 +174,9 @@ if($merge_carts){
                     <div class="left col-lg-3">
                         <div class="nav_wrapper">
                           <span>КАТАЛОГ ТОВАРОВ</span>
-                          <?echo createMenu() ?>
+                          <div class="menu">
+                            <?echo createMenu() ?>
+                          </div>
                         </div>
                     </div>
                     <div class="right col-lg-9">
