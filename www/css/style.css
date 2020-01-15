@@ -656,15 +656,37 @@ ul.menu__list {
 	color: #555;
 }
 ul.menu__list--sub-menu {
-	width: 30%;
 	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
 }
-ul.menu__list--sub-menu li.menu__item a {
+.menu__list--sub-menu > li.menu__item {
+	padding: 0 1em 1.5em 0;
+	margin: 0 2em 1em 0;
+	display: block;
+	width: 28%;
+	float: left;
+}
+ul.menu__list--sub-menu > li.menu__item > ul {
+	padding-left: .5em;
+}
+ul.menu__list--sub-menu > li.menu__item > ul > li.menu__item a {
+	font-size: .9em;
+	padding-bottom: .3em;
+}
+ul.menu__list--sub-menu > li.menu__item > ul > li.menu__item:hover a {
+	border-bottom: none;
+	color: #e37218;
+}
+ul.menu__list--sub-menu > li.menu__item > a {
 	color: #666;
 	display: inline-block;
 	padding: .5em 0;
+	margin-bottom: .5em;
+	font-weight: 600;
 }
-ul.menu__list--sub-menu li.menu__item:hover a {
+ul.menu__list--sub-menu > li.menu__item:hover > a {
 	border-bottom: none;
 	color: #e37218;
 }
@@ -674,9 +696,6 @@ li.menu__item:hover > a {
 	border-bottom: 1px solid #e37218;
 }
 ul.menu__list, .sub-menu {
-	display: none;
-}
-.menu__item>ul {
 	display: none;
 }
 .menu:hover ul.menu__list, .menu__item.hover > div {
@@ -1378,7 +1397,6 @@ a.save_me_life:hover {
 	box-shadow:         0px 5px 15px 0px rgba(50, 50, 50, 0.4);
 	color: #e37218;
 }
-
 .carousel {
 	position: relative;
 	width: 100%;
