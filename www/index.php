@@ -139,15 +139,6 @@ if($merge_carts){
         </div>
 
         <div class="header_mobile">
-            <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
-                <span class="icon-cart">
-                    <img src="/img/cart.svg" class="cart_icon">
-                    <span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?> </span>
-                </span>
-            </div>
-            <div class="header_logo" id="logo">
-                <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
-            </div>
             <div class="city_account">
                 <div class="parent header_city" id="city">
                     <a class="child city_href" href="#"><img id="map_icon" src="/img/map.png">
@@ -167,13 +158,23 @@ if($merge_carts){
             <div class="nav_wrapper">
                 <?echo createMenu() ?>
             </div>
+            <div class="header_logo" id="logo">
+                <a href="/">
+                    <p>FMT <span>formetu.ru</span></p>
+                </a>
+            </div>
+            <div class="nav_cart" data-href="/cart/" title="Перейти к корзине">
+                <span class="icon-cart">
+                    <img src="/img/cart.svg" class="cart_icon">
+                    <span class="nav_cart_size<?=$order->getCartSize()?' active">'.$order->getCartSize():'">'?> </span>
+                </span>
+            </div>
         </div>
         <div class="top_line">
             <div>
                 <div class="top_line_container row center-lg">
                     <div class="left col-lg-3">
                         <div class="nav_wrapper">
-                          <span>КАТАЛОГ ТОВАРОВ</span>
                           <div class="menu">
                             <?echo createMenu() ?>
                           </div>

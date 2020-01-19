@@ -702,7 +702,6 @@ $(document).ready(function(){
 			$('.main_products_list_items_info_pay_types_icons:eq(2)').find('.ssl-verify').html('<table width=125 border=0 cellspacing=0 cellpadding=0 title="CLICK TO VERIFY: This site uses a GlobalSign SSL Certificate to secure your personal information." ><tr><td><span id="ss_img_wrapper_gmogs_image_125-50_en_dblue"><a href="https://www.globalsign.com/" target=_blank title="GlobalSign Site Seal" rel="nofollow"><img alt="SSL" border=0 id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_125-50_en.gif"></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_125-50_en_dblue.js"></script></td></tr></table>');
 	},500);
 
-	$("#menu_id_2000000000 > a > span").text("КАТАЛОГ ТОВАРОВ");
 	var mqn = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
 	if (mqn.matches) {
 		$('.header_mobile #menu_id_2000000000 span:first').text('КАТАЛОГ');
@@ -717,8 +716,8 @@ $(document).ready(function(){
 	if (mql.matches) {
 		$('.header_mobile #menu_id_2000000000 span:first').text('');
 		$("#menu_id_2000000000 > a").removeAttr("href");
-		$('#menu_id_2000000000 > a > span').click(function () {
-			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
+		$('.nav_wrapper').click(function () {
+			$(this).toggleClass('active_mobile');
 			$('body').toggleClass('active_cat');
 			$('.city_account').toggleClass('active_city_account');
 		});
