@@ -704,23 +704,24 @@ $(document).ready(function(){
 
 	var mqn = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
 	if (mqn.matches) {
-		$('.header_mobile #menu_id_2000000000 span:first').text('КАТАЛОГ');
-		$("#menu_id_2000000000 > a").removeAttr("href");
-		$('#menu_id_2000000000 > a > span').click(function () {
-			$('#menu_id_2000000000, .nav_wrapper').toggleClass('active_mobile');
-			$('body').toggleClass('active_cat');
-			$('.city_account').toggleClass('active_city_account');
-		});
-	}
-	var mql = window.matchMedia('only screen and (max-width: 768px)');
-	if (mql.matches) {
-		$('.header_mobile #menu_id_2000000000 span:first').text('');
-		$("#menu_id_2000000000 > a").removeAttr("href");
 		$('.nav_wrapper').click(function () {
 			$(this).toggleClass('active_mobile');
 			$('body').toggleClass('active_cat');
 			$('.city_account').toggleClass('active_city_account');
 		});
+	};
+	var mql = window.matchMedia('only screen and (max-width: 768px)');
+	if (mql.matches) {
+		$('.nav_wrapper > span').click(function () {
+			$(this).toggleClass('active');
+			$(this).parent().toggleClass('active_mobile');
+			$('body').toggleClass('active_cat');
+			$('.city_account').toggleClass('active_city_account');
+		});
+		$('.nav_wrapper > ul.menu__list > .menu__item > a').removeAttr('href');
+		$('.nav_wrapper > ul.menu__list > .menu__item').click(function () {
+			$(this).toggleClass('active');
+		})
 		$('#popup_quicksubmit').css({'width':'50%', 'left':'25%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
 	};
 	var mql = window.matchMedia('only screen and (max-width: 480px)');
