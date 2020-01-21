@@ -48,7 +48,10 @@
             <?if($content->childrenCategories) {
                 foreach($content->childrenCategories as $category) {
                     ?>
-                    <a class="save_me_life" href="<?=$category['link']?>"><?=$category['name']?></a>
+                    <div class="catalog_category">
+                        <img src="/img/cat_img.png" alt="">
+                        <a class="save_me_life" href="<?=$category['link']?>"><?=$category['name']?></a>
+                    </div>
                     <?
                 }
             }?>
