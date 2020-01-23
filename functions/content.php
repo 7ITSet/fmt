@@ -314,9 +314,9 @@ function getProduct($name) {
 		//ОТДЕЛЬНО ДОБАВЛЯЕМ ФИЛЬТР ЦЕНЫ
 		if(isset($data['FILTER[]'][0])){
 			$q_where[]='(
-	(Product.`m_products_price_general` BETWEEN '.(float)$data['FILTER[]'][0]['from'].' AND '.(float)$data['FILTER[]'][0]['to'].' AND Product.`m_products_price_currency`=1) OR
-	(Product.`m_products_price_general` BETWEEN '.round(($data['FILTER[]'][0]['from']/$this->ec[2]),2).' AND '.round(($data['FILTER[]'][0]['to']/$this->ec[2]),2).' AND Product.`m_products_price_currency`=2) OR 
-	(Product.`m_products_price_general` BETWEEN '.round(($data['FILTER[]'][0]['from']/$this->ec[3]),2).' AND '.round(($data['FILTER[]'][0]['to']/$this->ec[3]),2).' AND Product.`m_products_price_currency`=3)
+	(Product.`m_products_price_general` BETWEEN '.(float)$data['FILTER[]'][0]['from'].' AND '.(float)$data['FILTER[]'][0]['to'].' AND Product.`currency_id`=1) OR
+	(Product.`m_products_price_general` BETWEEN '.round(($data['FILTER[]'][0]['from']/$this->ec[2]),2).' AND '.round(($data['FILTER[]'][0]['to']/$this->ec[2]),2).' AND Product.`currency_id`=2) OR 
+	(Product.`m_products_price_general` BETWEEN '.round(($data['FILTER[]'][0]['from']/$this->ec[3]),2).' AND '.round(($data['FILTER[]'][0]['to']/$this->ec[3]),2).' AND Product.`currency_id`=3)
 )';
 		}
 		
@@ -324,7 +324,7 @@ function getProduct($name) {
 		$q_wo_l='SELECT 
 				SQL_CALC_FOUND_ROWS
 				/* Product.`id`,Product.`active`,Product.`id`[SELECT] */
-				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
+				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`currency_id`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
 			FROM `formetoo_main`.`m_products` Product
 [JOIN]
 			WHERE
@@ -476,7 +476,7 @@ Product.`active`=1
 				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`currency_id`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$links).') AND
 						`active`=1 
@@ -499,7 +499,7 @@ Product.`active`=1
 						$viewed[]=$_result;
 				}
 				if($viewed){
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`currency_id`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$viewed).') AND
 						`active`=1 
@@ -601,7 +601,7 @@ Product.`active`=1
                                         '<div class="main_products_list_items_item_price">
                                                 <div class="price">
                                                         <p>
-                                                                ' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['m_products_price_currency']], 2)) . ' <span>руб.</span>
+                                                                ' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['currency_id']], 2)) . ' <span>руб.</span>
                                                         </p>
                                                 </div>
                                         </div>
@@ -724,7 +724,7 @@ Product.`active`=1
 		//если не было - товары из открытой категории
 		elseif($this->getChCategories()){
 			//выбор ID товаров, находящихся в текущей категори или ее подкатегориях
-			$q='SELECT `id`,`m_products_price_general`,`m_products_price_currency`,`id` FROM `formetoo_main`.`m_products` WHERE 
+			$q='SELECT `id`,`m_products_price_general`,`currency_id`,`id` FROM `formetoo_main`.`m_products` WHERE 
 				`id` IN('.implode(',',$this->getChCategories()).') AND 
 				`active`=1;';
 			if($this->goods=$sql->query($q,'id')){
@@ -786,7 +786,7 @@ Product.`active`=1
 		//если не было - товары из открытой категории
 		if($chCat=$this->getChCategories()){
 			//выбор ID товаров, находящихся в текущей категори или ее подкатегориях
-			/* $q='SELECT `id`,`m_products_price_general`,`m_products_price_currency`,`id` FROM `formetoo_main`.`m_products` WHERE 
+			/* $q='SELECT `id`,`m_products_price_general`,`currency_id`,`id` FROM `formetoo_main`.`m_products` WHERE 
 				`id` IN('.implode(',',$chCat).') AND 
 				`active`=1;';
 			if($this->goods=$sql->query($q,'id')){	 */		
@@ -848,7 +848,7 @@ Product.`active`=1
 			foreach($this->selectedIDGoods as $_good){
 				//перевод цены в рубли
 				$_good=$this->goods[$_good][0];
-				$_good['m_products_price_general']=round($this->ec[$_good['m_products_price_currency']]*$_good['m_products_price_general'],2);
+				$_good['m_products_price_general']=round($this->ec[$_good['currency_id']]*$_good['m_products_price_general'],2);
 				$attr_range_f[0]['min']=$_good['m_products_price_general']<$attr_range_f[0]['min']?$_good['m_products_price_general']:$attr_range_f[0]['min'];
 				$attr_range_f[0]['max']=$_good['m_products_price_general']>$attr_range_f[0]['max']?$_good['m_products_price_general']:$attr_range_f[0]['max'];
 			}
@@ -857,7 +857,7 @@ Product.`active`=1
 			foreach($this->goods as $_good){
 				//перевод цены в рубли
 				$_good=$_good[0];
-				$_good['m_products_price_general']=round($this->ec[$_good['m_products_price_currency']]*$_good['m_products_price_general'],2);
+				$_good['m_products_price_general']=round($this->ec[$_good['currency_id']]*$_good['m_products_price_general'],2);
 				$attr_range[0]['min']=$_good['m_products_price_general']<$attr_range[0]['min']?$_good['m_products_price_general']:$attr_range[0]['min'];
 				$attr_range[0]['max']=$_good['m_products_price_general']>$attr_range[0]['max']?$_good['m_products_price_general']:$attr_range[0]['max'];
 			}
@@ -1199,8 +1199,8 @@ Product.`active`=1
 	public function getGoodPrice(){
 		global $e,$sql,$current_product;
 		
-		$price=$current_product['m_products_price_general']*$this->ec[$current_product['m_products_price_currency']];
-		$bonus=$current_product['m_products_price_general']*$this->ec[$current_product['m_products_price_currency']]*$current_product['m_products_price_bonus']*.01;
+		$price=$current_product['m_products_price_general']*$this->ec[$current_product['currency_id']];
+		$bonus=$current_product['m_products_price_general']*$this->ec[$current_product['currency_id']]*$current_product['m_products_price_bonus']*.01;
 		
 		return array(
 			'price'=>$price,

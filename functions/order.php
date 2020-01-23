@@ -343,13 +343,13 @@ class order{
 		$ec[3]=$ec_res[0]['m_info_settings_exchange_eur'];
 		
 		//находим цену и параметры товара
-		$q='SELECT `id`,`slug`,`m_products_price_general`,`m_products_price_bonus`,`m_products_price_currency`,`measure_ratio` FROM `formetoo_main`.`m_products` WHERE 
+		$q='SELECT `id`,`slug`,`m_products_price_general`,`m_products_price_bonus`,`currency_id`,`measure_ratio` FROM `formetoo_main`.`m_products` WHERE 
 			`id`='.$data['product_id'].' LIMIT 1;';
 		if($prod=$sql->query($q)){
 			$prod=$prod[0];
 			
-			$price=round($prod['m_products_price_general']*$ec[$prod['m_products_price_currency']],2);
-			$bonus=$prod['m_products_price_general']*$ec[$prod['m_products_price_currency']]*$prod['m_products_price_bonus']*.01;
+			$price=round($prod['m_products_price_general']*$ec[$prod['currency_id']],2);
+			$bonus=$prod['m_products_price_general']*$ec[$prod['currency_id']]*$prod['m_products_price_bonus']*.01;
 			$volume=round($prod['measure_ratio'],4);
 			//проверка на кратность товара и минимально возможное количество
 			$volume=$volume?$volume:1;
