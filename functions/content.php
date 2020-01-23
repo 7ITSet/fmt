@@ -102,9 +102,9 @@ class content{
 //			$current['description']=$current_product['m_products_name_full'].' с доставкой в '.$G['CITY']['m_info_city_name_city_tv'].'. Купить '.mb_strtolower($current_product['m_products_name'],'utf-8').' оптом и в розницу в интернет-магазине.';
 //			$current['keywords']=$current_product['m_products_name_full'];
 
-            $current['title']=$current_product['m_products_seo_title'];
-            $current['description']=$current_product['m_products_seo_description'];
-            $current['keywords']=$current_product['m_products_seo_keywords'];
+            $current['title']=$current_product['meta_title'];
+            $current['description']=$current_product['meta_description'];
+            $current['keywords']=$current_product['meta_keywords'];
 
 			$current['h1']=$current_product['m_products_name_full'];
 		}
