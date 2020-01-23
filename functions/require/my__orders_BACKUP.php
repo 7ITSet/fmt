@@ -53,12 +53,12 @@ if(get('new')=='success'){
 			foreach($params->items as $_item)
 				foreach($_item->services as $__item)
 					$data_prod[]=$__item->id;
-			$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';	
+			$q='SELECT `id`,`slug`,`m_products_name_full`,`measure_id` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';	
 			$data_prod=$sql->query($q,'id');
 			//ед. измерения
 			$data_units=array();
 			foreach($data_prod as $_prod)
-				$data_units[]=$_prod[0]['m_products_unit'];
+				$data_units[]=$_prod[0]['measure_id'];
 			$q='SELECT * FROM `formetoo_cdb`.`m_info_units` WHERE `m_info_units_id` IN('.implode(',',$data_units).');';
 			$data_units=$sql->query($q,'m_info_units_id');
 		}
@@ -96,7 +96,7 @@ if(get('new')=='success'){
 						<td class="left" style="border-right:1px solid #ddd;">'.$data_prod[$__item->id][0]['m_products_name_full'].'</td>
 						<td class="right" style="border-right:1px solid #ddd;">'.transform::price_o($__item->price,true,true).'&nbsp;₽</td>
 						<td class="center" style="border-right:1px solid #ddd;">'.transform::price_o($__item->count,true,true).'</td>
-						<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$data_prod[$__item->id][0]['m_products_unit']][0]['m_info_units_name'].'</td>
+						<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$data_prod[$__item->id][0]['measure_id']][0]['m_info_units_name'].'</td>
 						<td class="right">'.transform::price_o(round($__item->price*$__item->count,2),true,true).'&nbsp;₽</td>
 					</tr>';
 		echo '
@@ -146,7 +146,7 @@ if(get('action')=='detail'){
 					if($__item->table=='products')
 						$data_prod[]=$__item->id;
 					else $data_serv[]=$__item->id;
-			$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';	
+			$q='SELECT `id`,`slug`,`m_products_name_full`,`measure_id` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';	
 			$data_prod=$sql->query($q,'id');
 			$q='SELECT `m_services_id`,`m_services_name`,`m_services_unit` FROM `formetoo_main`.`m_services` WHERE `m_services_id` IN(0,'.implode(',',$data_serv).');';	
 			$data_serv=$sql->query($q,'m_services_id');
@@ -154,7 +154,7 @@ if(get('action')=='detail'){
 			$data_units=array();
 			if($data_prod)
 				foreach($data_prod as $_prod)
-					$data_units[]=$_prod[0]['m_products_unit'];
+					$data_units[]=$_prod[0]['measure_id'];
 			if($data_serv)
 				foreach($data_serv as $_serv)
 					$data_units[]=$_serv[0]['m_services_unit'];		
@@ -191,7 +191,7 @@ if(get('action')=='detail'){
 						<td class="left" style="border-right:1px solid #ddd;">'.($__item->table=='products'?$data_prod[$__item->id][0]['m_products_name_full']:$data_serv[$__item->id][0]['m_services_name']).'</td>
 						<td class="right" style="border-right:1px solid #ddd;">'.transform::price_o($__item->price,true,true).'&nbsp;₽</td>
 						<td class="center" style="border-right:1px solid #ddd;">'.transform::price_o($__item->count,true,true).'</td>
-						<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$__item->table=='products'?$data_prod[$__item->id][0]['m_products_unit']:$data_serv[$__item->id][0]['m_services_unit']][0]['m_info_units_name'].'</td>
+						<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$__item->table=='products'?$data_prod[$__item->id][0]['measure_id']:$data_serv[$__item->id][0]['m_services_unit']][0]['m_info_units_name'].'</td>
 						<td class="right">'.transform::price_o(round($__item->price*$__item->count,2),true,true).'&nbsp;₽</td>
 					</tr>';
 			}

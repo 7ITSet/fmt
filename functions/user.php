@@ -1508,12 +1508,12 @@ class user{
 			$data_prod=array();
 			foreach($data_cart->items as $_item)
 				$data_prod[]=$_item->product_id;
-			$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';
+			$q='SELECT `id`,`slug`,`m_products_name_full`,`measure_id` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';
 			$data_prod=$sql->query($q,'id');
 			//ед. измерения
 			$data_units=array();
 			foreach($data_prod as $_prod)
-				$data_units[]=$_prod[0]['m_products_unit'];
+				$data_units[]=$_prod[0]['measure_id'];
 			$q='SELECT * FROM `formetoo_cdb`.`m_info_units` WHERE `m_info_units_id` IN('.implode(',',$data_units).');';
 			$data_units=$sql->query($q,'m_info_units_id');
 			//контрагент
@@ -1557,7 +1557,7 @@ class user{
 									<td class="left" style="border-right:1px solid #ddd;">'.$data_prod[$_item->product_id][0]['m_products_name_full'].'</td>
 									<td class="right" style="border-right:1px solid #ddd;">'.transform::price_o($_item->product_price,true,true).'&nbsp;₽</td>
 									<td class="center" style="border-right:1px solid #ddd;">'.transform::price_o($_item->product_count,true,true).'</td>
-									<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$data_prod[$_item->product_id][0]['m_products_unit']][0]['m_info_units_name'].'</td>
+									<td class="center" style="border-right:1px solid #ddd;">'.$data_units[$data_prod[$_item->product_id][0]['measure_id']][0]['m_info_units_name'].'</td>
 									<td class="right">'.transform::price_o(round($_item->product_price*$_item->product_count,2),true,true).'&nbsp;₽</td>
 								</tr>';
 
@@ -1617,12 +1617,12 @@ class user{
 			$data_prod=array();
 			foreach($data_cart->items as $_item)
 				$data_prod[]=$_item->product_id;
-			$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_unit` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';
+			$q='SELECT `id`,`slug`,`m_products_name_full`,`measure_id` FROM `formetoo_main`.`m_products` WHERE `id` IN('.implode(',',$data_prod).');';
 			$data_prod=$sql->query($q,'id');
 			//ед. измерения
 			$data_units=array();
 			foreach($data_prod as $_prod)
-				$data_units[]=$_prod[0]['m_products_unit'];
+				$data_units[]=$_prod[0]['measure_id'];
 			$q='SELECT * FROM `formetoo_cdb`.`m_info_units` WHERE `m_info_units_id` IN('.implode(',',$data_units).');';
 			$data_units=$sql->query($q,'m_info_units_id');
 

@@ -20,7 +20,7 @@ if($order->getCart()){
 	$goods=array();
 	foreach($order->getCart()->items as &$_item)
 		$goods[]=$_item->product_id;
-	$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_name`,`m_products_foto`,`m_products_unit`,`id_isolux` FROM `formetoo_main`.`m_products` WHERE `id` IN ('.implode(',',$goods).');';
+	$q='SELECT `id`,`slug`,`m_products_name_full`,`m_products_name`,`m_products_foto`,`measure_id`,`id_isolux` FROM `formetoo_main`.`m_products` WHERE `id` IN ('.implode(',',$goods).');';
 	if($products=$sql->query($q,'id')){
 		//ед. измерения
 		$units=$sql->query('SELECT * FROM `formetoo_cdb`.`m_info_units`;','m_info_units_id');
@@ -117,7 +117,7 @@ if($order->getCart()){
 				$item_v['weight']=0;
 				$item_v['volume']=0;
 				
-				$unit=$units[$products[$_item->product_id][0]['m_products_unit']][0];
+				$unit=$units[$products[$_item->product_id][0]['measure_id']][0];
 				$foto='';
 				$products[$_item->product_id][0]['m_products_foto']=json_decode($products[$_item->product_id][0]['m_products_foto']);
 				foreach($products[$_item->product_id][0]['m_products_foto'] as $_foto)

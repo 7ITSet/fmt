@@ -79,7 +79,7 @@ class content{
 				$q = 'SELECT `m_products`.*, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id FROM `formetoo_main`.`m_products` 
 					RIGHT JOIN `formetoo_main`.`m_products_category` 
 						ON `m_products_category`.`category_id`='.$current['id'].' AND `m_products`.`id`=`m_products_category`.`product_id` 
-					WHERE `m_products_show_site`=1 
+					WHERE `active`=1 
 					GROUP BY `m_products_category`.`product_id` 
 					LIMIT 1;'; 
 
@@ -323,14 +323,14 @@ function getProduct($name) {
 		//запрос без лимитов пагинации для правильного расчета кол-ва товаров по каждому фильтру	
 		$q_wo_l='SELECT 
 				SQL_CALC_FOUND_ROWS
-				/* Product.`id`,Product.`m_products_show_site`,Product.`id`[SELECT] */
-				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
+				/* Product.`id`,Product.`active`,Product.`id`[SELECT] */
+				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
 			FROM `formetoo_main`.`m_products` Product
 [JOIN]
 			WHERE
 [WHERE]
 Product.`id` IN('.implode(',',$this->getChCategories($data['current'])).') AND
-Product.`m_products_show_site`=1 
+Product.`active`=1 
 			ORDER BY '.$order.',`order` DESC;';
 			
 		//формируем запрос
@@ -430,7 +430,7 @@ Product.`m_products_show_site`=1
 						ON `m_products_category`.`category_id` IN('.implode(',',($ch?$ch:array($current['id']))).') AND `m_products`.`id`=`m_products_category`.`product_id` 
 					LEFT JOIN `formetoo_main`.`m_products_attributes_groups`
 						ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id` 
-					WHERE `m_products_show_site`=1 
+					WHERE `active`=1 
 					GROUP BY `m_products_category`.`product_id` 
 					ORDER BY '.$order.',`order` DESC
 					LIMIT '.$start.','.$limit.';'; 
@@ -476,10 +476,10 @@ Product.`m_products_show_site`=1
 				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$links).') AND
-						`m_products_show_site`=1 
+						`active`=1 
 						ORDER BY '.$order.',`order` DESC 
 						LIMIT '.$start.','.$limit.';';
 					$res=$sql->query($q);
@@ -499,10 +499,10 @@ Product.`m_products_show_site`=1
 						$viewed[]=$_result;
 				}
 				if($viewed){
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$viewed).') AND
-						`m_products_show_site`=1 
+						`active`=1 
 						LIMIT '.$start.','.$limit.';';
 					$res=$sql->query($q);
 					$count=$sql->query('SELECT FOUND_ROWS();');
@@ -706,7 +706,7 @@ Product.`m_products_show_site`=1
 			$q=' CREATE TEMPORARY TABLE IF NOT EXISTS `formetoo_main`.`temp__filters`
 						SELECT `id` FROM `formetoo_main`.`m_products` WHERE 
 						`id` IN('.implode(',',$goods).') 
-						AND `m_products_show_site`=1;';
+						AND `active`=1;';
 				$sql->query($q);
 			//выбор атрибутов
 			$q='SELECT * FROM `formetoo_main`.`m_products_attributes`
@@ -726,12 +726,12 @@ Product.`m_products_show_site`=1
 			//выбор ID товаров, находящихся в текущей категори или ее подкатегориях
 			$q='SELECT `id`,`m_products_price_general`,`m_products_price_currency`,`id` FROM `formetoo_main`.`m_products` WHERE 
 				`id` IN('.implode(',',$this->getChCategories()).') AND 
-				`m_products_show_site`=1;';
+				`active`=1;';
 			if($this->goods=$sql->query($q,'id')){
 				$q=' CREATE TEMPORARY TABLE IF NOT EXISTS `formetoo_main`.`temp__filters`
 						SELECT `id` FROM `formetoo_main`.`m_products` WHERE 
 						`id` IN('.implode(',',$this->getChCategories()).') 
-						AND `m_products_show_site`=1;';
+						AND `active`=1;';
 				$sql->query($q);
 				//выбор атрибутов
 				$q='SELECT * FROM `formetoo_main`.`m_products_attributes`
@@ -755,7 +755,7 @@ Product.`m_products_show_site`=1
 			/* $q=' CREATE TEMPORARY TABLE IF NOT EXISTS `formetoo_main`.`temp__filters`
 						SELECT `id` FROM `formetoo_main`.`m_products` WHERE 
 						`id` IN('.implode(',',$goods).') 
-						AND `m_products_show_site`=1;';
+						AND `active`=1;';
 				$sql->query($q); */
 			//выбор атрибутов
 			/* $q='SELECT * FROM `formetoo_main`.`m_products_attributes`
@@ -788,12 +788,12 @@ Product.`m_products_show_site`=1
 			//выбор ID товаров, находящихся в текущей категори или ее подкатегориях
 			/* $q='SELECT `id`,`m_products_price_general`,`m_products_price_currency`,`id` FROM `formetoo_main`.`m_products` WHERE 
 				`id` IN('.implode(',',$chCat).') AND 
-				`m_products_show_site`=1;';
+				`active`=1;';
 			if($this->goods=$sql->query($q,'id')){	 */		
 				 $q=' CREATE TEMPORARY TABLE IF NOT EXISTS `formetoo_main`.`temp__filters`
 						SELECT `id`,`slug` FROM `formetoo_main`.`m_products` WHERE 
 						`id` IN('.implode(',',$chCat).') 
-						AND `m_products_show_site`=1;'; 
+						AND `active`=1;'; 
 				$sql->query($q);
 				//выбор атрибутов
 				$q='SELECT * FROM `formetoo_main`.`m_products_attributes`
@@ -1090,7 +1090,7 @@ Product.`m_products_show_site`=1
 				FROM `formetoo_main`.`m_products` 
 				RIGHT JOIN `formetoo_main`.`m_products_category` 
 					ON `m_products_category`.`category_id` IN('.implode(',',$cat_ids).') AND `m_products`.`id`=`m_products_category`.`product_id` 
-				WHERE `m_products_show_site`=1 
+				WHERE `active`=1 
 				GROUP BY `m_products_category`.`product_id`;';
 
 			if($res=$sql->query($q,'categories_id')){
@@ -1210,7 +1210,7 @@ Product.`m_products_show_site`=1
 	
 	public function getGoodUnit(){
 		global $current_product;
-		return $this->units[$current_product['m_products_unit']][0];
+		return $this->units[$current_product['measure_id']][0];
 	}
 	
 	//атрибуты товара в карточке товара
