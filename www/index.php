@@ -156,7 +156,7 @@ if($merge_carts){
                 </div>
             </div>
             <div class="nav_wrapper">
-                <span>  </span>
+                <span></span>
                 <?echo createMenu() ?>
             </div>
             <div class="header_logo" id="logo">

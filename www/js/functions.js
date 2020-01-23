@@ -736,4 +736,16 @@ $(document).ready(function(){
 			$(this).children('.good_icons').toggleClass('shadow');
 		};
 	});
+
+	$('.tab_list').click(function () {
+		$(this).addClass('active');
+		$('.avails_list').addClass('active');
+		$('.tab_map').removeClass('active');
+	});
+
+	$('.tab_map').click(function () {
+		$(this).addClass('active');
+		$('.tab_list,.avails_list').removeClass('active');
+	});
+
 });

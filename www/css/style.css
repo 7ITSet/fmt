@@ -2478,6 +2478,140 @@ a.good_comparison_item {
 .links_goods .slick-slide{
 	margin-right:1em;}
 
+/*НАЛИЧИЕ ТОВАРА*/
+.goods_avails {
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    box-sizing: border-box;
+	background: #f0f0f0;
+    border-radius: 7px;
+}
+.goods_avails_header {
+	position: relative;
+    padding: 1.5em;
+    box-sizing: border-box;
+	border-radius: 7px 7px 0 0;
+	background: #e6e6e6;
+}
+.goods_avails_header h1 {
+	position: relative;
+	margin: 0;
+	color: #333;
+}
+.goods_avails_header h1::after {
+	content: '\00d7';
+	position: absolute;
+	color: #bbb;
+	font-size: 2em;
+	font-weight: 300;
+	top: -20px;
+	right: 0px;
+	cursor: pointer;
+}
+.goods_avails_content {
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+}
+.tabs {
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+}
+.tabs div {
+	width: 50%;
+	position: relative;
+	padding: .5em;
+	font-size: 1.5em;
+	box-sizing: border-box;
+	border: 1px solid #d8d8d8;
+	cursor: pointer;
+	background: #e6e6e6;
+}
+.tab_list.active, .tab_map.active {
+	background: #fff;
+	border-bottom: none;
+}
+.panels {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: 600px;
+	background: #fff;
+}
+.avails_list {
+	position: relative;
+	display: none;
+	flex-direction: column;
+}
+.avails_list.active {
+	display: flex;
+}
+.list_items {
+	position: relative;
+	width: 100%;
+	height: 527px;
+	box-sizing: border-box;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #d8d8d8;
+}
+.list_head {
+	padding: 1.5em 1em;
+	border: 1px solid #d8d8d8;
+	border-top: none;
+	display: flex;
+	justify-content: space-between;
+}
+.list_head span {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	text-align: left;
+	font-size: 1.1em;
+	color: #888;
+	margin: auto;
+}
+span.name_adress {
+	width: 50%;
+}
+span.schedule {
+	width: 25%;
+}
+span.buy_good {
+	width: 25%;
+}
+.avails_list_item p {
+	margin: 0;
+}
+.avails_list_item > div {
+	display: flex;
+	margin: auto;
+}
+.avails_list_item input{
+	height: 1em;
+	margin: auto 0;
+	width: 1em;
+}
+.shop_name {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 1em;
+}
+.avails_list_item div, .avails_list_item p, .avails_list_item span {
+	color: #e37218;
+	font-weight: 600;
+}
+.avails_list_item {
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+
 /* ТОВАРЫ */
 .main_products_list_items_item.after_categories {
 	width: 19.35%;}
@@ -2609,12 +2743,6 @@ a.good_comparison_item {
 	font-size:.875em;
 	font-weight:300;
 	margin:0;
-
-	/* color:#fff;
-	padding:.4em .5em;
-	display:inline-block;
-	background:#24ac45;
-	border-radius:.2em; */
 }
 .exist{
 	position:relative;}
