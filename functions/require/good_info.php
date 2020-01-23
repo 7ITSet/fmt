@@ -356,7 +356,7 @@ else $captcha_reg=false;
                                                     <div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
                                                         <span id="pay_count_minus" onselectstart="return false">–</span>
                                                     </div>
-                                                    <input type="text" name="pay_count" id="pay_count" data-unitvolume="<?=round($current_product['m_products_multiplicity'],4);?>" value="<?=round($current_product['m_products_multiplicity'],4);?>"/>
+                                                    <input type="text" name="pay_count" id="pay_count" data-unitvolume="<?=round($current_product['measure_ratio'],4);?>" value="<?=round($current_product['measure_ratio'],4);?>"/>
                                                     <div class="main_products_list_items_info_pay_count_inputs_pay_count_change">
                                                         <span id="pay_count_plus" onselectstart="return false">+</span>
                                                     </div>
