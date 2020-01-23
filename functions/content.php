@@ -254,7 +254,7 @@ function getProduct($name) {
 				$order='`m_products_feedbacks` DESC';
 				break;
 			case 'newest':
-				$order='`m_products_date` DESC';
+				$order='`created_at` DESC';
 				break;
 			case 'exist':
 				$order='`m_products_exist` DESC';
@@ -324,14 +324,14 @@ function getProduct($name) {
 		$q_wo_l='SELECT 
 				SQL_CALC_FOUND_ROWS
 				/* Product.`id`,Product.`m_products_show_site`,Product.`id`[SELECT] */
-				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
+				Product.`id`, `slug`,`id_isolux`,`id`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks`[SELECT]
 			FROM `formetoo_main`.`m_products` Product
 [JOIN]
 			WHERE
 [WHERE]
 Product.`id` IN('.implode(',',$this->getChCategories($data['current'])).') AND
 Product.`m_products_show_site`=1 
-			ORDER BY '.$order.',`m_products_order` DESC;';
+			ORDER BY '.$order.',`order` DESC;';
 			
 		//формируем запрос
 		if($q_where){
@@ -405,7 +405,7 @@ Product.`m_products_show_site`=1
 					$order='`m_products_feedbacks` DESC';
 					break;
 				case 'newest':
-					$order='`m_products_date` DESC';
+					$order='`created_at` DESC';
 					break;
 				case 'exist':
 					$order='`m_products_exist` DESC';
@@ -432,7 +432,7 @@ Product.`m_products_show_site`=1
 						ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id` 
 					WHERE `m_products_show_site`=1 
 					GROUP BY `m_products_category`.`product_id` 
-					ORDER BY '.$order.',`m_products_order` DESC
+					ORDER BY '.$order.',`order` DESC
 					LIMIT '.$start.','.$limit.';'; 
 
 				$res = $sql->query($q);
@@ -476,11 +476,11 @@ Product.`m_products_show_site`=1
 				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$links).') AND
 						`m_products_show_site`=1 
-						ORDER BY '.$order.',`m_products_order` DESC 
+						ORDER BY '.$order.',`order` DESC 
 						LIMIT '.$start.','.$limit.';';
 					$res=$sql->query($q);
 					$count=$sql->query('SELECT FOUND_ROWS();');
@@ -499,7 +499,7 @@ Product.`m_products_show_site`=1
 						$viewed[]=$_result;
 				}
 				if($viewed){
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`m_products_date`,`m_products_order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`,`slug`, `id_isolux`,`m_products_name_full`,`m_products_unit`,`m_products_price_general`,`m_products_price_currency`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`m_products_show_site`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$viewed).') AND
 						`m_products_show_site`=1 
@@ -1086,13 +1086,12 @@ Product.`m_products_show_site`=1
 			$cats=$cat_ids=array();
 			$menu->displayLeftCat($cats,$cat_ids);
 			
-			$q = 'SELECT `m_products`.`id`,`m_products`.`slug`,`m_products`.`m_products_foto`,`m_products`.`m_products_foto_category`, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id 
+			$q = 'SELECT `m_products`.`id`,`m_products`.`slug`,`m_products`.`m_products_foto`, GROUP_CONCAT(`m_products_category`.`category_id` SEPARATOR \'|\') AS categories_id 
 				FROM `formetoo_main`.`m_products` 
 				RIGHT JOIN `formetoo_main`.`m_products_category` 
 					ON `m_products_category`.`category_id` IN('.implode(',',$cat_ids).') AND `m_products`.`id`=`m_products_category`.`product_id` 
 				WHERE `m_products_show_site`=1 
-				GROUP BY `m_products_category`.`product_id` 
-				ORDER BY `m_products_foto_category` DESC;';
+				GROUP BY `m_products_category`.`product_id`;';
 
 			if($res=$sql->query($q,'categories_id')){
 				function _rec_count_cats(&$cats,$res){
