@@ -2499,6 +2499,15 @@ a.good_comparison_item {
 	margin: 0;
 	color: #333;
 }
+.goods_avails_header i {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	display: block;
+	right: 15px;
+	top: 20px;
+	cursor: pointer;
+}
 .goods_avails_header h1::after {
 	content: '\00d7';
 	position: absolute;
@@ -2512,7 +2521,7 @@ a.good_comparison_item {
 .goods_avails_content {
 	position: relative;
 	box-sizing: border-box;
-	padding: 1em;
+	padding: 2em 1.5em;
 }
 .tabs {
 	position: relative;
@@ -2609,6 +2618,31 @@ span.buy_good {
 	box-sizing: border-box;
 	padding: 1em;
 	border-bottom: 1px solid #d8d8d8;
+}
+.avails_map {
+	border: 1px solid #d8d8d8;
+	border-top: none;
+	display: none;
+}
+.avails_map.active {
+	display: block;
+}
+#goods_avails {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	height: 100vh;
+	overflow: hidden;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	padding-top: 68px;
+}
+#goods_avails.active {
+	display: block;
 }
 
 

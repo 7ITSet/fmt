@@ -737,15 +737,23 @@ $(document).ready(function(){
 		};
 	});
 
-	$('.tab_list').click(function () {
+	$('#goods_avails').on('click','.tab_list' ,function () {
 		$(this).addClass('active');
 		$('.avails_list').addClass('active');
-		$('.tab_map').removeClass('active');
+		$('.tab_map,.avails_map').removeClass('active');
 	});
 
-	$('.tab_map').click(function () {
+	$('#goods_avails').on('click','.tab_map' ,function () {
 		$(this).addClass('active');
+		$('.avails_map').addClass('active');
 		$('.tab_list,.avails_list').removeClass('active');
 	});
-
+	$('.exist-1').click(function () {
+		$('#goods_avails').addClass('active');
+		$('#goods_avails').load('/ajax/get_exist.php');
+	});
+	$('#goods_avails').on('click', '.goods_avails_header i', function () {
+		$('#goods_avails').removeClass('active');
+		console.log("111");
+	});
 });

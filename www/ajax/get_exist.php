@@ -1,59 +1,186 @@
-<?
-define ('_DSITE',1);
-
-require_once(__DIR__.'/../../functions/system.php');
-require_once(__DIR__.'/../../functions/ccdb.php');
-require_once(__DIR__.'/../../functions/user.php');
-
-$sql=new sql;
-$user=new user(false);
-if(!$user->getInfo('m_users_id')){
-	unset($user);
-	unset($sql);
-	echo 0;
-	exit;
-};
-$sql_islx=new sql(2);
-
-global $e;
-
-$data['id']=array(1,null,null,10,1);
-array_walk($data,'check',true);
-
-//echo 0;exit;
-
-if(!$e){
-
-	$q='SELECT `id_isolux` FROM `formetoo_main`.`m_products` WHERE `id`='.$data['id'].' LIMIT 1;';
-	if($res=$sql->query($q)){
-
-		$q='SELECT `url` FROM `p-islx`.`ci_goods` WHERE `id`=\'СН'.$res[0]['id_isolux'].'\' LIMIT 1;';
-		if($res=$sql_islx->query($q))
-			if($html=file_get_contents($res[0]['url'])){
-				libxml_use_internal_errors(TRUE);
-				$node=new DOMDocument('1.0', 'utf-8');
-				if($node->loadHTML($html)){
-					$xp=new DomXPath($node);
-					$attrs=$xp->query('//input[@class="change-qty__value"]/@data-content');
-					foreach ($attrs as $_attr) {
-						$result=json_decode($_attr->value);
-						break;
-					}
-
-					if(isset($result->inStockCount))
-
-                    echo transform::stock_o($result->inStockCount);
-					else{
-						echo 0;
-					}
-				}
-			}
-	}	
-}
-else{
-	elogs(__FILE__,__FUNCTION__,$data);
-}
-
-unset($sql);
-unset($sql_islx);
-?>
+<div class="goods_avails">
+    <div class="goods_avails_header">
+        <h1>Наличие товара (Москва)</h1>
+        <i></i>
+    </div>
+    <div class="goods_avails_content">
+        <div class="tabs">
+            <div class="tab_list active">Список</div>
+            <div class="tab_map">Карта</div>
+        </div>
+        <div class="panels">
+            <div class="avails_list active">
+                <div class="list_head">
+                    <span class="name_adress">Название и адрес магазина</span>
+                    <span class="schedule">График работы</span>
+                    <span class="buy_good">Наличие товара</span>
+                </div>
+                <div class="list_items">
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                    <div class="avails_list_item row">
+                        <div class="col-lg-6">
+                            <input type="radio">
+                            <div class="shop_name">
+                                <p>г. Москва</p>
+                                <p>ул. Тамбовская, д. 69Б</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <p>пн-пт: 09:00 - 18:00</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <span>осталось: </span>
+                            10
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="avails_map">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A074da53952e52183d62332488412a026939f5d5a047114cea8776a15cf6760ca&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </div>
+</div>
