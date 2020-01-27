@@ -18,7 +18,7 @@
                 <div class="list_items">
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>
@@ -162,7 +162,7 @@
                     </div>
                     <div class="avails_list_item row">
                         <div class="col-lg-6">
-                            <input type="radio">
+                            <input type="radio" name="select_shop">
                             <div class="shop_name">
                                 <p>г. Москва</p>
                                 <p>ул. Тамбовская, д. 69Б</p>

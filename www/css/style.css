@@ -1669,8 +1669,6 @@ input.main_products_filters_checkbox[type="radio"]:checked:disabled + label::bef
 .main_products_filters_body label span{
 	color:#999;
 	font-size:.75em;}
-
-
 .main_content{
 	text-align:left;
 	margin-bottom: 1em;
@@ -1758,7 +1756,6 @@ p.select_default_option_selected{
 	color:#333!important;
 	white-space:nowrap;}
 
-
 .main_products_list_items{
 	overflow:hidden;
 	width: 100%;
@@ -1791,6 +1788,28 @@ p.select_default_option_selected{
 	box-sizing: border-box;
 	border-radius: 7px;
 }
+
+/*MAIN SLIDERS*/
+.main_products_list_items.main_page {
+	padding-bottom: 0;
+}
+.sl_main_container {
+	padding: 2em 0;
+}
+.sl_main {
+	background: #fff;
+	padding: 1em;
+}
+h1.sl_main_header {
+	font-size: 2em;
+	font-weight: 600;
+	margin-bottom: .5em;
+}
+.sl_main button.btn-cart, .sl_main .good_icons, .sl_main .char_parent {
+	display: none;
+}
+
+
 .good_info {
 	overflow: hidden;
 	min-height: 31em;

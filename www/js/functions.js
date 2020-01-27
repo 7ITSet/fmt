@@ -756,4 +756,15 @@ $(document).ready(function(){
 		$('#goods_avails').removeClass('active');
 		console.log("111");
 	});
+
+	$('.sl_main').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+	});
+	$('.sl_main_partners').slick({
+		slidesToShow: 10,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+	});
 });

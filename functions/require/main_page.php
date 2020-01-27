@@ -79,21 +79,24 @@
             </div>
         </div>
     </div>
-		<div class="clr"></div>
-		<div class="main_products_list_items col-lg-offset-3 col-lg-9 col-xs-12" style="margin-right: 0px;">
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+    <div class="clr"></div>
+    <div class="main_products_list_items main_page col-lg-12 col-xs-12" style="margin-right: 0px;">
+        <div class="sl_main_container">
+            <h1 class="sl_main_header">Акции</h1>
+            <div class="sl_main stocks">
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -103,62 +106,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -168,62 +171,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -233,62 +236,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -298,62 +301,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -363,62 +366,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -428,62 +431,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -493,62 +496,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -558,62 +561,62 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
                     </div>
-                </div> </div>
-            <div class="main_products_list_items_item">
-                <div class="main_products_list_items_item_info">
-                    <div class="foto">
-                        <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
-                    </div>
-                    <div class="title">
-                        <p>
-                            <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="main_products_list_items_item_cart">
-                    <div class="cart"><div class="main_products_list_items_item_price">
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
                             <div class="price">
                                 <p>
                                     12 342 <span>руб.</span>
@@ -623,104 +626,678 @@
                         <div class="product_id hidden" data-value="2985892480"></div>
                         <div class="product_count hidden" data-value="1"></div>
                         <button class="btn-cart">Купить</button></div>
-                </div>
-                <div class="good_icons">
-                    <div>
-                        <a class="like"></a>
-                        <a class="comparison"></a>
                     </div>
-                    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                        <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                    </a>
-                </div>                            <div class="char_parent">
-                    <div class="main_products_list_item_char">
-                        <ul class="list_dots">
-                            <li>
-                                <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фуцафц</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">|</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фацуацфу</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">фафцуа</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">китай</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">суфсф</span>
-                            </li>
-                            <li>
-                                <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
-                                <span class="list_dotts_value">202</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div> </div>
-		</div>
-		<div class="clr"></div>
-		<div class="main_content_container col-lg-12 col-xs">
-            <!--<?=$current['content'];?>-->
-            <div class="main_delivery">
-                <img src="/img/ad240.png" alt="бесплатная доставка" class="main_delivery_img">
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
             </div>
-            <div id="carousel" class="carousel">
-                <span class="carousel_title">Наши партнеры</span>
-								<button class="slide_arrow slide_arrow_prev">.</button>
-                <div class="gallery">
-                    <ul class="images">
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                        <li><img src="/img/tm copy.svg"></li>
-                    </ul>
-                </div>
-								<button class="slide_arrow slide_arrow_next">.</button>
+        </div>
+        <div class="sl_main_container">
+            <h1 class="sl_main_header">Хиты продаж</h1>
+            <div class="sl_main hits">
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
+                <div class="main_products_list_items_item">
+                    <div class="main_products_list_items_item_info">
+                        <div class="foto">
+                            <a href="/catalog/test_cat/yjds/"><img src="https://crm.formetoo.ru/images/products/9483179001/9KpZ5cMmQ1BI_med.jpg" alt="Жироуловитель под мойку. Эконом. Тестовый товар 1."></a>
+                        </div>
+                        <div class="title">
+                            <p>
+                                <a href="/catalog/test_cat/yjds/" title="yjds">Жироуловитель под мойку</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="main_products_list_items_item_cart">
+                        <div class="cart"><div class="main_products_list_items_item_price">
+                                <div class="price">
+                                    <p>
+                                        12 342 <span>руб.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="product_id hidden" data-value="2985892480"></div>
+                            <div class="product_count hidden" data-value="1"></div>
+                            <button class="btn-cart">Купить</button></div>
+                    </div>
+                    <div class="good_icons">
+                        <div>
+                            <a class="like"></a>
+                            <a class="comparison"></a>
+                        </div>
+                        <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                            <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                        </a>
+                    </div>                            <div class="char_parent">
+                        <div class="main_products_list_item_char">
+                            <ul class="list_dots">
+                                <li>
+                                    <span class="list_dotts_name">Бренд: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фуцафц</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Длина сетевого шнура: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">|</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Материал подошвы: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фацуацфу</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Основной цвет: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">фафцуа</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Страна производства: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">китай</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Тип: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">суфсф</span>
+                                </li>
+                                <li>
+                                    <span class="list_dotts_name">Скорость парового удара: &nbsp;&nbsp;</span>
+                                    <span class="list_dotts_value">202</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="main_content_container col-lg-12 col-xs">
+        <!--<?=$current['content'];?>-->
+        <div class="main_delivery">
+            <img src="/img/ad240.png" alt="бесплатная доставка" class="main_delivery_img">
+        </div>
+        <div id="carousel" class="carousel">
+            <span class="carousel_title">Наши партнеры</span>
+            <button class="slide_arrow slide_arrow_prev"></button>
+            <div class="gallery">
+                <ul class="images">
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                    <li><img src="/img/tm copy.svg"></li>
+                </ul>
+            </div>
+            <button class="slide_arrow slide_arrow_next"></button>
+        </div>
+    </div>
 </div>
-<link rel="stylesheet" type="text/css" href="/js/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="/js/slick/slick-theme.css"/>
-<script type="text/javascript" src="/js/slick/slick.min.js"></script>
-<script>
-$(document).ready(function(){
-	$('.main-slider').slick({
-		dots: true,
-		autoplay:true,
-		autoplaySpeed:4000,
-		speed: 300,
-		slidesToShow: 1,
-		nextArrow:'<button class="slide_arrow slide_arrow_next"></button>',
-		prevArrow:'<button class="slide_arrow slide_arrow_prev"></button>',
-
-	});
-});
-</script>
 <script>
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
@@ -733,14 +1310,12 @@ $(document).ready(function(){
     }
 </script>
 <script>
-
     let i = 1;
     for(let li of carousel.querySelectorAll('li')) {
       li.style.position = 'relative';
       li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
       i++;
     }
-
 
     let width = 20; // ширина картинки
     let count = 5; // видимое количество изображений

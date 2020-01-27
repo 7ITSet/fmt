@@ -39,6 +39,8 @@ if($merge_carts){
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.structure.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.theme.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/flexboxgrid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/js/slick/slick-theme.css"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -56,6 +58,7 @@ if($merge_carts){
 	<script type="text/javascript" src="/js/validation/localization/messages_ru.js"></script>
 	<script type="text/javascript" src="/js/simplebar/simplebar.js"></script>
 	<script type="text/javascript" src="/js/functions.js"></script>
+    <script type="text/javascript" src="/js/slick/slick.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&amp;subset=cyrillic" rel="stylesheet">
 <?if(1/* !isset($_COOKIE['regionselect']) */){?>
 	<script>
