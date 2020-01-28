@@ -756,15 +756,44 @@ $(document).ready(function(){
 		$('#goods_avails').removeClass('active');
 		console.log("111");
 	});
-
-	$('.sl_main').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-	});
-	$('.sl_main_partners').slick({
-		slidesToShow: 10,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 2000,
-	});
+	var slmax = window.matchMedia('only screen and (min-width: 1000px)');
+	if (slmax.matches) {
+		$('.sl_main').slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+		});
+		$('.sl_main_partners').slick({
+			slidesToShow: 8,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+		$('#slides').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+	}
+	var slmax = window.matchMedia('only screen and (max-width: 480px)');
+	if (slmax.matches) {
+		$('.sl_main').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+		$('.sl_main_partners').slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+		$('#slides').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+	}
 });
