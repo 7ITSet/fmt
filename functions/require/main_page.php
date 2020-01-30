@@ -19,19 +19,17 @@
                 <div class="slide"><img class="baner_img" src="/img/baner.jpg"></div>
             </div>
 		</div>
-        <div class="main_slider_mobile">
-            <img src="/img/baner.jpg" alt="slider">
-        </div>
     </div>
     <div class="clr"></div>
     <div class="main_products_list_items main_page col-lg-12 col-xs-12" style="margin-right: 0px;">
         <div class="sl_main_container">
             <div class="timer_header row">
-                <h1 class="sl_main_header col-lg-9">Акция</h1>
-                <div class="main-timer col-lg-3">
+                <h1 class="sl_main_header col-lg-9 col-xs">Акция</h1>
+                <div class="main-timer col-lg-3 col-xs">
                     <script src="//megatimer.ru/get/a7f3bf0177c991bf403a236a2d051f10.js"></script>
                 </div>
             </div>
+
             <div class="sl_main stocks">
                 <div class="main_products_list_items_item">
                     <div class="main_products_list_items_item_info">

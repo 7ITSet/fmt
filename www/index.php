@@ -246,7 +246,7 @@ if($merge_carts){
 				<div class="footer_floor footer_top between-lg col-xs-12">
 					<div class="footer_top_left col-lg-3">
 						<div id="footer-logo">
-              <a href="/"><img class="logo_img" src="/img/fmt_logo.svg" alt="formetoo"></a>
+              <a href="/"><p>FMT <span>formetu.ru</span></p></a>
             </div>
 					</div>
 					<div class="footer_top_right col-lg-3">

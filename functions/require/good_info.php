@@ -296,7 +296,7 @@ else $captcha_reg=false;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-xs">
+                <div class="col-lg-8 col-xs-12">
                     <div class="row">
                         <div class="about_good col-lg-8 col-xs">
                             <div class="good_title">
@@ -454,7 +454,7 @@ else $captcha_reg=false;
                                 <? } ?>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 col-xs">
                             <div>
                                 <a href="#" class="good_info_comparison_a comparison_a" title="Сравнить">
                                     <span class="good_info_comparison_icon"></span>
@@ -475,7 +475,7 @@ else $captcha_reg=false;
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 col-xs">
                             <div class="detail-info_header">
                                 <div class="detail-info_header_item active" id="products_tech">Технические характеристики</div>
                                 <div class="detail-info_header_item" id="products_about">О товаре</div>
