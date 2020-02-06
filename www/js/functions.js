@@ -704,11 +704,16 @@ $(document).ready(function(){
 
 	var mqn = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
 	if (mqn.matches) {
-		$('.nav_wrapper').click(function () {
-			$(this).toggleClass('active_mobile');
+		$('.nav_wrapper > span').click(function () {
+			$(this).toggleClass('active');
+			$(this).parent().toggleClass('active_mobile');
 			$('body').toggleClass('active_cat');
 			$('.city_account').toggleClass('active_city_account');
 		});
+		$('.nav_wrapper > ul.menu__list > .menu__item > a').removeAttr('href');
+		$('.nav_wrapper > ul.menu__list > .menu__item').click(function () {
+			$(this).toggleClass('active');
+		})
 	};
 	var mql = window.matchMedia('only screen and (max-width: 768px)');
 	if (mql.matches) {
@@ -796,18 +801,18 @@ $(document).ready(function(){
 			autoplaySpeed: 2000,
 		});
 	}
-    var slmin = window.matchMedia('only screen and (min-width: 481px) and (max-width: 768px)');
-    if (slmin.matches) {
+    var slmid = window.matchMedia('only screen and (min-width: 481px) and (max-width: 768px)');
+    if (slmid.matches) {
         $('.sl_main').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
         });
         $('.sl_main_partners').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 2000,
         });
         $('#slides').slick({
@@ -817,4 +822,25 @@ $(document).ready(function(){
             autoplaySpeed: 2000,
         });
     }
+	var slmax = window.matchMedia('only screen and (min-width: 769px) and (max-width: 999px)');
+	if (slmax.matches) {
+		$('.sl_main').slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+		$('.sl_main_partners').slick({
+			slidesToShow: 6,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+		$('#slides').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+		});
+	}
 });
