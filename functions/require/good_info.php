@@ -468,6 +468,7 @@ else $captcha_reg=false;
                                 <a href="https://wa.me/79105199977" class="good_info_whatsapp_href" target="_blank">
                                     <img src="/img/whatsapp.png" alt="whatsapp_icon">
                                 </a>
+                                <button class="print_button" title="Версия для печати"></button>
                             </div>
                             <? if ($user->isVisiblePrice()) { ?>
                                 <span id="pay_oneclick" onselectstart="return false">Быстрый заказ</span>

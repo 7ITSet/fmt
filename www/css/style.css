@@ -1185,8 +1185,6 @@ img.baner_img {
 .main_services {
 	display: flex;
 	justify-content: space-between;
-	padding: 1em;
-	background: #fff;
 }
 .main_service {
 	text-align: center;
@@ -1198,6 +1196,8 @@ img.baner_img {
 p.main_service_title {
 	color: #60C0AA;
 	font-weight: 600;
+	font-size: 1.5em;
+	line-height: 1.2!important;
 	padding-top: .5em;
 	margin-bottom: .5em;
 }
@@ -1206,7 +1206,6 @@ p.main_service_text {
 	margin-bottom: 0;
 	padding: 0 1em;
 }
-
 
 /* BREADCRUMBS */
 .breadcrumbs{
@@ -1708,7 +1707,6 @@ h1.sl_main_header {
     height: 35px;
     width: 6em;
 }
-
 .good_info {
 	overflow: hidden;
 	min-height: 31em;
@@ -1722,6 +1720,10 @@ h1.sl_main_header {
 }
 span.share_text {
 	line-height: 3;
+}
+.partners {
+	padding: 1em;
+	background: #fff;
 }
 .partners h1 {
 	font-size: 1.5em;
@@ -3821,7 +3823,41 @@ span.comment{
 #blocked.dark{
 	display:none;
 	background:#3e5660;}
-/* 800px - mobile */
+
+.print_button {
+	margin: auto;
+	margin-left: 2em;
+	width: 40px;
+	height: 37px;
+	display: flex;
+	position: relative;
+	background: url(/img/print.png) no-repeat;
+	background-size: contain;
+	cursor: pointer;
+}
+
+@media print {
+	.buy-form .col-lg-4.col-xs, div#carousel, .feedbacks-count, .stars, .exist_span, .exist, .detail-info_header_item, .main_products_list_items_info_pay_buy, .main_products_list_items_info_pay_count, .main_products_list_items.after_categories.after_good.viewed_goods_header{
+		display: none!important;
+	}
+	.detail-info_header_item.active, .col-lg-12 {
+		display: block!important;
+		background: none;
+		padding: 0!important;
+	}
+	.detail-info_header {
+		border-bottom: none!important;
+	}
+	form.main_products_list_items_info_pay {
+		box-shadow: none;
+		padding: 0;
+		margin: 0 0 30px;
+	}
+	.detail-info__body_item {
+		margin: 0!important;
+		padding: 0!important;
+	}
+}
 
 /*MEDIA CHANGES*/
 @media only screen  and (min-width: 1225px) {
@@ -3927,6 +3963,11 @@ span.comment{
   .header_mobile .nav_cart {
     border-radius: 0;
   }
+  .print_button {
+	  margin: 0;
+	  margin-left: 1em;
+  }
+
 }
 
 @media only screen  and (max-width: 480px) {

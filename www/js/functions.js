@@ -843,4 +843,12 @@ $(document).ready(function(){
 			autoplaySpeed: 2000,
 		});
 	}
+
+	$('.print_button').click(function printEl() {
+		var body = $('body').html(),
+			el = $('.good_info_content');
+		$('body').html(el);
+		window.print();
+		$('body').html(body);
+	});
 });
