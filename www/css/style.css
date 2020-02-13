@@ -3823,7 +3823,72 @@ span.comment{
 #blocked.dark{
 	display:none;
 	background:#3e5660;}
-
+.error_massage {
+	padding: 1.5em;
+	background: #fff;
+	display: none;
+}
+.error_massage.active {
+	display: block;
+}
+.error_massage_header h1 {
+	font-size: 2em;
+}
+.error_massage_header i {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	display: block;
+	right: 43px;
+	top: 32px;
+	cursor: pointer;
+}
+.error_massage_header h1::after {
+	content: '\00d7';
+	position: absolute;
+	color: #bbb;
+	font-size: 1.5em;
+	font-weight: 300;
+	top: 20px;
+	right: 50px;
+	cursor: pointer;
+}
+.error_massage form input {
+	width: 30%;
+	font-size: 1.2em;
+	padding: .3em .5em;
+	border-radius: 5px;
+	color: #333;
+	border: 1px solid #ddd;
+	margin-bottom: 1em;
+}
+.error_massage form textarea {
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 1em;
+	padding: .6em;
+	border-radius: 5px;
+	color: #333;
+	border: 1px solid #ddd;
+}
+.error_massage form input[type="submit"] {
+	width: 15%;
+	padding: .5em;
+	box-sizing: border-box;
+	color: #fff;
+	background: #e37218;
+	border: none;
+}
+.error_massage form {
+	display: flex;
+	flex-direction: column;
+}
+.error_massage_content > p {
+	text-align: left;
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #333;
+}
 .print_button {
 	margin: auto;
 	margin-left: 2em;
@@ -3835,6 +3900,8 @@ span.comment{
 	background-size: contain;
 	cursor: pointer;
 }
+
+/*MEDIA*/
 
 @media print {
 	.buy-form .col-lg-4.col-xs, div#carousel, .feedbacks-count, .stars, .exist_span, .exist, .detail-info_header_item, .main_products_list_items_info_pay_buy, .main_products_list_items_info_pay_count, .main_products_list_items.after_categories.after_good.viewed_goods_header{
@@ -3859,7 +3926,6 @@ span.comment{
 	}
 }
 
-/*MEDIA CHANGES*/
 @media only screen  and (min-width: 1225px) {
 	.header_mobile {
 		display: none;
