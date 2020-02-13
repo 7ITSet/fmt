@@ -385,6 +385,7 @@ Product.`active`=1
 	}
 	
 	//прием параметров фильтра (не ajax) и вывод готовых товарных позиций
+	// вывод товаров в категории
 	public function getGoods($result=null,$view='table',$limit=24){
 		global $e,$sql,$current,$menu, $user;
 		$data['p']=array(null,1,500,null,1);
@@ -476,7 +477,7 @@ Product.`active`=1
 				$q='SELECT `m_products_links`,`slug` FROM `formetoo_main`.`m_products` WHERE `id`='.$result.' LIMIT 1;';
 				if($links=$sql->query($q)){
 					$links=explode('|',$links[0]['m_products_links']);
-					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`currency_id`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
+					$q='SELECT SQL_CALC_FOUND_ROWS `id`, `id_isolux`,`m_products_name_full`,`measure_id`,`m_products_price_general`,`currency_id`,`m_products_price_discount`,`m_products_price_bonus`,`measure_ratio`,`active`,`created_at`,`order`,`m_products_exist`,`m_products_foto`,`m_products_rate`,`m_products_feedbacks` 
 						FROM `formetoo_main`.`m_products` WHERE
 						`id` IN('.implode(',',$links).') AND
 						`active`=1 
@@ -516,6 +517,7 @@ Product.`active`=1
 				$res=$result;
 				$count=$result['FOUND_ROWS()'];
 			}
+
 			//результат фильтрации (url)
 			else{
 				$data['current']=$current['menu'];
@@ -537,18 +539,24 @@ Product.`active`=1
 					echo '<script>var attrs_count='.json_encode($attr_sum,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).'</script>';
 				} */
 				$current['products_count']=$count;
-				if(!isset($viewed)&&!isset($links))
+
+				if(!isset($viewed)&&!isset($links)) {
 					echo '<div class="main_products_list_items_item_count" data-count="'.$count.'"></div>';
+				}
+				
 				//массив с id товаров (и главных товаров), которые уже вывели
 				$goods_id=array();
+
 				//максимальная позиция в выборке товаров
 				if(sizeof($res)<=$limit) $start=0;
-				$maxpos=($limit+$start)<$count?($limit+$start):$count;//
+
+				$maxpos = ($limit+$start) < $count ? ($limit+$start) : $count;
+
 				//выборка товаров нужной страницы из массива всех товаров
 				for($k=$start;$k<$maxpos;$k++){//
-					if(!isset($res[$k])) break;//
-					$_good=$res[$k];//
+					if(!isset($res[$k])) break;
 
+					$_good=$res[$k];//
 
 				//вариант с готовой выборкой страницы средствами mysql
 				//foreach($res as $j=>$_good){
@@ -557,6 +565,7 @@ Product.`active`=1
 					//если товар есть в массиве выведенных (его мог внести дублирующий товар),
 					//или это товар, дубли или главныей товар которого уже выводдились - не выводим товар
 					if(in_array($_good['id'],$goods_id)) continue;
+
 					//средняя оценка
 					/* $m_rating=0;
 					if($rating&&isset($rating[$_good['id']])){
@@ -566,75 +575,67 @@ Product.`active`=1
 					} */
 
 					$_good['m_products_foto']=json_decode($_good['m_products_foto']);
-					$foto='';
+					if (isset($_good['m_products_foto'])) {
+						$imageItem = $_good['m_products_foto'][0];
+					}
 
-					foreach($_good['m_products_foto'] as $_foto)
-
-//                        echo "<pre>";
-//                    var_dump($_foto);
-//                    echo "</pre>";
-
-//						if($_foto->main)
-							$foto = $_foto->file;
-							$ext = $_foto->ext ? $_foto->ext : 'jpg';
-
-                  //  echo "<pre>";
-                  //  var_dump($foto);
-                  //  echo "</pre>";
+					$nameItem = htmlspecialchars($_good['m_products_name_full'] ? $_good['m_products_name_full'] : $_good['m_products_name']);
 
 					echo '
-						<div class="main_products_list_items_item">
+						<div class="main_products_list_items_item"> 
 							<div class="main_products_list_items_item_info">
 								<div class="foto">
-									<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/">'.'<img src="https://crm.formetoo.ru/images/products/'.$_good['id'].'/'.$foto.'_med.'.$ext.'" alt="'.htmlspecialchars($_good['m_products_name_full']).'"/>'.'</a>
+									<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/">'.'<img src="http://crm.formetu.ru/'.$imageItem->file.'" alt="'.htmlspecialchars($imageItem->title).'"/>'.'</a>
 								</div>
 								<div class="title">
-                                    <p>
-                                        <a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/" title="'.htmlspecialchars($_good['m_products_name_full']).'">'.$_good['m_products_name_full'].'</a>
-                                    </p>
-                                </div>
+									<p>
+										<a href="'.parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ).''.$_good['slug'].'/" title="'.$nameItem.'">'.$nameItem.'</a>
+									</p>
+								</div>
 							</div>
 							<div class="main_products_list_items_item_cart">
 								<div class="cart">';
-                                    if ($user->isVisiblePrice()) {
-                                        echo
-                                        '<div class="main_products_list_items_item_price">
-                                                <div class="price">
-                                                        <p>
-                                                                ' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['currency_id']], 2)) . ' <span>руб.</span>
-                                                        </p>
-                                                </div>
-                                        </div>
-                                        <div class="product_id hidden" data-value="' . $_good['id'] . '"></div>
-                                        <div class="product_count hidden" data-value="' . round($_good['measure_ratio'], 4) . '"></div>
-                                        <button class="btn-cart">Купить</button>';
-                                    }
-                                    echo
-                                '</div>
+									if ($user->isVisiblePrice()) {
+										echo '<div class="main_products_list_items_item_price">
+											<div class="price">
+												<p>
+													' . transform::price_o(round($_good['m_products_price_general'] * $this->ec[$_good['currency_id']], 2)) . ' <span>руб.</span>
+												</p>
+											</div>
+										</div>
+										<div class="product_id hidden" data-value="' . $_good['id'] . '"></div>
+										<div class="product_count hidden" data-value="' . round($_good['measure_ratio'], 4) . '"></div>
+										<button class="btn-cart">Купить</button>'; 
+									}
+
+							unset($imageItem);
+
+							echo '</div>
 							</div>
 							<div class="good_icons">
-                                <div>
-                                    <a class="like"></a>
-                                    <a class="comparison"></a>
-                                </div>
-							    <a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
-                                    <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
-                                </a>
+								<div>
+									<a class="like"></a>
+									<a class="comparison"></a>
+								</div>
+								<a href="https://wa.me/79105199977" class="whatsapp" target="_blank">
+                  <img src="/img/whatsapp_white.png" alt="whatsapp_icon" class="whatsapp">
+                </a>
 							</div>';
-                            if (!empty($_good['attrs'])) { ?>
-                            <div class="char_parent">
-                                <div class="main_products_list_item_char">
-                                    <ul class="list_dots">
-                                    <?foreach ($_good['attrs'] as $_goodAttr) {?>
-                                        <li>
-                                            <span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?>: &nbsp&nbsp</span>
-                                            <span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span>
-                                        </li>
-                                    <? } ?>
-                                    </ul>
-                                </div>
-                            </div> <? }
-                    echo '</div>';
+							if (!empty($_good['attrs'])) { ?>
+							<div class="char_parent">
+									<div class="main_products_list_item_char">
+											<ul class="list_dots">
+											<?foreach ($_good['attrs'] as $_goodAttr) {?>
+													<li>
+															<span class="list_dotts_name"><?=$_goodAttr['m_products_attributes_list_name']?>: &nbsp&nbsp</span>
+															<span class="list_dotts_value"><?=$_goodAttr['m_products_attributes_value']?></span>
+													</li>
+											<? } ?>
+											</ul>
+									</div>
+							</div> 
+							<? }
+            echo '</div>';
 					//добавляем id товара и id главного товара (если это дубль) в массив выведенных товаров
 					$goods_id[]=$_good['id'];
 				}
@@ -690,13 +691,13 @@ Product.`active`=1
 						</div>';
 				}
 			}
+
 			if(!isset($data['current'])&&(!isset($count)||!$count)){
 				echo '<div class="main_products_list_items_item_count" data-count="'.$count.'"></div>
 					<p class="main_products_list_null">К сожалению, нет товаров, удовлетворяющих выбранным условиям.<br/>Попробуйте изменить критерии поиска или <a href="#" class="clean-filters dashed">очистить фильтры</a>.</p>';
 			}
 		}
-		
-	}
+	} // end getGoods()
 	
 	//АТРИБУТЫ ПО МАССИВУ ТОВАРОВ
 	/* function updateAttrFromGoods($goods=null,&$result=null){
