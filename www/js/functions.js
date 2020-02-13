@@ -759,7 +759,6 @@ $(document).ready(function(){
 	});
 	$('#goods_avails').on('click', '.goods_avails_header i', function () {
 		$('#goods_avails').removeClass('active');
-		console.log("111");
 	});
 	var slmax = window.matchMedia('only screen and (min-width: 1000px)');
 	if (slmax.matches) {
@@ -851,4 +850,11 @@ $(document).ready(function(){
 		window.print();
 		$('body').html(body);
 	});
+
+	$('.error_massage_button').click(function () {
+		$('.error_massage').addClass('active');
+	});
+	$('.error_massage_header i').click(function () {
+		$('.error_massage').removeClass('active');
+	})
 });

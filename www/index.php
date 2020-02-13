@@ -243,11 +243,26 @@ if($merge_carts){
 	<div id="footer">
 		<div id="footer-container">
 			<div id="footer-inner">
+                <div class="error_massage" id="error_massage">
+                    <div class="error_massage_header">
+                        <h1>Сообщить об ошибке</h1>
+                        <i></i>
+                    </div>
+                    <div class="error_massage_content">
+                        <form action="" method="post">
+                            <input type="text" name="users_name" placeholder="Как Вас зовут?">
+                            <input type="email" name="users_mail" placeholder="Ваш E-mail">
+                            <p class="error_massage_text"><textarea name="error_text" rows="7" placeholder="Пожалуйста, опишите подробно замеченную Вами ошибку/замечание/опечатку..."></textarea></p>
+                            <input type="submit">
+                        </form>
+                        <p>Спасибо, что помогаете нам стать лучше!</p>
+                    </div>
+                </div>
 				<div class="footer_floor footer_top between-lg col-xs-12">
 					<div class="footer_top_left col-lg-3">
 						<div id="footer-logo">
-              <a href="/"><p>FMT <span>formetu.ru</span></p></a>
-            </div>
+                            <a href="/"><p>FMT <span>formetu.ru</span></p></a>
+                        </div>
 					</div>
 					<div class="footer_top_right col-lg-3">
 						<div id="footer-info-social">
@@ -261,95 +276,96 @@ if($merge_carts){
 				</div>
 				<div class="footer_floor footer_midle between-lg col-xs-12">
 					<div class="footer_midle_left col-lg-4">
-            <div class="footer_contacts1">
-                <a href="mailto:{mail}" class="child footer_email_href">
-                    <div class="email_parent">
-                        <div class="email_icon">
-                            <img src="/img/icon-message.svg" alt="email_icon" id="email">
+                        <div class="footer_contacts1">
+                            <a href="mailto:{mail}" class="child footer_email_href">
+                                <div class="email_parent">
+                                    <div class="email_icon">
+                                        <img src="/img/icon-message.svg" alt="email_icon" id="email">
+                                    </div>
+                                    <div class="email_adress">
+                                        <p class="email">{mail}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/79105199977" class="child footer_whatsapp_href" target="_blank">
+                                <div class="whatsapp_icon">
+                                    <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
+                                </div>
+                            </a>
+                            <a href="viber://chat?number={tel_office}" class="child footer_viber_href" target="_blank">
+                                <div class="viber_icon">
+                                    <img src="/img/viber.png" alt="viber_icon" id="viber">
+                                </div>
+                            </a>
                         </div>
-                        <div class="email_adress">
-                            <p class="email">{mail}</p>
+                        <div class="footer_contacts2">
+                            <div class="footer_city">
+                                <span class="footer_city">г. Санкт-Петербург</span>
+                                <span class="footer_city_street">ул. Тамбовская, д. 69Б</span>
+                            </div>
+                            <div class="footer_tel">
+                                <span class="footer_tel"><a href="tel:{tel_office_nobr}">{tel_office}</a></span>
+                                <span class="footer_schedule">пн-пт: 09:00 - 18:00</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="https://wa.me/79105199977" class="child footer_whatsapp_href" target="_blank">
-                    <div class="whatsapp_icon">
-                        <img src="/img/whatsapp.png" alt="whatsapp_icon" id="whatsapp">
-                    </div>
-                </a>
-                <a href="viber://chat?number={tel_office}" class="child footer_viber_href" target="_blank">
-                    <div class="viber_icon">
-                        <img src="/img/viber.png" alt="viber_icon" id="viber">
-                    </div>
-                </a>
-            </div>
-            <div class="footer_contacts2">
-                <div class="footer_city">
-                    <span class="footer_city">г. Санкт-Петербург</span>
-                    <span class="footer_city_street">ул. Тамбовская, д. 69Б</span>
-                </div>
-                <div class="footer_tel">
-                    <span class="footer_tel"><a href="tel:{tel_office_nobr}">{tel_office}</a></span>
-                    <span class="footer_schedule">пн-пт: 09:00 - 18:00</span>
-                </div>
-            </div>
-            <div class="footer_contacts3">
-                <div class="footer_city">
-                    <span class="footer_city">г. Москва</span>
-                    <span class="footer_city_street">ул. Скотопрогонная, д. 35с4</span>
-                </div>
-                <div class="footer_tel">
-                    <span class="footer_tel"><a href="tel:{tel_office_nobr}">{tel_office}</a></span>
-                    <span class="footer_schedule">пн-пт: 09:00 - 18:00</span>
-                </div>
-            </div>
+                        <div class="footer_contacts3">
+                            <div class="footer_city">
+                                <span class="footer_city">г. Москва</span>
+                                <span class="footer_city_street">ул. Скотопрогонная, д. 35с4</span>
+                            </div>
+                            <div class="footer_tel">
+                                <span class="footer_tel"><a href="tel:{tel_office_nobr}">{tel_office}</a></span>
+                                <span class="footer_schedule">пн-пт: 09:00 - 18:00</span>
+                            </div>
+                        </div>
 					</div>
 					<div class="footer_midle_center col-lg-2">
-            <a href="#" class="download_price"><img src="/img/download-price.svg" alt="скачать прайс-лист"></a>
-            <a href="#" class="yamarket"><img src="/img/market.svg" alt="яндекс маркет"></a>
+                        <a href="#" class="download_price"><img src="/img/download-price.svg" alt="скачать прайс-лист"></a>
+                        <a href="#" class="yamarket"><img src="/img/market.svg" alt="яндекс маркет"></a>
 					</div>
 					<div class="footer_midle_right col-lg-5">
-            <div class="footer_midle_right_child">
-                <span class="footer_midle_right_title">О компании</span>
-                <ul class="footer_midle_right_list">
-                    <li class="footer_midle_right_item"><a href="/about/company/">Реквизиты</a></li>
-                    <li class="footer_midle_right_item"><a href="/about/contacts/">Контакты</a></li>
-                    <li class="footer_midle_right_item"><a href="/about/feedback/">Обратная связь</a></li>
-                </ul>
-            </div>
-            <div class="footer_midle_right_child">
-                <span class="footer_midle_right_title">Покупателям</span>
-                <ul class="footer_midle_right_list">
-                    <li class="footer_midle_right_item"><a href="/info/delivery/">Доставка</a></li>
-                    <li class="footer_midle_right_item"><a href="/info/return">Возврат товара</a></li>
-                    <li class="footer_midle_right_item"><a href="/info/payments/">Способ оплаты</a></li>
-                </ul>
-            </div>
-            <div class="footer_midle_right_child">
-                <span class="footer_midle_right_title">Информация</span>
-                <ul class="footer_midle_right_list">
-                    <li class="footer_midle_right_item"><a href="/info/terms-of-sale/">Условия продажи<br>товаров</a></li>
-                    <li class="footer_midle_right_item"><a href="/info/">Персональные данные</a></li>
-                </ul>
-            </div>
+                        <div class="footer_midle_right_child">
+                            <span class="footer_midle_right_title">О компании</span>
+                            <ul class="footer_midle_right_list">
+                                <li class="footer_midle_right_item"><a href="/about/company/">Реквизиты</a></li>
+                                <li class="footer_midle_right_item"><a href="/about/contacts/">Контакты</a></li>
+                                <li class="footer_midle_right_item"><a href="/about/feedback/">Обратная связь</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer_midle_right_child">
+                            <span class="footer_midle_right_title">Покупателям</span>
+                            <ul class="footer_midle_right_list">
+                                <li class="footer_midle_right_item"><a href="/info/delivery/">Доставка</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/return">Возврат товара</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/payments/">Способ оплаты</a></li>
+                                <li class="footer_midle_right_item error_massage_button"><a href="#error_massage">Сообщить об ошибке</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer_midle_right_child">
+                            <span class="footer_midle_right_title">Информация</span>
+                            <ul class="footer_midle_right_list">
+                                <li class="footer_midle_right_item"><a href="/info/terms-of-sale/">Условия продажи<br>товаров</a></li>
+                                <li class="footer_midle_right_item"><a href="/info/">Персональные данные</a></li>
+                            </ul>
+                        </div>
 					</div>
 				</div>
 				<div class="footer_floor footer_bottom between-lg col-xs-12">
 					<div class="footer_bottom_left col-lg-3">
-              <span class="footer_bottom_left_info">Copyright © 2008 - 2019</span>
-              <span class="footer_bottom_left_info">Formetoo</span>
+                        <span class="footer_bottom_left_info">Copyright © 2008 - 2019</span>
+                        <span class="footer_bottom_left_info">Formetoo</span>
 					</div>
 					<div class="footer_bottom_center col-lg-3">
 						<div id="footer-info-paysystems">
-              <span class="paysystem_title">Принимаем к оплате</span>
+                            <span class="paysystem_title">Принимаем к оплате</span>
 							<span class="icon icon-visa-mini nolink" title="Принимаем к оплате карты VISA"></span>
 							<span class="icon icon-mastercard-mini nolink" title="Принимаем к оплате карты MasterCard"></span>
 							<span class="icon icon-mir-mini nolink" title="Принимаем к оплате карты МИР"></span>
 						</div>
 					</div>
 					<div class="footer_bottom_right col-lg-3">
-            <span class="footer_bottom_right_info"><a href="#">Политика конфеденциальности</a></span>
-            <span class="footer_bottom_right_info"><a href="#">Публичная оферта</a></span>
+                        <span class="footer_bottom_right_info"><a href="#">Политика конфеденциальности</a></span>
+                        <span class="footer_bottom_right_info"><a href="#">Публичная оферта</a></span>
 					</div>
 				</div>
 			</div>
