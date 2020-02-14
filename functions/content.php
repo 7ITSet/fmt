@@ -1215,55 +1215,42 @@ Product.`active`=1
 	}
 	
 	//атрибуты товара в карточке товара
-	public function getItemAttributes(){
-		global $e,$sql,$current,$menu;
+	public function getItemAttributes($productId){
+		global $sql;
 		
-		$data['id']=array(1,null,null,10,1);
-		array_walk($data,'check',true);
-		
-		if(!$e){
-			$q='SELECT m_products_attributes_groups_list_id FROM `formetoo_main`.`m_products_attributes_groups` 
-			LEFT JOIN `formetoo_main`.`m_products`
-				ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id`
-			WHERE 
-			(`m_products`.`id`='.$data['id'].');';
+		$q='SELECT m_products_attributes_groups_list_id FROM `formetoo_main`.`m_products_attributes_groups` 
+		LEFT JOIN `formetoo_main`.`m_products`
+			ON `m_products`.`products_attributes_groups_id`=`m_products_attributes_groups`.`products_attributes_groups_id`
+		WHERE 
+		(`m_products`.`id`='. $productId .');';
 
-			if($res=$sql->query($q)) {
-				$attrsGroup = explode('|', $res[0]['m_products_attributes_groups_list_id']);
-			} 
+		if($res=$sql->query($q)) {
+			$attrsGroup = explode('|', $res[0]['m_products_attributes_groups_list_id']);
+		} 
 
-			// $q='SELECT * FROM `formetoo_main`.`m_products_attributes_list` 
-			// 	RIGHT JOIN `formetoo_main`.`m_products_attributes`
-			// 		ON `m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`
-			// 	WHERE
-			// 		(
-			// 			`m_products_attributes`.`m_products_attributes_product_id`='.$data['id'].' AND 
-			// 		`is_active`=1;';
-			$q = 'SELECT * FROM `formetoo_main`.`m_products_attributes`
-			LEFT JOIN `formetoo_main`.`m_products_attributes_list` ON
-				`m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`  
-				AND `is_active`=1 
-			WHERE
-				`m_products_attributes_product_id`=' . $data['id'] . ';'; 
+		$q = 'SELECT * FROM `formetoo_main`.`m_products_attributes`
+		LEFT JOIN `formetoo_main`.`m_products_attributes_list` ON
+			`m_products_attributes`.`m_products_attributes_list_id`=`m_products_attributes_list`.`m_products_attributes_list_id`  
+			AND `is_active`=1 
+		WHERE
+			`m_products_attributes_product_id`=' . $productId . ';'; 
 
-			if($res=$sql->query($q)) {
-				if(!empty($attrsGroup)) {
-					$tempResult = array();
-					foreach($res as $attrId) {
-						$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroup);
-						
-						if ($index) {
-							$tempResult[$attrId['m_products_attributes_list_name_url']] = $attrId;
-							$tempResult[$attrId['m_products_attributes_list_name_url']]['sort'] = $index;
-						}
+		if($res=$sql->query($q)) {
+			if(!empty($attrsGroup)) {
+				$tempResult = array();
+				foreach($res as $attrId) {
+					$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroup);
+					
+					if ($index) {
+						$tempResult[$attrId['m_products_attributes_list_name_url']] = $attrId;
+						$tempResult[$attrId['m_products_attributes_list_name_url']]['sort'] = $index;
 					}
-					array_multisort(array_column($tempResult, 'sort'), SORT_ASC, $tempResult);
-					return $tempResult;
 				}
-				
-				return $res;
+				array_multisort(array_column($tempResult, 'sort'), SORT_ASC, $tempResult);
+				return $tempResult;
 			}
-			return false;
+			
+			return $res;
 		}
 		return false;
 	}
