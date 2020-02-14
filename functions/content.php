@@ -1242,6 +1242,10 @@ Product.`active`=1
 					$index = array_search($attrId['m_products_attributes_list_id'], $attrsGroup);
 					
 					if ($index) {
+						if ($attrId['m_products_attributes_list_type'] == L) {
+							$attrId['m_products_attributes_value'] = self::getAttributeValueList($attrId['m_products_attributes_value']);
+						}
+						
 						$tempResult[$attrId['m_products_attributes_list_name_url']] = $attrId;
 						$tempResult[$attrId['m_products_attributes_list_name_url']]['sort'] = $index;
 					}
@@ -1254,6 +1258,20 @@ Product.`active`=1
 		}
 		return false;
 	}
+
+	// получаем значения у атрибута списка
+	private function getAttributeValueList($id){
+		global $sql;
+
+		$q='SELECT `value` FROM `formetoo_main`.`m_attributes_enum` WHERE (`m_attributes_enum`.`id`='. $id .');';
+
+		if($res=$sql->query($q)) {
+			return $res[0]['value'];
+		}
+
+		return NULL;
+	}
+
 	//все варианты товара (id)
 	public function getGoodVariants(){
 		global $e,$sql;
