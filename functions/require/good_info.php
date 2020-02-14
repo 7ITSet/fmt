@@ -437,8 +437,8 @@ else $captcha_reg=false;
                         <?}?>
                         <div class="clr"></div>
                     </div>
-                    <!--					<div class="detail-info__body_item products_about" itemprop="description"><noindex>--><?//=str_replace('<p>&nbsp;</p>','',$text['m_products_desc_text']);?><!--</noindex></div>-->
-                    <div class="detail-info__body_item products_about" itemprop="description"><noindex><?=str_replace('<p>&nbsp;</p>','',htmlspecialchars_decode($text['m_products_desc_text']));?></noindex></div>
+										<div class="detail-info__body_item products_about" itemprop="description"><noindex><?=str_replace('<p>&nbsp;</p>','',htmlspecialchars_decode(
+										$current_product['description']));?></noindex></div>
                     <? if ($docsItem){
                         $docsArray = json_decode($docsItem['m_products_attributes_value']);
                         ?>
