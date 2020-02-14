@@ -3827,6 +3827,7 @@ span.comment{
 	padding: 1.5em;
 	background: #fff;
 	display: none;
+	position: relative;
 }
 .error_massage.active {
 	display: block;
@@ -3839,8 +3840,8 @@ span.comment{
 	height: 40px;
 	position: absolute;
 	display: block;
-	right: 43px;
-	top: 32px;
+	right: 18px;
+	top: 25px;
 	cursor: pointer;
 }
 .error_massage_header h1::after {
@@ -3849,8 +3850,8 @@ span.comment{
 	color: #bbb;
 	font-size: 1.5em;
 	font-weight: 300;
-	top: 20px;
-	right: 50px;
+	top: 12px;
+	right: 25px;
 	cursor: pointer;
 }
 .error_massage form input {
@@ -4115,9 +4116,17 @@ span.comment{
 		padding: 0 2.3em 0 0;
 		font-size: .9em;
 	}
+	.nav_wrapper > ul.menu__list > .menu__item > i {
+		position: absolute;
+		width: 35px;
+		height: 30px;
+		right: 0;
+		top: 8px;
+	}
 	.nav_wrapper > ul.menu__list > .menu__item{
 		padding: .8em 0;
 		border-bottom: 1px solid #ddd;
+		position: relative;
 	}
 	.nav_wrapper > ul.menu__list > .menu__item.active {
 		padding-bottom: .5em;

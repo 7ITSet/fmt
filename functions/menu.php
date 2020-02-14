@@ -52,7 +52,7 @@ class menu{
 			foreach($cats as $category) {
 				$linkCategory = $link . '/' . $category['slug'];
 				$result.= '<li class="menu__item">';
-				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a>';
+				$result.= '<a class="menu__link" href="' . $linkCategory . '">' . $category['name'] . '</a><i></i>';
 				self::menuCatalogThree($nodes, $result, $linkCategory, $category, $depth+1);
 				$result.= '</li>';
 			}

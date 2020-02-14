@@ -723,9 +723,9 @@ $(document).ready(function(){
 			$('body').toggleClass('active_cat');
 			$('.city_account').toggleClass('active_city_account');
 		});
-		$('.nav_wrapper > ul.menu__list > .menu__item > a').removeAttr('href');
-		$('.nav_wrapper > ul.menu__list > .menu__item').click(function () {
-			$(this).toggleClass('active');
+		$('.nav_wrapper > ul.menu__list > .menu__item').removeAttr('href');
+		$('.nav_wrapper > ul.menu__list > .menu__item > i').click(function () {
+			$(this).parent().toggleClass('active');
 		})
 		$('#popup_quicksubmit').css({'width':'50%', 'left':'25%', 'height':'82%', 'box-sizing':'border-box', 'top':'10%', 'margin':'0px'});
 	};
